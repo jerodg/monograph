@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "python-monograph"
+version = "0.1.0"
+description = "How do I...?"
+authors = ["Jerod Gawne <jerodg@pm.me>"]
+readme = "readme.adoc"
+license = "SSPL"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.dev-dependencies]
+
+
+[build-system]
+requires = ["poetry-core>"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 132
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
