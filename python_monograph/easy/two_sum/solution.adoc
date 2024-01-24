@@ -8,6 +8,7 @@
 :sectlinks:
 :sectnums:
 :toc:
+:icons: font
 :keywords: solution, python, sum, list, array, hash, hashtable, dictionary
 
 == Solutions
@@ -36,7 +37,6 @@ def method_0(nums: list[int], target: int) -> list[int]:
 ----
 
 ==== Explanation
-
 
 ==== Complexity Analysis
 ===== Time

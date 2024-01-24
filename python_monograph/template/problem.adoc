@@ -8,8 +8,8 @@
 :sectlinks:
 :sectnums:
 :toc:
-:keywords:
-
+:icons: font
+:keywords: problem, python
 
 == Problem
 [.lead]
@@ -17,9 +17,8 @@
 === Constraints
 
 
-
 == Examples
-=== Example
+=== Example 0
 
 
 === Example 1

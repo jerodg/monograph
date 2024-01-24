@@ -1,0 +1,76 @@
+:doctitle: Merge Two Sorted Lists Solution
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:keywords: solution, python, merge, list, sort
+
+== Solutions
+[.lead]
+
+=== Method 0:
+
+==== Implementation
+[source,python,linenums]
+----
+
+----
+
+==== Explanation
+
+===== Advantages
+
+===== Disadvantages
+
+===== Complexity Analysis
+
+====== Time
+
+====== Space
+
+
+=== Method 1:
+
+==== Implementation
+[source,python,linenums]
+----
+
+----
+
+==== Explanation
+
+===== Advantages
+
+===== Disadvantages
+
+===== Complexity Analysis
+
+====== Time
+
+====== Space
+
+=== Method 2:
+
+==== Implementation
+[source,python,linenums]
+----
+
+----
+
+==== Explanation
+
+===== Advantages
+
+===== Disadvantages
+
+===== Complexity Analysis
+
+====== Time
+
+====== Space

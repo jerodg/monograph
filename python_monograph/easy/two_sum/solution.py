@@ -17,19 +17,17 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from sys import exc_info
-from traceback import print_exception
 
 
 def method_0(nums: list[int], target: int) -> list[int]:
-    """Brute Force (iteration)
+    """Method 0: Brute Force (iteration)
 
     Args:
-        nums: list[int]
-        target: int
+        nums (list[int]):
+        target (int):
 
     Returns:
-        list[int]
+        list[int]:
     """
     for i, n in enumerate(nums):
         for j, m in enumerate(nums[i + 1:]):
@@ -38,14 +36,15 @@ def method_0(nums: list[int], target: int) -> list[int]:
 
 
 def method_1(nums: list[int], target: int) -> list[int]:
-    """Two-pass Hash Table
+    """Method 1: Two-pass Hash Table
 
     Args:
-        nums: list[int]
-        target: int
+        nums (list[int]):
+        target (int):
 
     Returns:
         list[int]
+
     """
     d = {}
     for i, n in enumerate(nums):
@@ -55,12 +54,13 @@ def method_1(nums: list[int], target: int) -> list[int]:
         if target - n in d and i != d[target - n]:
             return [i, d[target - n]]
 
+
 def method_2(nums: list[int], target: int) -> list[int]:
-    """One-pass Hash Table
+    """
 
     Args:
-        nums: list[int]
-        target: int
+        nums (list[int]):
+        target (int):
 
     Returns:
         list[int]
@@ -71,8 +71,6 @@ def method_2(nums: list[int], target: int) -> list[int]:
             return [d[target - n], i]
         d[n] = i
 
+
 if __name__ == "__main__":
-    try:
-        print(__doc__)
-    except Exception as excp:
-        print(print_exception(*exc_info()))
+    print(__doc__)
