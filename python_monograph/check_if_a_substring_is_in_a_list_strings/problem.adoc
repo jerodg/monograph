@@ -1,0 +1,35 @@
+:doctitle: Title
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:keywords: problem, python
+
+== Problem
+[.lead]
+You need to find out if a given string is within a list of strings.
+
+=== Constraints
+
+
+== Examples
+=== Example 0
+
+
+=== Example 1
+
+
+=== Example 2
+
+
+
+== Follow-up
+
+
+== Related Topics
