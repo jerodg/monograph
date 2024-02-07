@@ -60,6 +60,7 @@ def method_1(data: List[str], substr: str) -> bool:
         if row.find(substr) != -1:  # Returns -1 if not found
             return True
 
+    return False
 
 def method_2(data: List[str], substr: str) -> bool:
     """Method #1a: Using the find() method with a list comprehension
@@ -106,6 +107,8 @@ def method_4(data: List[str], substr: str) -> bool:
     for row in data:
         if substr in row:
             return True
+
+    return False
 
 
 def method_5(data: List[str], substr: str) -> bool:
