@@ -11,18 +11,17 @@
 :keywords: solution, python
 
 == Solutions
-[.lead]
 
+[.lead]
 === Method 0:
 
 ==== Implementation
+
 [source,python,linenums]
-
-
 ==== Explanation
 
-
 ==== Complexity Analysis
+
 ===== Time
 
 ===== Space

@@ -21,6 +21,7 @@ from re import compile, split
 
 DRE = compile(r"(\d+)")
 
+
 def method_0(x: list, rvrs: bool = False) -> list:
     if isinstance(x, list):
         return [

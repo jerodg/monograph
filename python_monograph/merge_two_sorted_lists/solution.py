@@ -19,13 +19,16 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 import heapq
 
+
 class ListNode:
     """
     Definition for singly-linked list.
     """
+
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 def method_0(l1: ListNode, l2: ListNode) -> ListNode:
     """Method 0: Iterative
@@ -55,6 +58,7 @@ def method_0(l1: ListNode, l2: ListNode) -> ListNode:
 
     return dummy.next
 
+
 def method_1(l1: ListNode, l2: ListNode) -> ListNode:
     """Method 1: Recursive
 
@@ -77,6 +81,7 @@ def method_1(l1: ListNode, l2: ListNode) -> ListNode:
     else:
         l2.next = method_1(l1, l2.next)
         return l2
+
 
 def method_2(l1: ListNode, l2: ListNode) -> ListNode:
     """Method 2: Priority Queue
@@ -111,6 +116,7 @@ def method_2(l1: ListNode, l2: ListNode) -> ListNode:
             heapq.heappush(queue, (node.val, node))
 
     return dummy.next
+
 
 if __name__ == "__main__":
     print(__doc__)

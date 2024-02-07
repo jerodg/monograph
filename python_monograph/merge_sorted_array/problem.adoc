@@ -29,7 +29,6 @@ To accommodate this, `nums1` has a length of `m + n`, where the first `m` elemen
 - `1 <= m + n <= 200` +
 - `-10`^`9`^`+ <= nums1[i], nums2[j] <= 10`^`9`^
 
-
 == Examples
 
 === Example 0

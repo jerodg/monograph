@@ -12,8 +12,10 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 The built-in sort doesn't take into account numbers with more than one digit.
+
 [source,lang-py,s-code-block]
 ----
 ['Elm11', 'Elm12', 'Elm2', 'elm0', 'elm1', 'elm10', 'elm13', 'elm9']
@@ -30,19 +32,14 @@ This way elm0 comes before elm10.
 
 === Constraints
 
-
 == Examples
-=== Example 0
 
+=== Example 0
 
 === Example 1
 
-
 === Example 2
 
-
-
 == Follow-up
-
 
 == Related Topics

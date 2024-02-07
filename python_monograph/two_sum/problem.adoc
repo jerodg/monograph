@@ -12,11 +12,12 @@
 :keywords: problem, python, sum, list, array, hash, hashtable, dictionary
 
 == Problem
+
 [.lead]
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 
-
 === Constraints
+
 - 2 <= nums.length <= 104
 - -109 <= nums[i] <= 109
 - -109 <= target <= 109
@@ -24,8 +25,8 @@ Given an array of integers `nums` and an integer `target`, return indices of the
 - You can return the answer in any order.
 - You may not use the same element twice.
 
-
 == Examples
+
 === Example 0
 
 Input:
@@ -66,18 +67,23 @@ Output:
 == Hints
 
 [TIP]
-A really brute force way would be to search for all possible pairs of numbers but that would be too slow. Again, it's best to try out brute force solutions for just for completeness. It is from these brute force solutions that you can come up with optimizations.
+A really brute force way would be to search for all possible pairs of numbers but that would be too slow.
+Again, it's best to try out brute force solutions for just for completeness.
+It is from these brute force solutions that you can come up with optimizations.
 
 [TIP]
-So, if we fix one of the numbers, say `x`, we have to scan the entire array to find the next number `y` which is `value - x` where value is the input parameter. Can we change our array somehow so that this search becomes faster?
+So, if we fix one of the numbers, say `x`, we have to scan the entire array to find the next number `y` which is `value - x` where value is the input parameter.
+Can we change our array somehow so that this search becomes faster?
 
 [TIP]
-The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?
+The second train of thought is, without changing the array, can we use additional space somehow?
+Like maybe a hash map to speed up the search?
 
 == Follow-up
+
 Can you come up with an algorithm that is less than O(n^2^) time complexity?
 
-
 == Related Topics
+
 - https://docs.python.org/3/library/array.html?highlight=array#module-array[Array]
 - https://docs.python.org/3/library/hashlib.html[Hash] Table

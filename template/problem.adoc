@@ -12,23 +12,18 @@
 :keywords: problem, python
 
 == Problem
-[.lead]
 
+[.lead]
 === Constraints
 
-
 == Examples
-=== Example 0
 
+=== Example 0
 
 === Example 1
 
-
 === Example 2
 
-
-
 == Follow-up
-
 
 == Related Topics

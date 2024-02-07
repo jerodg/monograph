@@ -14,7 +14,7 @@
 == Problem
 
 [.lead]
-You need to find out if a given string is within a list of strings.
+You need to find out if two circles intersect, overlap, or encompass eachother.
 
 === Constraints
 
