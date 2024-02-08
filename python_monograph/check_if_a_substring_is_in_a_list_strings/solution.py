@@ -62,6 +62,7 @@ def method_1(data: List[str], substr: str) -> bool:
 
     return False
 
+
 def method_2(data: List[str], substr: str) -> bool:
     """Method #1a: Using the find() method with a list comprehension
 

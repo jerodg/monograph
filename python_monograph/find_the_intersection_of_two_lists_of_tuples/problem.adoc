@@ -12,6 +12,7 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to find the intersection of two lists of tuples.
 

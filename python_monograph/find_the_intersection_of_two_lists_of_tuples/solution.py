@@ -18,6 +18,7 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
+
 def method_0(ls0: list, ls1: list) -> set:
     """Using sorted(), set(), and list comprehension
 
@@ -53,6 +54,7 @@ def method_3(ls0: list, ls1: list) -> list:
     :return: (list)"""
     return list(set(ls0).intersection(set(ls1)))
 
+
 def method_4(ls0: list, ls1: list) -> list:
     """Using a List Comprehension with in Operator
 
@@ -61,13 +63,15 @@ def method_4(ls0: list, ls1: list) -> list:
     :return: (list)"""
     return [x for x in ls0 if x in ls1]
 
+
 def method_5(ls0: list, ls1: list) -> list:
     """Using the filter() Function
 
     :param ls0:
     :param ls1:
-    :return: """
+    :return:"""
     return list(filter(lambda x: x in ls1, ls0))
+
 
 def method_6(ls0: list, ls1: list) -> list:
     """Using a Set Comprehension
@@ -76,6 +80,7 @@ def method_6(ls0: list, ls1: list) -> list:
     :param ls1: (list)
     :return: (list)"""
     return list({x for x in ls0}.intersection(ls1))
+
 
 if __name__ == "__main__":
     print(__doc__)

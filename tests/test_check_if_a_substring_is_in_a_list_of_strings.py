@@ -18,7 +18,6 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
-import pytest
 from python_monograph.check_if_a_substring_is_in_a_list_strings.solution import method_0, method_1, method_2, method_3, method_4, method_5
 
 def test_substring_present_in_list_using_any():

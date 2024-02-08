@@ -22,12 +22,12 @@ from typing import Union
 
 
 def check_circles(
-        x0: Union[int, float],
-        y0: Union[int, float],
-        r0: Union[int, float],
-        x1: Union[int, float],
-        y1: Union[int, float],
-        r1: Union[int, float],
+    x0: Union[int, float],
+    y0: Union[int, float],
+    r0: Union[int, float],
+    x1: Union[int, float],
+    y1: Union[int, float],
+    r1: Union[int, float],
 ) -> str:
     """Method 0: If Conditional
 

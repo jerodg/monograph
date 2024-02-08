@@ -17,8 +17,8 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-import pytest
-from python_monograph.merge_two_sorted_lists.solution import method_0, method_1, method_2, ListNode
+from python_monograph.merge_two_sorted_lists.solution import ListNode, method_0, method_1, method_2
+
 
 # todo: need better tests
 def test_merge_two_sorted_lists_iterative():

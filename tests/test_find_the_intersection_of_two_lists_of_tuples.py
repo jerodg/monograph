@@ -17,7 +17,6 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-import pytest
 from python_monograph.find_the_intersection_of_two_lists_of_tuples.solution import method_0, method_1, method_2, method_3, method_4, method_5, method_6
 
 def test_intersection_present_in_lists_using_sorted_set_and_list_comprehension():
