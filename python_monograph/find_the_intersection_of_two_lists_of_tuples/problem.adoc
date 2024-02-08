@@ -1,0 +1,32 @@
+:doctitle: Title
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:keywords: problem, python
+
+== Problem
+[.lead]
+You need to find the intersection of two lists of tuples.
+
+=== Constraints
+
+== Examples
+
+=== Example 0
+
+=== Example 1
+
+=== Example 2
+
+== Follow-up
+
+=== Performance Considerations
+
+== Related Topics
