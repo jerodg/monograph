@@ -36,6 +36,7 @@ def test_merge_two_sorted_lists_iterative():
     assert result.next.next.next.next.val == 4
     assert result.next.next.next.next.next.val == 4
 
+
 def test_merge_two_sorted_lists_recursive():
     l1 = ListNode(1)
     l1.next = ListNode(2)
@@ -51,6 +52,7 @@ def test_merge_two_sorted_lists_recursive():
     assert result.next.next.next.next.val == 4
     assert result.next.next.next.next.next.val == 4
 
+
 def test_merge_two_sorted_lists_priority_queue():
     l1 = ListNode(1)
     l1.next = ListNode(2)
@@ -65,6 +67,7 @@ def test_merge_two_sorted_lists_priority_queue():
     assert result.next.next.next.val == 3
     assert result.next.next.next.next.val == 4
     assert result.next.next.next.next.next.val == 4
+
 
 if __name__ == "__main__":
     print(__doc__)

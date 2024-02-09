@@ -18,40 +18,59 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
-from python_monograph.check_if_a_substring_is_in_a_list_strings.solution import method_0, method_1, method_2, method_3, method_4, method_5
+from python_monograph.check_if_a_substring_is_in_a_list_strings.solution import (
+    method_0,
+    method_1,
+    method_2,
+    method_3,
+    method_4,
+    method_5,
+)
+
 
 def test_substring_present_in_list_using_any():
     assert method_0(["Hello", "World"], "World") == True
 
+
 def test_substring_not_present_in_list_using_any():
     assert method_0(["Hello", "World"], "Python") == False
+
 
 def test_substring_present_in_list_using_find():
     assert method_1(["Hello", "World"], "World") == True
 
+
 def test_substring_not_present_in_list_using_find():
     assert method_1(["Hello", "World"], "Python") == False
+
 
 def test_substring_present_in_list_using_find_list_comprehension():
     assert method_2(["Hello", "World"], "World") == True
 
+
 def test_substring_not_present_in_list_using_find_list_comprehension():
     assert method_2(["Hello", "World"], "Python") == False
+
 
 def test_substring_present_in_list_using_join():
     assert method_3(["Hello", "World"], "World") == True
 
+
 def test_substring_not_present_in_list_using_join():
     assert method_3(["Hello", "World"], "Python") == False
+
 
 def test_substring_present_in_list_using_for_loop():
     assert method_4(["Hello", "World"], "World") == True
 
+
 def test_substring_not_present_in_list_using_for_loop():
     assert method_4(["Hello", "World"], "Python") == False
 
+
 def test_substring_present_in_list_using_list_comprehension():
     assert method_5(["Hello", "World"], "World") == True
+
 
 def test_substring_not_present_in_list_using_list_comprehension():
     assert method_5(["Hello", "World"], "Python") == False
