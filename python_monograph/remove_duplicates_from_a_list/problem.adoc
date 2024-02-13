@@ -1,0 +1,27 @@
+:doctitle: Title
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:keywords: problem, python
+
+== Problem
+
+[.lead]
+You need to remove duplicates from a list.
+
+=== Constraints
+
+== Examples
+
+=== Example 0
+
+== Follow-up
+
+== Related Topics
