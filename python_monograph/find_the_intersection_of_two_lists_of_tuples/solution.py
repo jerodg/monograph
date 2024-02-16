@@ -20,65 +20,114 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
 def method_0(ls0: list, ls1: list) -> set:
-    """Using sorted(), set(), and list comprehension
+    """Find the intersection of two lists using list comprehension and set().
 
-    :param ls0: (list)
-    :param ls1: (list)
-    :return: (set)"""
+    This function takes two lists of tuples as input and returns a set of tuples that are present in both lists.
+    The tuples are sorted before comparison to ensure that the order of elements does not affect the result.
+
+    Args:
+        ls0: The first list of tuples.
+        ls1: The second list of tuples.
+
+    Returns:
+        A set of tuples that are present in both input lists.
+    """
     return set([tuple(sorted(x)) for x in ls0]) & set([tuple(sorted(y)) for y in ls1])
 
 
 def method_1(ls0: list, ls1: list) -> set:
-    """Using list comprehension, map(), frozenset(), and &
+    """Find the intersection of two lists using map() and frozenset().
 
-    :param ls0: (list)
-    :param ls1: (list)
-    :return: (set)"""
+    This function takes two lists of tuples as input and returns a set of tuples that are present in both lists.
+    The tuples are converted to frozensets before comparison to ensure that the order of elements does not affect the result.
+
+    Args:
+        ls0: The first list of tuples.
+        ls1: The second list of tuples.
+
+    Returns:
+        A set of tuples that are present in both input lists.
+    """
     return set(map(frozenset, ls0)) & set(map(frozenset, ls1))
 
 
 def method_2(ls0: list, ls1: list) -> list:
-    """Using list comprehension
+    """Find the intersection of two lists using list comprehension.
 
-    :param ls0: (list)
-    :param ls1: (list)
-    :return: (list)"""
+    This function takes two lists as input and returns a list of elements that are present in both lists.
+    The order of elements in the input lists does not affect the result.
+
+    Args:
+        ls0: The first list.
+        ls1: The second list.
+
+    Returns:
+        A list of elements that are present in both input lists.
+    """
     return [x for x in ls0 for y in ls1 if x == y]
 
 
 def method_3(ls0: list, ls1: list) -> list:
-    """Using set.intersection()
+    """Find the intersection of two lists using set() and intersection().
 
-    :param ls0: (list)
-    :param ls1: (list)
-    :return: (list)"""
+    This function takes two lists as input and returns a list of elements that are present in both lists.
+    The order of elements in the input lists does not affect the result.
+
+    Args:
+        ls0: The first list.
+        ls1: The second list.
+
+    Returns:
+        A list of elements that are present in both input lists.
+    """
     return list(set(ls0).intersection(set(ls1)))
 
 
 def method_4(ls0: list, ls1: list) -> list:
-    """Using a List Comprehension with in Operator
+    """Find the intersection of two lists using list comprehension.
 
-    :param ls0: (list)
-    :param ls1: (list)
-    :return: (list)"""
+    This function takes two lists as input and returns a list of elements that are present in both lists.
+    The order of elements in the input lists does not affect the result.
+
+    Args:
+        ls0: The first list.
+        ls1: The second list.
+
+    Returns:
+        A list of elements that are present in both input lists.
+    """
     return [x for x in ls0 if x in ls1]
 
 
 def method_5(ls0: list, ls1: list) -> list:
-    """Using the filter() Function
+    """Find the intersection of two lists using filter() and lambda.
 
-    :param ls0:
-    :param ls1:
-    :return:"""
+    This function takes two lists as input and returns a list of elements that are present in both lists.
+    The order of elements in the input lists does not affect the result.
+
+    Args:
+        ls0: The first list.
+        ls1: The second list.
+
+    Returns:
+        A list of elements that are present in both input lists.
+    """
     return list(filter(lambda x: x in ls1, ls0))
 
 
 def method_6(ls0: list, ls1: list) -> list:
-    """Using a Set Comprehension
+    """Find the intersection of two lists using set comprehension and intersection().
 
-    :param ls0: (list)
-    :param ls1: (list)
-    :return: (list)"""
+    This function takes two lists as input and returns a list of elements that are present in both lists.
+    The order of elements in the input lists does not affect the result.
+
+    Args:
+        ls0: The first list.
+        ls1: The second list.
+
+    Returns:
+        A list of elements that are present in both input lists.
+    """
     return list({x for x in ls0}.intersection(ls1))
 
 

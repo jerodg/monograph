@@ -25,19 +25,21 @@ import numpy as np
 
 
 def method_0(itr: (tuple, list)) -> Generator:
-    """Method 0: Using a generator w/ recursion
+    """Flatten a list or tuple using a generator with recursion.
 
-    Notes:
-            Does not provide the location of the substr.
+    This function takes a list or tuple as input and returns a generator that yields each element in the list or tuple.
+    If an element is a list or tuple, it recursively flattens it.
+    Note that this method does not provide the location of the substr.
 
     Args:
-            itr (tuple|list):
+        itr: The list or tuple to be flattened.
 
     Returns:
-            object (generator):
+        A generator that yields each element in the flattened list or tuple.
 
     References:
-            https://docs.python.org/3/reference/expressions.html#yieldexpr"""
+        https://docs.python.org/3/reference/expressions.html#yieldexpr
+    """
     for item in itr:
         if isinstance(item, (tuple, list)):
             yield from method_0(item)
@@ -46,37 +48,61 @@ def method_0(itr: (tuple, list)) -> Generator:
 
 
 def method_1(itr: (tuple, list)) -> list:
-    """Method 1: Using itertools.chain
+    """Flatten a list or tuple using itertools.chain.
 
-    :param itr:
-    :return:
+    This function takes a list or tuple as input and returns a list that contains each element in the list or tuple.
+    If an element is a list or tuple, it is flattened into individual elements.
+
+    Args:
+        itr: The list or tuple to be flattened.
+
+    Returns:
+        A list that contains each element in the flattened list or tuple.
     """
     return list(itertools.chain(*itr))
 
 
 def method_2(itr: (tuple, list)) -> list:
-    """Method 2: Using list comprehension
+    """Flatten a list or tuple using list comprehension.
 
-    :param itr:
-    :return:
+    This function takes a list or tuple as input and returns a list that contains each element in the list or tuple.
+    If an element is a list or tuple, it is flattened into individual elements.
+
+    Args:
+        itr: The list or tuple to be flattened.
+
+    Returns:
+        A list that contains each element in the flattened list or tuple.
     """
     return [item for sublist in itr for item in sublist]
 
 
 def method_3(itr: (tuple, list)) -> list:
-    """Method 3: Using numpy
+    """Flatten a list or tuple using numpy's flatten method.
 
-    :param itr:
-    :return:
+    This function takes a list or tuple as input and returns a list that contains each element in the list or tuple.
+    If an element is a list or tuple, it is flattened into individual elements.
+
+    Args:
+        itr: The list or tuple to be flattened.
+
+    Returns:
+        A list that contains each element in the flattened list or tuple.
     """
     return np.array(itr).flatten().tolist()
 
 
 def method_4(itr: (tuple, list)) -> list:
-    """Method 4: Using reduce
+    """Flatten a list or tuple using functools.reduce.
 
-    :param itr:
-    :return:
+    This function takes a list or tuple as input and returns a list that contains each element in the list or tuple.
+    If an element is a list or tuple, it is flattened into individual elements.
+
+    Args:
+        itr: The list or tuple to be flattened.
+
+    Returns:
+        A list that contains each element in the flattened list or tuple.
     """
     return reduce(lambda x, y: x + y, itr)
 

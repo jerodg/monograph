@@ -20,19 +20,21 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
 def convert_bytes(size, notation: str = "decimal") -> str:
-    """Convert Bytes
+    """Convert a given size in bytes to a human-readable format.
 
-    :param size:
-    :type size:
-    :param notation:
-    :type notation:
-    :return:
-    :rtype:
+    This function takes a size in bytes and a notation (either 'decimal' or 'binary') and returns a string
+    representing the size in a human-readable format. The 'decimal' notation uses a base of 1000 and the 'binary'
+    notation uses a base of 1024.
 
-    References:
-        https://blog.codinghorror.com/gigabyte-decimal-vs-binary/
-        https://physics.nist.gov/cuu/Units/binary.html
-        https://ux.stackexchange.com/questions/13815/files-size-units-kib-vs-kb-vs-kb
+    Args:
+        size: The size in bytes to convert.
+        notation: The notation to use for the conversion. Must be either 'decimal' or 'binary'. Defaults to 'decimal'.
+
+    Returns:
+        A string representing the size in a human-readable format.
+
+    Raises:
+        ValueError: If the size is negative or the notation is not 'decimal' or 'binary'.
     """
     if size < 0:
         raise ValueError("Size cannot be negative.")

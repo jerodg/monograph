@@ -78,6 +78,7 @@ def test_method_1_handles_custom_objects_correctly():
 
     assert method_1(Test()) == 428
 
+
 # fixme: this test is failing
 # def test_method_1_avoids_infinite_recursion_with_circular_references():
 #     a = []

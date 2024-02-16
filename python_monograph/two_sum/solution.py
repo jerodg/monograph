@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Two Sum Solution
+"""Python Monograph: Two Sum Solutions
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -22,12 +22,18 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 def method_0(nums: list[int], target: int) -> list[int]:
     """Method 0: Brute Force (iteration)
 
+    This function takes a list of integers and a target integer as input.
+    It iterates over the list of integers twice (nested iteration) to find two numbers that add up to the target.
+    The function returns a list containing the indices of the two numbers in the original list.
+    If no such pair of numbers is found, the function returns None.
+
     Args:
-        nums (list[int]):
-        target (int):
+        nums: A list of integers.
+        target: An integer that we want to find two numbers in the list that add up to.
 
     Returns:
-        list[int]:
+        A list of two integers representing the indices in the original list of the two numbers that add up to the target.
+        If no such pair of numbers is found, the function returns None.
     """
     for i, n in enumerate(nums):
         for j, m in enumerate(nums[i + 1 :]):
@@ -38,13 +44,19 @@ def method_0(nums: list[int], target: int) -> list[int]:
 def method_1(nums: list[int], target: int) -> list[int]:
     """Method 1: Two-pass Hash Table
 
+    This function takes a list of integers and a target integer as input.
+    It uses a hash table (dictionary in Python) to store the integers from the list as keys and their indices as values.
+    The function then iterates over the list of integers again, checking if the difference between the target and the current integer is in the hash table.
+    If it is, and the index of the current integer is not the same as the index stored in the hash table for the difference, the function returns a list containing the indices of the two numbers.
+    If no such pair of numbers is found, the function returns None.
+
     Args:
-        nums (list[int]):
-        target (int):
+        nums: A list of integers.
+        target: An integer that we want to find two numbers in the list that add up to.
 
     Returns:
-        list[int]
-
+        A list of two integers representing the indices in the original list of the two numbers that add up to the target.
+        If no such pair of numbers is found, the function returns None.
     """
     d = {}
     for i, n in enumerate(nums):
@@ -56,14 +68,21 @@ def method_1(nums: list[int], target: int) -> list[int]:
 
 
 def method_2(nums: list[int], target: int) -> list[int]:
-    """
+    """Method 2: One-pass Hash Table
+
+    This function takes a list of integers and a target integer as input.
+    It uses a hash table (dictionary in Python) to store the integers from the list as keys and their indices as values.
+    The function iterates over the list of integers, checking if the difference between the target and the current integer is in the hash table.
+    If it is, the function returns a list containing the indices of the two numbers.
+    If no such pair of numbers is found, the function returns None.
 
     Args:
-        nums (list[int]):
-        target (int):
+        nums: A list of integers.
+        target: An integer that we want to find two numbers in the list that add up to.
 
     Returns:
-        list[int]
+        A list of two integers representing the indices in the original list of the two numbers that add up to the target.
+        If no such pair of numbers is found, the function returns None.
     """
     d = {}
     for i, n in enumerate(nums):

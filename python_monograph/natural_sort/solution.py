@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Natural Sort
+"""Python Monograph: Natural Sort Solution
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -23,6 +23,21 @@ DRE = compile(r"(\d+)")
 
 
 def method_0(x: list, rvrs: bool = False) -> list:
+    """Perform a 'natural' sort on a list of strings.
+
+    This function takes a list of strings as input and returns a new list that is sorted in natural order.
+    Natural order sorting means that the numeric parts of the strings are sorted as numbers, not as strings.
+    For example, the list ['file1', 'file10', 'file2'] is sorted as ['file1', 'file2', 'file10'] in natural order.
+    The function uses recursion to sort nested lists.
+    The original list is not modified.
+
+    Args:
+        x: The list of strings to be sorted.
+        rvrs: A boolean value that determines whether the list should be sorted in reverse order. Default is False.
+
+    Returns:
+        A new list that contains all the elements from the input list, sorted in natural order.
+    """
     if isinstance(x, list):
         return [
             method_0(y, rvrs=rvrs)

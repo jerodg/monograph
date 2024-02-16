@@ -23,35 +23,47 @@ from typing import List
 
 
 def method_0(arr: List[dict]) -> list:
-    """Method 0: Using Chain itertools
+    """Find unique keys from a list of dictionaries using Chain from itertools.
+
+    This function takes a list of dictionaries as input and returns a list of unique keys present in all dictionaries.
+    The order of dictionaries in the input list does not affect the result.
 
     Args:
-            arr (List[dict]):
+        arr: The list of dictionaries.
 
     Returns:
-            (list)"""
+        A list of unique keys present in all input dictionaries.
+    """
     return list(set(chain.from_iterable(sub.keys() for sub in arr)))
 
 
 def method_1(arr: List[dict]) -> list:
-    """Method 1: Using list/dict Comprehension
+    """Find unique keys from a list of dictionaries using list/dict comprehension.
+
+    This function takes a list of dictionaries as input and returns a list of unique keys present in all dictionaries.
+    The order of dictionaries in the input list does not affect the result.
 
     Args:
-            arr (List[dict]):
+        arr: The list of dictionaries.
 
     Returns:
-            (list)"""
+        A list of unique keys present in all input dictionaries.
+    """
     return list(set(val for dic in arr for val in dic.keys()))
 
 
 def method_2(arr: List[dict]) -> list:
-    """Method 2: Using keys(),extend(),list() and set() methods
+    """Find unique keys from a list of dictionaries using keys(), extend(), list() and set() methods.
+
+    This function takes a list of dictionaries as input and returns a list of unique keys present in all dictionaries.
+    The order of dictionaries in the input list does not affect the result.
 
     Args:
-            arr (List[dict]):
+        arr: The list of dictionaries.
 
     Returns:
-            (list)"""
+        A list of unique keys present in all input dictionaries.
+    """
     new_list = []
 
     for i in arr:
@@ -61,13 +73,17 @@ def method_2(arr: List[dict]) -> list:
 
 
 def method_3(arr: List[dict]) -> list:
-    """Method 3: Using functools.reduce()
+    """Find unique keys from a list of dictionaries using functools.reduce().
+
+    This function takes a list of dictionaries as input and returns a list of unique keys present in all dictionaries.
+    The order of dictionaries in the input list does not affect the result.
 
     Args:
-            arr (List[dict]):
+        arr: The list of dictionaries.
 
     Returns:
-            (list)"""
+        A list of unique keys present in all input dictionaries.
+    """
     return list(reduce(lambda a, b: {**a, **b}, arr).keys())
 
 

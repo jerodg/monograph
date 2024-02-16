@@ -21,26 +21,40 @@ import heapq
 
 
 class ListNode:
-    """
-    Definition for singly-linked list.
+    """Definition for a singly-linked list node.
+
+    A singly-linked list node is a data structure that holds a value and a reference to the next node in the list.
+    This class is used to create nodes for a singly-linked list.
+
+    Attributes:
+        val: The value stored in the node.
+        next: The next node in the list.
     """
 
     def __init__(self, x):
+        """
+        Initialize a ListNode with a value.
+
+        Args:
+            x: The value to be stored in the node.
+        """
         self.val = x
         self.next = None
 
 
 def method_0(l1: ListNode, l2: ListNode) -> ListNode:
-    """Method 0: Iterative
+    """Merge two sorted linked lists iteratively.
 
-    Parameters
-    ----------
-    l1 : ListNode
-    l2 : ListNode
+    This function takes two sorted linked lists as input and merges them into a new sorted linked list.
+    The new list is made by splicing together the nodes of the first two lists.
+    The original lists are not modified.
 
-    Returns
-    -------
-    ListNode
+    Args:
+        l1: The first sorted linked list.
+        l2: The second sorted linked list.
+
+    Returns:
+        A new sorted linked list that contains all the nodes from both input lists.
     """
     dummy = ListNode(0)
     current = dummy
@@ -60,16 +74,19 @@ def method_0(l1: ListNode, l2: ListNode) -> ListNode:
 
 
 def method_1(l1: ListNode, l2: ListNode) -> ListNode:
-    """Method 1: Recursive
+    """Merge two sorted linked lists recursively.
 
-    Parameters
-    ----------
-    l1 : ListNode
-    l2 : ListNode
+    This function takes two sorted linked lists as input and merges them into a new sorted linked list.
+    The new list is made by splicing together the nodes of the first two lists.
+    The original lists are not modified.
+    The function uses recursion to merge the lists.
 
-    Returns
-    -------
-    ListNode
+    Args:
+        l1: The first sorted linked list.
+        l2: The second sorted linked list.
+
+    Returns:
+        A new sorted linked list that contains all the nodes from both input lists.
     """
     if not l1:
         return l2
@@ -84,16 +101,19 @@ def method_1(l1: ListNode, l2: ListNode) -> ListNode:
 
 
 def method_2(l1: ListNode, l2: ListNode) -> ListNode:
-    """Method 2: Priority Queue
+    """Merge two sorted linked lists using a priority queue.
 
-    Parameters
-    ----------
-    l1 : ListNode
-    l2 : ListNode
+    This function takes two sorted linked lists as input and merges them into a new sorted linked list.
+    The new list is made by splicing together the nodes of the first two lists.
+    The original lists are not modified.
+    The function uses a priority queue to ensure that the smallest element is always at the front of the queue.
 
-    Returns
-    -------
-    ListNode
+    Args:
+        l1: The first sorted linked list.
+        l2: The second sorted linked list.
+
+    Returns:
+        A new sorted linked list that contains all the nodes from both input lists.
     """
     dummy = ListNode(0)
     current = dummy

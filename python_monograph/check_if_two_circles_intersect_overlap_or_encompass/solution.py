@@ -20,69 +20,17 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 import math
 from typing import Union
 
-class Circle:
-    """
-    A class used to represent a Circle.
-
-    ...
-
-    Attributes
-    ----------
-    x : Union[int, float]
-        x-coordinate of the circle's center
-    y : Union[int, float]
-        y-coordinate of the circle's center
-    r : Union[int, float]
-        radius of the circle
-
-    Methods
-    -------
-    check_relation(other_circle)
-        Determines the spatial relation between this circle and another circle.
-    """
-
+# todo: need tests
+# todo: graph this
+class Circle(object):
     def __init__(self, x: Union[int, float], y: Union[int, float], r: Union[int, float]):
-        """
-        Constructs a new Circle with the given center coordinates and radius.
-
-        Parameters
-        ----------
-        x : Union[int, float]
-            x-coordinate of the circle's center
-        y : Union[int, float]
-            y-coordinate of the circle's center
-        r : Union[int, float]
-            radius of the circle
-
-        Raises
-        ------
-        ValueError
-            If the radius is negative
-        """
         if r < 0:
             raise ValueError("Invalid input: radius must be positive")
         self.x = x
         self.y = y
         self.r = r
+
     def check_relation(self, other_circle) -> str:
-        """
-        Determines the spatial relation between this circle and another circle.
-
-        Parameters
-        ----------
-        other_circle : Circle
-            The other circle to check the relation with
-
-        Returns
-        -------
-        str
-            A string describing the relation between the two circles. Possible values are:
-            - "other_circle is in this circle"
-            - "this circle is in other_circle"
-            - "this circle and other_circle intersect"
-            - "this circle and other_circle will touch"
-            - "this circle and other_circle do not overlap, intersect, or touch"
-        """
         d = math.sqrt((self.x - other_circle.x) ** 2 + (self.y - other_circle.y) ** 2)
 
         if d <= self.r - other_circle.r:
@@ -96,6 +44,7 @@ class Circle:
         else:
             return "this circle and other_circle do not overlap, intersect, or touch"
 
+
 def check_circles(
     x0: Union[int, float],
     y0: Union[int, float],
@@ -104,15 +53,6 @@ def check_circles(
     y1: Union[int, float],
     r1: Union[int, float],
 ) -> str:
-    """Method 0: If Conditional
-
-    :param x0: Union[int, float]
-    :param y0: Union[int, float]
-    :param r0: Union[int, float]
-    :param x1: Union[int, float]
-    :param y1: Union[int, float]
-    :param r1: Union[int, float]
-    :return: str"""
     if r0 < 0 or r1 < 0:
         return "Invalid input: radius must be positive"
 

@@ -19,9 +19,27 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from inspect import isgetsetdescriptor, ismemberdescriptor
 from sys import getsizeof
-from typing import Any, Union
+from typing import Any
 
-def method_0(obj: Any, seen: set = None) -> Union[int, str]:
+
+def method_0(obj: Any, seen: set = None) -> int:
+    """Calculate the memory size of a given object in bytes.
+
+    This function recursively traverses the object's attributes and elements (if it's a container),
+    summing up their memory sizes. It handles circular references by keeping track of already seen objects.
+
+    Args:
+        obj: The object to calculate the memory size of.
+        seen: A set of ids of objects that have already been processed.
+
+    Returns:
+        The memory size of the object in bytes.
+
+    References:
+        https://blog.codinghorror.com/gigabyte-decimal-vs-binary/
+        https://physics.nist.gov/cuu/Units/binary.html
+        https://ux.stackexchange.com/questions/13815/files-size-units-kib-vs-kb-vs-kb
+    """
     size = getsizeof(obj)
     seen = seen or set()
     obj_id = id(obj)
@@ -50,13 +68,30 @@ def method_0(obj: Any, seen: set = None) -> Union[int, str]:
 
     return size
 
-def method_1(obj):
+
+def method_1(obj: Any) -> int:
+    """Calculate the memory size of a given object in bytes.
+
+    This function recursively traverses the object's attributes and elements (if it's a container),
+    summing up their memory sizes. It handles circular references by keeping track of already seen objects.
+
+    Args:
+        obj: The object to calculate the memory size of.
+
+    Returns:
+        The memory size of the object in bytes.
+
+    References:
+        https://blog.codinghorror.com/gigabyte-decimal-vs-binary/
+        https://physics.nist.gov/cuu/Units/binary.html
+        https://ux.stackexchange.com/questions/13815/files-size-units-kib-vs-kb-vs-kb
+    """
     size = getsizeof(obj)
     if isinstance(obj, dict):
         size += sum(method_1(v) for v in obj.values())
-    elif hasattr(obj, '__dict__'):
+    elif hasattr(obj, "__dict__"):
         size += method_1(obj.__dict__)
-    elif hasattr(obj, '__iter__') and not isinstance(obj, (str, bytes, bytearray)):
+    elif hasattr(obj, "__iter__") and not isinstance(obj, (str, bytes, bytearray)):
         size += sum(method_1(item) for item in obj)
     return size
 
