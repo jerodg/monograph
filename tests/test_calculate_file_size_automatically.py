@@ -23,26 +23,34 @@ from python_monograph.calculate_file_size_automatically.solution import convert_
 
 
 def test_convert_bytes_decimal_notation():
-    assert convert_bytes(1500, 'decimal') == "1.50 KB"
+    assert convert_bytes(1500, "decimal") == "1.50 KB"
+
 
 def test_convert_bytes_binary_notation():
-    assert convert_bytes(1500, 'binary') == "1.46 KiB"
+    assert convert_bytes(1500, "binary") == "1.46 KiB"
+
 
 def test_convert_bytes_large_size_decimal_notation():
-    assert convert_bytes(1500000000, 'decimal') == "1.50 GB"
+    assert convert_bytes(1500000000, "decimal") == "1.50 GB"
+
 
 def test_convert_bytes_large_size_binary_notation():
-    assert convert_bytes(1500000000, 'binary') == "1.40 GiB"
+    assert convert_bytes(1500000000, "binary") == "1.40 GiB"
+
 
 def test_convert_bytes_invalid_notation():
     with pytest.raises(ValueError):
-        convert_bytes(1500, 'invalid')
+        convert_bytes(1500, "invalid")
+
 
 def test_convert_bytes_negative_size():
     with pytest.raises(ValueError):
-        convert_bytes(-1500, 'decimal')
+        convert_bytes(-1500, "decimal")
+
 
 def test_convert_bytes_zero_size():
-    assert convert_bytes(0, 'decimal') == "0.00 B"
+    assert convert_bytes(0, "decimal") == "0.00 B"
+
+
 if __name__ == "__main__":
     print(__doc__)
