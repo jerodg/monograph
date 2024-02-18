@@ -12,12 +12,9 @@
 :keywords: solution, python
 
 == Solutions
-
 [.lead]
 === Method 0:
-
 ==== Implementation
-
 [source,python,linenums]
 ----
 def method_0(x: list, rvrs: bool = False) -> list:
@@ -31,9 +28,7 @@ def method_0(x: list, rvrs: bool = False) -> list:
             )
         ]
 ----
-
 ==== Explanation
-
 The provided Python code defines a function named `method_0` that performs a natural sort on a list.
 Natural sorting is a type of sorting where the elements are arranged in the way that a human would naturally sort them.
 For example, if we have a list `['item1', 'item10', 'item2']`, a natural sort would sort this list as `['item1', 'item2', 'item10']` instead of `['item1', 'item10', 'item2']` which is the result of a standard lexicographical sort.
@@ -85,64 +80,40 @@ In summary, `method_0` is a function that performs a natural sort on a list, wit
 It can handle lists of lists, sorting each sublist in the same way.
 
 ===== Advantages
-
 ===== Disadvantages
-
 ===== Complexity Analysis
-
 The time complexity of the selected code is O(n log n) and the space complexity is O(n).
 
 ====== Time
-
 The time complexity of the selected code is primarily determined by the sorting operation.
 In Python, the built-in sorted function uses a sorting algorithm called Timsort, which has a worst-case and average time complexity of O(n log n), where n is the number of elements in the list.
 The lambda function used as the key for sorting has a time complexity of O(k), where k is the number of characters in a string.
 However, since this operation is performed for each element in the list, it does not change the overall time complexity from O(n log n).
-
-====== Space
-
-The space complexity of the selected code is O(n), where n is the number of elements in the list.
+====== Space The space complexity of the selected code is O(n), where n is the number of elements in the list.
 This is because the sorted function returns a new list containing all elements from the original list, thus requiring additional space.
 The recursive calls to method_0 do not change the overall space complexity, as each call works on a different subset of the original list and the space used by a call is freed up after the call is finished.
-
 === Method 1:
-
 ==== Implementation
 
 [source,python,linenums]
 ----
 
 ----
-
 ==== Explanation
-
 ===== Advantages
-
 ===== Disadvantages
-
 ===== Complexity Analysis
-
 ====== Time
-
 ====== Space
-
 === Method 2:
-
 ==== Implementation
-
 [source,python,linenums]
 ----
 
 ----
-
 ==== Explanation
-
 ===== Advantages
-
 ===== Disadvantages
-
 ===== Complexity Analysis
-
 ====== Time
-
 ====== Space

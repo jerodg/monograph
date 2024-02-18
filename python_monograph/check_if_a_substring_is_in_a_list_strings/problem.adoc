@@ -12,35 +12,26 @@
 :keywords: problem, python
 
 == Problem
-
 [.lead]
 You need to find out if a given string is within a list of strings.
 
 === Use-Cases
-Finding out if a given string is within a list of strings is a common task in various fields of computer science and data management. Here are some use cases:
+Finding out if a given string is within a list of strings is a common task in various fields of computer science and data management.
+Here are some use cases:
 
-1. **Text Analysis**: In text analysis, you might have a list of keywords and you want to check if a given word is in that list. This can be useful in sentiment analysis, spam detection, or search functionality.
+1. **Text Analysis**: In text analysis, you might have a list of keywords and you want to check if a given word is in that list.
+This can be useful in sentiment analysis, spam detection, or search functionality.
 
-2. **Data Validation**: In data validation, you might have a list of valid inputs and you want to check if a given input is valid by seeing if it's in that list. This can be useful in form validation, command-line argument validation, etc.
+2. **Data Validation**: In data validation, you might have a list of valid inputs and you want to check if a given input is valid by seeing if it's in that list.
+This can be useful in form validation, command-line argument validation, etc.
 
 3. **Autocomplete Features**: In applications with autocomplete features, you might have a list of suggestions and you want to check if a given input matches any of those suggestions.
 
 4. **Access Control**: In access control, you might have a list of authorized users and you want to check if a given user is in that list.
 
-5. **Programming and Software Development**: In programming and software development, checking if a string is in a list of strings is a common operation. This can be used in various scenarios like error handling, feature toggling, etc.
+5. **Programming and Software Development**: In programming and software development, checking if a string is in a list of strings is a common operation.
+This can be used in various scenarios like error handling, feature toggling, etc.
 
-These are just a few examples. The concept of checking if a string is in a list of strings can be applied in many other scenarios depending on the problem at hand.
-
-=== Constraints
-
-== Examples
-
-=== Example 0
-
-=== Example 1
-
-=== Example 2
-
-== Follow-up
-
-== Related Topics
+These are just a few examples.
+The concept of checking if a string is in a list of strings can be applied in many other scenarios depending on the problem at hand.
+=== Constraints == Examples === Example 0 === Example 1 === Example 2 == Follow-up == Related Topics

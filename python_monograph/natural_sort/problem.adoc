@@ -30,7 +30,8 @@ For instance, you are looking for something like this:
 This way elm0 comes before elm10.
 
 === Use-Cases
-Naturally sorting a list is a common operation in various fields of computer science and data management. Here are some use cases:
+Naturally sorting a list is a common operation in various fields of computer science and data management.
+Here are some use cases:
 
 1. **File Management**: In file management, you might have a list of file names and you want to sort them in a way that aligns with human expectations (i.e., 'file1' comes before 'file10').
 
@@ -42,14 +43,6 @@ Naturally sorting a list is a common operation in various fields of computer sci
 
 5. **Text Processing**: In text processing, you might have a list of words or sentences that you want to sort naturally for linguistic analysis or natural language processing tasks.
 
-These are just a few examples. The concept of naturally sorting a list can be applied in many other scenarios depending on the problem at hand.
-
-=== Constraints
-
-== Examples
-
-=== Example 0
-
-== Follow-up
-
-== Related Topics
+These are just a few examples.
+The concept of naturally sorting a list can be applied in many other scenarios depending on the problem at hand.
+=== Constraints == Examples === Example 0 == Follow-up == Related Topics

@@ -12,12 +12,9 @@
 :keywords: solution, python
 
 == Solutions
-
 [.lead]
 === Method 0:
-
 ==== Implementation
-
 [source,python,linenums]
 ----
 def convert_bytes(size, notation: str = "decimal") -> str:
@@ -51,9 +48,7 @@ def convert_bytes(size, notation: str = "decimal") -> str:
 
     return f"{size:3.2f} {suffixes[index]}"
 ----
-
 ==== Explanation
-
 The unit names for binary notation are as follows:
 B: Byte KiB: Kibibyte MiB: Mebibyte GiB: Gibibyte TiB: Tebibyte PiB: Pebibyte EiB: Exbibyte ZiB: Zebibyte YiB: Yobibyte Each unit represents a power of 1024 (which is 2^10), starting from Byte (B) which is 2^0.
 
@@ -100,35 +95,23 @@ return f"{size:3.2f} {suffixes[index]}"
 In summary, the `convert_bytes` function converts a size in bytes to the largest possible unit in either decimal or binary notation, depending on the `notation` argument.
 
 ===== Advantages
-
 1. **Flexibility**: The method can convert bytes to either binary or decimal notation.
 This is achieved by passing the `notation` argument to the function, which can be either 'binary' or 'decimal'.
 2. **Simplicity**: The code is straightforward and easy to understand.
 It uses a while loop to divide the size by the base (1024 for binary and 1000 for decimal) until the size is less than the base.
 This effectively finds the largest unit that the size can be expressed in.
 3. **Error Handling**: The method includes a check for invalid `notation` values and raises a `ValueError` if the `notation` is neither 'binary' nor 'decimal'.
-
 ===== Disadvantages
-
 1. **Limited Error Checking**: While the method does check for invalid `notation` values, it does not check if the `size` argument is a positive number.
 If a negative number or a non-numeric value is passed for `size`, the function may behave unexpectedly.
 2. **Lack of Documentation**: The docstring for the function is incomplete.
 The `:param`, `:type`, `:return`, and `:rtype` fields are not filled out, which can make it harder for other developers to understand what the function does and how to use it.
 3. **Inefficient Loop**: The while loop continues to divide the size by the base even after it has found the largest unit that the size can be expressed in.
 This could be avoided by breaking out of the loop as soon as the size is less than the base.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the function is O(1), which means it has constant time complexity.
+===== Complexity Analysis ====== Time The time complexity of the function is O(1), which means it has constant time complexity.
 This is because the while loop in the function runs a maximum of 9 times, regardless of the input size.
 This is due to the fact that there are only 9 possible units (from 'B' to 'YB' or 'YiB') that the size can be converted to.
-
-====== Space
-
-The space complexity of the function is also O(1), which means it has constant space complexity.
+====== Space The space complexity of the function is also O(1), which means it has constant space complexity.
 The function uses a fixed amount of space to store the suffixes list and a few variables (size, notation, base, index).
 The space used does not change with the size of the input.
-
 ==== Tests

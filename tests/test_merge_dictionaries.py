@@ -18,75 +18,108 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
-from python_monograph.merge_dictionaries.solution import method_0, method_1, method_10, method_2, method_3, method_4, \
-    method_5, method_6, method_7, method_8, method_9
+from python_monograph.merge_dictionaries.solution import (
+    method_0,
+    method_1,
+    method_10,
+    method_2,
+    method_3,
+    method_4,
+    method_5,
+    method_6,
+    method_7,
+    method_8,
+    method_9,
+)
 
 
 def test_method_0_merges_dictionaries_correctly():
-    assert method_0({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_0({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_0_overwrites_duplicate_keys():
-    assert method_0({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_0({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_1_merges_dictionaries_correctly():
-    assert method_1({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_1({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_1_overwrites_duplicate_keys():
-    assert method_1({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_1({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_2_merges_dictionaries_correctly():
-    assert method_2({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_2({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_2_overwrites_duplicate_keys():
-    assert method_2({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_2({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_3_merges_dictionaries_correctly():
-    assert method_3({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_3({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_3_overwrites_duplicate_keys():
-    assert method_3({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_3({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_4_merges_dictionaries_correctly():
-    assert method_4({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_4({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_4_overwrites_duplicate_keys():
-    assert method_4({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_4({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_5_merges_dictionaries_correctly():
-    assert method_5({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_5({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_5_overwrites_duplicate_keys():
-    assert method_5({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_5({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_6_merges_dictionaries_correctly():
-    assert method_6({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_6({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_6_overwrites_duplicate_keys():
-    assert method_6({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_6({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_7_merges_dictionaries_correctly():
-    assert method_7({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_7({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_7_overwrites_duplicate_keys():
-    assert method_7({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_7({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_8_merges_dictionaries_correctly():
-    assert method_8({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_8({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_8_overwrites_duplicate_keys():
-    assert method_8({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_8({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_9_merges_dictionaries_correctly():
-    assert method_9({'a': 1}, {'b': 2}) == {'a': 1, 'b': 2}
+    assert method_9({"a": 1}, {"b": 2}) == {"a": 1, "b": 2}
+
 
 def test_method_9_overwrites_duplicate_keys():
-    assert method_9({'a': 1}, {'a': 2}) == {'a': 2}
+    assert method_9({"a": 1}, {"a": 2}) == {"a": 2}
+
 
 def test_method_10_merges_dictionaries_correctly():
-    assert method_10({'a': 1}, {'b': 2}) == {'a': [1], 'b': [2]}
+    assert method_10({"a": 1}, {"b": 2}) == {"a": [1], "b": [2]}
+
 
 def test_method_10_merges_duplicate_keys():
-    assert method_10({'a': 1}, {'a': 2}) == {'a': [1, 2]}
+    assert method_10({"a": 1}, {"a": 2}) == {"a": [1, 2]}
+
 
 if __name__ == "__main__":
     print(__doc__)

@@ -20,6 +20,11 @@ requests = "^2.31.0"
 requires = ["poetry-core>"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.black]
-line-length = 132
-target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+#[tool.black]
+#line-length = 132
+#target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+##python-cell-magics = true
+#preview = true
+##color = true
+##safe = true
+##workers = 4

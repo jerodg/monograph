@@ -12,12 +12,9 @@
 :keywords: solution, python
 
 == Solutions
-
 [.lead]
 === Method 0:
-
 ==== Implementation
-
 [source,python,linenums]
 ----
 def method_0(itr: (tuple, list)) -> Generator:
@@ -40,9 +37,7 @@ def method_0(itr: (tuple, list)) -> Generator:
         else:
             yield item
 ----
-
 ==== Explanation
-
 The selected code defines a function named `method_0` in Python.
 This function is designed to flatten a list of lists or tuples using a generator with recursion.
 The function takes one argument `itr`, which is expected to be a tuple or a list.
@@ -72,38 +67,23 @@ The function returns a generator object, which you can iterate over to access th
 Note that the function does not provide the location of the substrings in the original nested structure.
 
 ===== Advantages
-
 1. **Memory Efficiency**: Generators are a great way to optimize memory.
 Instead of creating a new list and storing all the elements in memory, generators yield one item at a time.
 This is particularly useful when dealing with large data structures, as it allows the function to start producing output immediately and to process the input data one piece at a time.
 2. **Recursion**: The use of recursion allows the function to handle nested lists or tuples.
 This makes the function versatile and capable of handling complex data structures.
-
 ===== Disadvantages
-
 1. **Recursion Overhead**: While recursion provides a clean and elegant solution, it comes with a performance cost.
 Each recursive call adds a layer to the system call stack, which can lead to increased memory usage and slower performance, especially for deeply nested lists or tuples.
 2. **No Index Information**: The function does not preserve the original structure or provide any information about the location of the elements in the original nested structure.
 If this information is needed, an alternative approach would be required.
 3. **Limited by Recursion Depth**: Python has a limit on the depth of recursion, which can be hit if your list is nested too deeply.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
+===== Complexity Analysis ====== Time The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
 This is because each element in the list is processed once.
-
-====== Space
-
-The space complexity of this function is O(d), where d is the maximum depth of nested lists in the input list.
+====== Space The space complexity of this function is O(d), where d is the maximum depth of nested lists in the input list.
 This is because in the worst-case scenario, if the list is deeply nested, a recursive call will be made for each level of nesting, each of which adds a level to the call stack.
 The generator itself does not use additional space proportional to the size of the input list, as it yields one item at a time.
-
-==== Tests
-
-=== Method 1:
-
+==== Tests === Method 1:
 ==== Implementation
 
 [source,python,linenums]
@@ -117,9 +97,7 @@ def method_1(itr: (tuple, list)) -> list:
     return list(itertools.chain(*itr))
 ----
 
-==== Explanation
-
-The selected code defines a Python function named `method_1`.
+==== Explanation The selected code defines a Python function named `method_1`.
 This function is designed to flatten a list of lists or tuples using the `itertools.chain()` function from Python's built-in `itertools` module.
 The function takes one argument `itr`, which is expected to be a tuple or a list.
 
@@ -141,36 +119,20 @@ This is the final result that the function returns.
 This function provides a simple and efficient way to flatten a list of lists or tuples.
 However, it does not handle nested lists or tuples.
 If the input iterable contains nested lists or tuples, they will remain nested in the output.
-
 ===== Advantages
-
 1. **Simplicity**: The `itertools.chain()` function provides a simple and straightforward way to flatten a list of lists or tuples.
 It's easy to understand and use.
 2. **Efficiency**: `itertools.chain()` is implemented in C, making it faster than a Python-based solution like a list comprehension or a for loop.
-
 ===== Disadvantages
-
 1. **No Nested Handling**: The `itertools.chain()` function does not handle nested lists or tuples.
 If the input iterable contains nested lists or tuples, they will remain nested in the output.
 2. **Memory Usage**: While `itertools.chain()` is efficient, it returns an iterable.
 If you need a list, you have to convert the iterable to a list using the `list()` function, which creates a new list and uses additional memory.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
+===== Complexity Analysis ====== Time The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
 This is because each element in the list is processed once.
-
-====== Space
-
-The space complexity of this function is O(n), where n is the total number of elements in the input list.
+====== Space The space complexity of this function is O(n), where n is the total number of elements in the input list.
 This is because the itertools.chain() function returns an iterable, and the list() function is used to convert this iterable to a list, which creates a new list in memory.
-
-==== Tests
-
-=== Method 2:
-
+==== Tests === Method 2:
 ==== Implementation
 
 [source,python,linenums]
@@ -184,9 +146,7 @@ def method_2(itr: (tuple, list)) -> list:
     return [item for sublist in itr for item in sublist]
 ----
 
-==== Explanation
-
-The selected code defines a Python function named `method_2`.
+==== Explanation The selected code defines a Python function named `method_2`.
 This function is designed to flatten a list of lists or tuples using a list comprehension.
 The function takes one argument `itr`, which is expected to be a tuple or a list.
 
@@ -208,36 +168,20 @@ This is the final result that the function returns.
 This function provides a simple and efficient way to flatten a list of lists or tuples.
 However, it does not handle nested lists or tuples.
 If the input iterable contains nested lists or tuples, they will remain nested in the output.
-
 ===== Advantages
-
 1. **Simplicity**: List comprehensions provide a concise and readable way to create lists.
 They are a distinctive feature of Python and are often favored for their readability and speed.
 2. **Efficiency**: List comprehensions are generally faster than equivalent `for` loops because they are specifically optimized for creating new lists.
-
 ===== Disadvantages
-
 1. **No Nested Handling**: The list comprehension in this function does not handle nested lists or tuples.
 If the input iterable contains nested lists or tuples, they will remain nested in the output.
 2. **Memory Usage**: List comprehensions create a new list in memory.
 If the input list is large, this could potentially use a significant amount of memory.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
+===== Complexity Analysis ====== Time The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
 This is because each element in the list is processed once.
-
-====== Space
-
-The space complexity of this function is O(n), where n is the total number of elements in the input list.
+====== Space The space complexity of this function is O(n), where n is the total number of elements in the input list.
 This is because the list comprehension creates a new list in memory that contains all the items from the input list.
-
-==== Tests
-
-=== Method 3:
-
+==== Tests === Method 3:
 ==== Implementation
 
 [source,python,linenums]
@@ -251,9 +195,7 @@ def method_3(itr: (tuple, list)) -> list:
     return np.array(itr).flatten().tolist()
 ----
 
-==== Explanation
-
-The selected code defines a Python function named `method_3`.
+==== Explanation The selected code defines a Python function named `method_3`.
 This function is designed to flatten a list of lists or tuples using the `numpy` library.
 The function takes one argument `itr`, which is expected to be a tuple or a list.
 
@@ -291,39 +233,23 @@ np.array(itr).flatten().tolist()
 
 This function provides a powerful and efficient way to flatten a list of lists or tuples, even if they are nested.
 However, it requires the `numpy` library, which may not be available or desirable in all environments.
-
 ===== Advantages
-
 1. **Nested Handling**: The `numpy` library can handle nested lists or tuples.
 If the input iterable contains nested lists or tuples, they will be flattened in the output.
 2. **Efficiency**: `numpy` is implemented in C, making it faster than a Python-based solution like a list comprehension or a for loop.
 3. **Versatility**: `numpy` provides a wide range of mathematical and array operations, making it a versatile tool for data manipulation.
-
 ===== Disadvantages
-
 1. **Dependency**: This method requires the `numpy` library, which may not be available or desirable in all environments.
 Installing and maintaining additional dependencies can add complexity to your project.
 2. **Memory Usage**: While `numpy` is efficient, the `flatten()` method returns a copy of the array, which can use a significant amount of memory for large arrays.
 3. **Type Limitation**: `numpy` arrays can only contain elements of the same type.
 If the input list contains mixed types (e.g., integers and strings), `numpy` will convert all elements to the same type, which may not be the desired behavior.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
+===== Complexity Analysis ====== Time The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
 This is because each element in the list is processed once when creating the numpy array and once more when flattening the array.
-
-====== Space
-
-The space complexity of this function is O(n), where n is the total number of elements in the input list.
+====== Space The space complexity of this function is O(n), where n is the total number of elements in the input list.
 This is because the numpy.array() function creates a new array in memory that contains all the items from the input list, and the flatten() method creates a new flattened array.
 The tolist() method then creates a new list from the flattened array.
-
-==== Tests
-
-=== Method 4:
-
+==== Tests === Method 4:
 ==== Implementation
 
 [source,python,linenums]
@@ -337,9 +263,7 @@ def method_4(itr: (tuple, list)) -> list:
     return reduce(lambda x, y: x + y, itr)
 ----
 
-==== Explanation
-
-The selected code defines a Python function named `method_4`.
+==== Explanation The selected code defines a Python function named `method_4`.
 This function is designed to flatten a list of lists or tuples using the `reduce` function from the `functools` module.
 The function takes one argument `itr`, which is expected to be a tuple or a list.
 
@@ -362,31 +286,18 @@ The result of the `reduce` function is then returned by `method_4`.
 This function provides a simple and efficient way to flatten a list of lists or tuples.
 However, it does not handle nested lists or tuples.
 If the input iterable contains nested lists or tuples, they will remain nested in the output.
-
 ===== Advantages
-
 1. **Simplicity**: The `reduce` function provides a simple and straightforward way to flatten a list of lists or tuples.
 It's easy to understand and use.
 2. **Efficiency**: `reduce` is implemented in C, making it faster than a Python-based solution like a list comprehension or a for loop.
-
 ===== Disadvantages
-
 1. **No Nested Handling**: The `reduce` function does not handle nested lists or tuples.
 If the input iterable contains nested lists or tuples, they will remain nested in the output.
 2. **Memory Usage**: While `reduce` is efficient, it returns a new list which can use a significant amount of memory for large lists.
 3. **Type Limitation**: The `reduce` function can only operate on lists that contain elements of the same type.
 If the input list contains mixed types (e.g., integers and strings), `reduce` will raise a TypeError.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
+===== Complexity Analysis ====== Time The time complexity of this function is O(n), where n is the total number of elements in the input list, including nested elements.
 This is because each element in the list is processed once when the reduce function is applied.
-
-====== Space
-
-The space complexity of this function is O(n), where n is the total number of elements in the input list.
+====== Space The space complexity of this function is O(n), where n is the total number of elements in the input list.
 This is because the reduce function returns a new list that contains all the items from the input list.
-
 ==== Tests

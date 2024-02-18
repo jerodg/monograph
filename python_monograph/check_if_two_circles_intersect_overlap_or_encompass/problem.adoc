@@ -12,14 +12,15 @@
 :keywords: problem, python
 
 == Problem
-
 [.lead]
 You need to find out if two circles intersect, overlap, or encompass eachother.
 
 === Use-Cases
-Checking if two circles intersect, overlap, or encompass each other is a common task in various fields of computer science, mathematics, and physics. Here are some use cases:
+Checking if two circles intersect, overlap, or encompass each other is a common task in various fields of computer science, mathematics, and physics.
+Here are some use cases:
 
-1. **Collision Detection**: In computer graphics and game development, this operation is often used for collision detection. If two objects (represented as circles) intersect or overlap, a collision has occurred.
+1. **Collision Detection**: In computer graphics and game development, this operation is often used for collision detection.
+If two objects (represented as circles) intersect or overlap, a collision has occurred.
 
 2. **Geospatial Analysis**: In geospatial analysis or Geographic Information System (GIS), this operation can be used to determine if two areas (represented as circles) have any common area, which can be useful in various scenarios like urban planning, route optimization, etc.
 
@@ -29,18 +30,6 @@ Checking if two circles intersect, overlap, or encompass each other is a common 
 
 5. **Robotics**: In robotics, this operation can be used in path planning algorithms where a robot needs to avoid circular obstacles.
 
-These are just a few examples. The concept of checking if two circles intersect, overlap, or encompass can be applied in many other scenarios depending on the problem at hand.
-
-=== Constraints
-
-== Examples
-
-=== Example 0
-
-=== Example 1
-
-=== Example 2
-
-== Follow-up
-
-== Related Topics
+These are just a few examples.
+The concept of checking if two circles intersect, overlap, or encompass can be applied in many other scenarios depending on the problem at hand.
+=== Constraints == Examples === Example 0 === Example 1 === Example 2 == Follow-up == Related Topics

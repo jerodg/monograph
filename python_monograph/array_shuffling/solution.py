@@ -76,22 +76,48 @@ def method_1(arr: list) -> list:
 
 
 def method_2(arr: list) -> list:
+    """This function shuffles an array in a specific manner. It ensures that any elements at even indices are no larger than any
+    elements at odd indices.
+
+    Parameters:
+    arr (list): The array to be shuffled.
+
+    Returns:
+    list: The shuffled array.
+
+    Approach:
+    1. Sort the array.
+    2. Split the array into two halves, with the first half containing the smaller elements and the second half containing the larger elements.
+    3. Create a new array and start filling it by alternating between the smallest element (from the first half) and the largest element (from the second half).
+    4. Continue this process until the original array is empty.
+    """
+    # Sort the array
     arr.sort()
+
+    # Calculate the middle index of the array
     e = len(arr) // 2
 
+    # Split the array into two halves
     odd = arr[: e + 1]
     evn = arr[e:]
 
+    # Create a new array
     out = []
+
+    # Start filling the new array by alternating between the smallest and largest elements
     for i in range(len(arr)):
         try:
             if i % 2:
+                # If the index is odd, append the largest element
                 out.append(evn.pop())
             else:
+                # If the index is even, append the smallest element
                 out.append(odd.pop())
         except:
+            # If one of the halves is empty, continue with the other half
             pass
 
+    # Return the shuffled array
     return out
 
 

@@ -12,12 +12,9 @@
 :keywords: solution, python
 
 == Solutions
-
 [.lead]
 === Method 0:
-
 ==== Implementation
-
 [source,python,linenums]
 ----
 def method_0(x: dict, y: dict) -> dict:
@@ -34,9 +31,7 @@ def method_0(x: dict, y: dict) -> dict:
     temp.update(y)
     return temp
 ----
-
 ==== Explanation
-
 The provided code is a Python function named `method_0` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
@@ -71,7 +66,6 @@ In summary, `method_0` is a simple and straightforward way to merge two dictiona
 It creates a new dictionary that includes all key-value pairs from both input dictionaries, with values from the second dictionary overwriting those from the first in case of duplicate keys.
 
 ===== Advantages
-
 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses built-in Python dictionary methods, which makes it accessible for developers of all experience levels.
 
@@ -80,9 +74,7 @@ This can be beneficial if you need to use the original dictionaries later in you
 
 3. **Overwriting of Duplicate Keys:** The `update` method overwrites the value of duplicate keys with the value from the second dictionary.
 This is useful when you want the second dictionary's values to take precedence over the first's in case of key collisions.
-
 ===== Disadvantages
-
 1. **Memory Usage:** The `copy` method creates a new dictionary, which can lead to increased memory usage, especially for large dictionaries.
 This might not be the most efficient method if memory usage is a concern.
 
@@ -91,27 +83,15 @@ While this is not an issue in this specific implementation because a copy of the
 
 3. **Overwriting of Duplicate Keys:** The `update` method overwrites the value of duplicate keys with the value from the second dictionary.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the copy method is O(n), where n is the number of elements in the dictionary.
+===== Complexity Analysis ====== Time The time complexity of the copy method is O(n), where n is the number of elements in the dictionary.
 This is because each element in the dictionary needs to be copied to the new dictionary.
 The update method also has a time complexity of O(n), where n is the number of elements in the second dictionary.
 This is because each key-value pair in the second dictionary needs to be inserted into the first dictionary.
 Therefore, the overall time complexity of the function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new dictionary is created to store the merged result.
 The space required for this new dictionary is proportional to the total number of elements in the two input dictionaries.
-
-==== Tests
-
-=== Method 1:
-
+==== Tests === Method 1:
 ==== Implementation
 
 [source,python,linenums]
@@ -129,9 +109,7 @@ def method_1(x: dict, y: dict) -> dict:
     return dict(list(x.items()) + list(y.items()))
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_1` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_1` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function begins by converting each dictionary into a list of its items using the `items` method.
@@ -158,9 +136,7 @@ return dict(...)
 In summary, `method_1` is a simple way to merge two dictionaries in Python.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
-
 ===== Advantages
-
 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses built-in Python dictionary and list methods, which makes it accessible for developers of all experience levels.
 
@@ -169,9 +145,7 @@ This can be beneficial if you need to use the original dictionaries later in you
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This is useful when you want the second dictionary's values to take precedence over the first's in case of key collisions.
-
 ===== Disadvantages
-
 1. **Memory Usage:** The `items` method and list concatenation create new lists and a new dictionary, which can lead to increased memory usage, especially for large dictionaries.
 This might not be the most efficient method if memory usage is a concern.
 
@@ -180,29 +154,17 @@ This method might not be the most efficient if performance is a concern.
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the items method is O(n), where n is the number of elements in the dictionary.
+===== Complexity Analysis ====== Time The time complexity of the items method is O(n), where n is the number of elements in the dictionary.
 This is because each element in the dictionary needs to be converted into a tuple and added to the list.
 The list concatenation operation also has a time complexity of O(n), where n is the total number of elements in the two lists.
 This is because each element in the lists needs to be copied to the new list.
 Finally, the dict function has a time complexity of O(n), where n is the number of elements in the list.
 This is because each tuple in the list needs to be converted into a key-value pair in the new dictionary.
 Therefore, the overall time complexity of the function is O(n + m + p), where n is the number of elements in the first dictionary, m is the number of elements in the second dictionary, and p is the total number of elements in the two lists.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new list and a new dictionary are created to store the merged result.
 The space required for these new data structures is proportional to the total number of elements in the two input dictionaries.
-
-==== Tests
-
-=== Method 2:
-
+==== Tests === Method 2:
 ==== Implementation
 
 [source,python,linenums]
@@ -221,9 +183,7 @@ def method_2(x: dict, y: dict) -> dict:
     return {**x, **y}
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_2` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_2` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses a feature introduced in Python 3.5, known as dictionary unpacking or the "curly star" method.
@@ -241,9 +201,7 @@ The key-value pairs from `y` will overwrite the ones from `x` in case of duplica
 In summary, `method_2` is a concise and efficient way to merge two dictionaries in Python.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
-
 ===== Advantages
-
 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses a built-in Python feature, which makes it accessible for developers of all experience levels.
 
@@ -254,32 +212,18 @@ This can be beneficial if you need to use the original dictionaries later in you
 
 4. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This is useful when you want the second dictionary's values to take precedence over the first's in case of key collisions.
-
 ===== Disadvantages
-
 1. **Python Version:** This method was introduced in Python 3.5. Therefore, it is not available in earlier versions of Python.
 
 2. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the dictionary unpacking operation is O(n), where n is the total number of elements in the two dictionaries.
+===== Complexity Analysis ====== Time The time complexity of the dictionary unpacking operation is O(n), where n is the total number of elements in the two dictionaries.
 This is because each key-value pair in the dictionaries needs to be inserted into the new dictionary.
 Therefore, the overall time complexity of the function is O(n), where n is the total number of elements in the two input dictionaries.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new dictionary is created to store the merged result.
 The space required for this new dictionary is proportional to the total number of elements in the two input dictionaries.
-
-==== Tests
-
-=== Method 3:
-
+==== Tests === Method 3:
 ==== Implementation
 
 [source,python,linenums]
@@ -297,9 +241,7 @@ def method_3(x: dict, y: dict) -> dict:
     return dict(ChainMap({}, y, x))
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_3` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_3` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the `ChainMap` class from the `collections` module. `ChainMap` is a class that provides the ability to link multiple mappings together such that they end up being a single unit.
@@ -322,9 +264,7 @@ This is done because `ChainMap` returns a view on the original dictionaries, but
 In summary, `method_3` is a way to merge two dictionaries in Python using the `ChainMap` class.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the first dictionary is preserved.
-
 ===== Advantages
-
 1. **Preservation of Original Dictionaries:** The `ChainMap` method does not modify the original dictionaries during the merge process.
 This can be beneficial if you need to use the original dictionaries later in your code.
 
@@ -332,9 +272,7 @@ This can be beneficial if you need to use the original dictionaries later in you
 
 3. **Preservation of Duplicate Keys:** In case of duplicate keys, the value from the first dictionary is preserved.
 This is useful when you want the first dictionary's values to take precedence over the second's in case of key collisions.
-
 ===== Disadvantages
-
 1. **Return Type:** `ChainMap` returns a view on the original dictionaries, not a new dictionary.
 If you need a new dictionary, you have to convert the `ChainMap` object back into a dictionary, which adds an extra step and can be less efficient.
 
@@ -343,28 +281,16 @@ The values from the first dictionary will take precedence over the second in cas
 This might not be what you want in some cases.
 
 3. **Access to Values:** Accessing values in a `ChainMap` can be slower than in a regular dictionary, especially if there are many dictionaries in the `ChainMap`, as it has to search each dictionary in order.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of creating a ChainMap is O(1), as it simply creates a view on the original dictionaries without copying them.
+===== Complexity Analysis ====== Time The time complexity of creating a ChainMap is O(1), as it simply creates a view on the original dictionaries without copying them.
 However, converting the ChainMap back into a dictionary using the dict function has a time complexity of O(n), where n is the total number of elements in the two dictionaries.
 This is because each key-value pair in the dictionaries needs to be inserted into the new dictionary.
 Therefore, the overall time complexity of the function is O(n), where n is the total number of elements in the two input dictionaries.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new dictionary is created to store the merged result.
 The space required for this new dictionary is proportional to the total number of elements in the two input dictionaries.
 However, it's worth noting that the ChainMap itself is more memory efficient than creating a new dictionary, as it does not copy the key-value pairs but instead creates a view on the original dictionaries.
 The additional space required for the ChainMap is O(m), where m is the number of dictionaries in the ChainMap, which in this case is constant.
-
-==== Tests
-
-=== Method 4:
-
+==== Tests === Method 4:
 ==== Implementation
 
 [source,python,linenums]
@@ -382,9 +308,7 @@ def method_4(x: dict, y: dict) -> dict:
     return dict(chain(x.items(), y.items()))
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_4` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_4` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the `chain` function from the `itertools` module. `chain` is a function that takes several iterables as arguments and returns a single iterable that combines all of them.
@@ -407,9 +331,7 @@ This is done because the requirement here is to get a new dictionary, not an ite
 In summary, `method_4` is a way to merge two dictionaries in Python using the `chain` function from the `itertools` module.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
-
 ===== Advantages
-
 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses built-in Python functions, which makes it accessible for developers of all experience levels.
 
@@ -417,9 +339,7 @@ It uses built-in Python functions, which makes it accessible for developers of a
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This is useful when you want the second dictionary's values to take precedence over the first's in case of key collisions.
-
 ===== Disadvantages
-
 1. **Return Type:** The `chain` function returns an iterable, not a new dictionary.
 If you need a new dictionary, you have to convert the iterable back into a dictionary, which adds an extra step and can be less efficient.
 
@@ -428,26 +348,14 @@ This might not be the most efficient method if memory usage is a concern.
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the chain function is O(n), where n is the total number of elements in the two dictionaries.
+===== Complexity Analysis ====== Time The time complexity of the chain function is O(n), where n is the total number of elements in the two dictionaries.
 This is because chain creates a new iterable that combines the items of the input dictionaries.
 Converting this iterable back into a dictionary using the dict function also has a time complexity of O(n), as each item in the iterable needs to be inserted into the new dictionary.
 Therefore, the overall time complexity of the function is O(n), where n is the total number of elements in the two input dictionaries.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new iterable and a new dictionary are created to store the merged result.
 The space required for these new data structures is proportional to the total number of elements in the two input dictionaries.
-
-==== Tests
-
-=== Method 5:
-
+==== Tests === Method 5:
 ==== Implementation
 
 [source,python,linenums]
@@ -466,9 +374,7 @@ def method_5(x: dict, y: dict) -> dict:
     return x | y
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_5` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_5` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the dictionary union operator `|`, which is a feature introduced in Python 3.9. This operator merges two dictionaries into a new one.
@@ -488,9 +394,7 @@ In summary, `method_5` is a way to merge two dictionaries in Python using the di
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is simple and efficient, but it requires Python 3.9 or later.
-
 ===== Advantages
-
 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses a built-in Python operator, which makes it accessible for developers of all experience levels.
 
@@ -498,32 +402,18 @@ It uses a built-in Python operator, which makes it accessible for developers of 
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This is useful when you want the second dictionary's values to take precedence over the first's in case of key collisions.
-
 ===== Disadvantages
-
 1. **Python Version:** This method was introduced in Python 3.9. Therefore, it is not available in earlier versions of Python.
 
 2. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the dictionary union operator | is O(n), where n is the total number of elements in the two dictionaries.
+===== Complexity Analysis ====== Time The time complexity of the dictionary union operator | is O(n), where n is the total number of elements in the two dictionaries.
 This is because the operator creates a new dictionary that combines the items of the input dictionaries.
 Therefore, the overall time complexity of the function is O(n), where n is the total number of elements in the two input dictionaries.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new dictionary is created to store the merged result.
 The space required for this new dictionary is proportional to the total number of elements in the two input dictionaries.
-
-==== Tests
-
-=== Method 6:
-
+==== Tests === Method 6:
 ==== Implementation
 
 [source,python,linenums]
@@ -541,9 +431,7 @@ def method_6(x: dict, y: dict) -> dict:
     return next(z.update(y) or z for z in [x.copy()])
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_6` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_6` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the `next` function and a generator expression to achieve this.
@@ -566,9 +454,7 @@ In summary, `method_6` is a way to merge two dictionaries in Python using a gene
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is efficient in terms of memory usage, but it may be less intuitive than other methods due to the use of a generator expression.
-
 ===== Advantages
-
 1. **Efficiency:** This method is efficient in terms of memory usage.
 The generator expression generates the output on the fly and does not store it in memory, which can be beneficial for large dictionaries.
 
@@ -577,9 +463,7 @@ This is useful when you want the second dictionary's values to take precedence o
 
 3. **Preservation of Original Dictionaries:** The `copy` method creates a new dictionary, which means the original dictionaries are not modified during the merge process.
 This can be beneficial if you need to use the original dictionaries later in your code.
-
 ===== Disadvantages
-
 1. **Complexity:** This method uses a generator expression and the `next` function, which may be less intuitive for developers who are not familiar with these concepts.
 
 2. **Single Use:** The generator expression is a single-use iterator.
@@ -587,28 +471,16 @@ This means that once the items have been generated and used, they cannot be reus
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the copy method is O(n), where n is the number of elements in the first dictionary.
+===== Complexity Analysis ====== Time The time complexity of the copy method is O(n), where n is the number of elements in the first dictionary.
 This is because each element in the dictionary needs to be copied to the new dictionary.
 The update method also has a time complexity of O(m), where m is the number of elements in the second dictionary.
 This is because each key-value pair in the second dictionary needs to be inserted into the first dictionary.
 Therefore, the overall time complexity of the function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new dictionary is created to store the merged result.
 The space required for this new dictionary is proportional to the total number of elements in the two input dictionaries.
 However, it's worth noting that the generator expression itself does not consume additional space as it generates the output on the fly.
-
-==== Tests
-
-=== Method 7:
-
+==== Tests === Method 7:
 ==== Implementation
 
 [source,python,linenums]
@@ -626,9 +498,7 @@ def method_7(x: dict, y: dict) -> dict:
     return (lambda z: z.update(y) or z)(x.copy())
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_7` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_7` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses a lambda function to achieve this.
@@ -651,9 +521,7 @@ In summary, `method_7` is a way to merge two dictionaries in Python using a lamb
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is efficient in terms of memory usage, but it may be less intuitive than other methods due to the use of a lambda function.
-
 ===== Advantages
-
 1. **Efficiency:** This method is efficient in terms of memory usage.
 The lambda function generates the output on the fly and does not store it in memory, which can be beneficial for large dictionaries.
 
@@ -662,9 +530,7 @@ This is useful when you want the second dictionary's values to take precedence o
 
 3. **Preservation of Original Dictionaries:** The `copy` method creates a new dictionary, which means the original dictionaries are not modified during the merge process.
 This can be beneficial if you need to use the original dictionaries later in your code.
-
 ===== Disadvantages
-
 1. **Complexity:** This method uses a lambda function, which may be less intuitive for developers who are not familiar with these concepts.
 
 2. **Single Use:** The lambda function is a single-use function.
@@ -672,28 +538,16 @@ This means that once the function has been used, it cannot be reused.
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the copy method is O(n), where n is the number of elements in the first dictionary.
+===== Complexity Analysis ====== Time The time complexity of the copy method is O(n), where n is the number of elements in the first dictionary.
 This is because each element in the dictionary needs to be copied to the new dictionary.
 The update method also has a time complexity of O(m), where m is the number of elements in the second dictionary.
 This is because each key-value pair in the second dictionary needs to be inserted into the first dictionary.
 Therefore, the overall time complexity of the function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
-
-====== Space
-
-The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
+====== Space The space complexity of the function is O(n), where n is the total number of elements in the merged dictionary.
 This is because a new dictionary is created to store the merged result.
 The space required for this new dictionary is proportional to the total number of elements in the two input dictionaries.
 However, it's worth noting that the lambda function itself does not consume additional space as it generates the output on the fly.
-
-==== Tests
-
-=== Method 8:
-
+==== Tests === Method 8:
 ==== Implementation
 
 [source,python,linenums]
@@ -711,9 +565,7 @@ def method_8(x: dict, y: dict) -> dict:
     return {k: v for d in [x, y] for k, v in d.items()}
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_8` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_8` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses a dictionary comprehension to achieve this.
@@ -735,9 +587,7 @@ In summary, `method_8` is a way to merge two dictionaries in Python using a dict
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is efficient in terms of memory usage and execution speed, but it may be less intuitive than other methods due to the use of a dictionary comprehension.
-
 ===== Advantages
-
 1. **Efficiency:** This method is efficient in terms of memory usage and execution speed.
 The dictionary comprehension generates the output on the fly and does not store it in memory, which can be beneficial for large dictionaries.
 
@@ -745,9 +595,7 @@ The dictionary comprehension generates the output on the fly and does not store 
 This is useful when you want the second dictionary's values to take precedence over the first's in case of key collisions.
 
 3. **Simplicity:** Dictionary comprehensions are a concise way to create dictionaries, which can make your code shorter and easier to read.
-
 ===== Disadvantages
-
 1. **Complexity:** This method uses a dictionary comprehension, which may be less intuitive for developers who are not familiar with these concepts.
 It might take some time to understand how it works, especially for beginners.
 
@@ -756,25 +604,13 @@ This means that once the dictionary has been created, the comprehension cannot b
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This could be a disadvantage if you want to preserve all values for keys that appear in both dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the dictionary comprehension is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
+===== Complexity Analysis ====== Time The time complexity of the dictionary comprehension is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
 This is because the comprehension needs to iterate over each key-value pair in both dictionaries once.
-
-====== Space
-
-The space complexity of the function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
+====== Space The space complexity of the function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
 This is because a new dictionary is created to store the merged result.
 The space required for this new dictionary is proportional to the total number of elements in the two input dictionaries.
 However, it's worth noting that the dictionary comprehension itself does not consume additional space as it generates the output on the fly.
-
-==== Tests
-
-=== Method 9:
-
+==== Tests === Method 9:
 ==== Implementation
 
 [source,python,linenums]
@@ -793,9 +629,7 @@ def method_9(x: dict, y: dict) -> dict:
     return x
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_9` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_9` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns the updated dictionary `x`.
 
 The function uses the `update` method of Python dictionaries to achieve this.
@@ -824,9 +658,7 @@ In summary, `method_9` is a way to merge two dictionaries in Python using the `u
 It modifies the original dictionary `x` by adding all key-value pairs from the second dictionary `y`.
 In case of duplicate keys, the value from `y` is preserved.
 This method is straightforward and easy to understand, but it modifies the original dictionary, which might not be desirable in all cases.
-
 ===== Advantages
-
 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses the built-in `update` method of Python dictionaries, which makes it accessible for developers of all experience levels.
 
@@ -835,9 +667,7 @@ This can be beneficial in terms of memory efficiency.
 
 3. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
 This is useful when you want the second dictionary's values to take precedence over the first's in case of key collisions.
-
 ===== Disadvantages
-
 1. **Modification of Original Dictionary:** The `update` method modifies the original dictionary.
 This could be a disadvantage if you want to preserve the original dictionary for later use in your code.
 
@@ -846,24 +676,12 @@ This could be a disadvantage if you want to preserve all values for keys that ap
 
 3. **Return Type:** The `update` method returns `None`, so you need to return the updated dictionary separately.
 This could be a disadvantage if you prefer methods that return the result directly.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of the update method is O(n), where n is the number of elements in the second dictionary.
+===== Complexity Analysis ====== Time The time complexity of the update method is O(n), where n is the number of elements in the second dictionary.
 This is because each key-value pair in the second dictionary needs to be inserted into the first dictionary.
 Therefore, the overall time complexity of the function is O(n), where n is the number of elements in the second dictionary.
-
-====== Space
-
-The space complexity of the function is O(1), as it updates the first dictionary in-place and does not create any additional data structures that scale with the input size.
+====== Space The space complexity of the function is O(1), as it updates the first dictionary in-place and does not create any additional data structures that scale with the input size.
 The update method modifies the original dictionary and does not require additional space proportional to the size of the input dictionaries.
-
-==== Tests
-
-=== Method 10:
-
+==== Tests === Method 10:
 ==== Implementation
 
 [source,python,linenums]
@@ -885,9 +703,7 @@ def method_10(x: dict, y: dict) -> dict:
     return merged
 ----
 
-==== Explanation
-
-The provided code is a Python function named `method_10` that merges two dictionaries.
+==== Explanation The provided code is a Python function named `method_10` that merges two dictionaries.
 It uses a `defaultdict` from the `collections` module to handle the merging process.
 A `defaultdict` is a dictionary subclass that calls a factory function to supply missing values, in this case, a list.
 
@@ -934,9 +750,7 @@ return merged
 In summary, `method_10` is a Python function that merges two dictionaries into a `defaultdict` where each key maps to a list of values.
 If a key is present in both input dictionaries, its corresponding value in the `merged` dictionary is a list containing the values from both dictionaries.
 This method preserves all values and does not overwrite any of them, which might be desirable in certain use cases.
-
 ===== Advantages
-
 1. **Preservation of All Values:** This method preserves all values from both dictionaries, even if the keys are the same.
 This is because it uses a list to store the values for each key.
 If a key is present in both dictionaries, its corresponding value in the merged dictionary will be a list containing the values from both dictionaries.
@@ -946,28 +760,17 @@ This can be beneficial if you want to keep all values for keys that appear in bo
 It automatically initializes the dictionary with a default value if a key has not been set, which is a list in this case.
 
 3. **In-place Update:** The function updates the `defaultdict` in-place, which can be more memory efficient than methods that create and return a new dictionary.
-
 ===== Disadvantages
-
 1. **Additional Complexity:** This method might be a bit more complex to understand for beginners or developers not familiar with `defaultdict` or the concept of factory functions.
 
 2. **Output Format:** The output is a `defaultdict` where each key maps to a list of values.
 This might not be the desired format in all cases, especially if you only want to keep the last value for keys that appear in both dictionaries.
 
 3. **Performance:** If the dictionaries are large, this method might be less efficient than other methods that don't require iterating over the key-value pairs of the dictionaries.
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
+===== Complexity Analysis ====== Time The time complexity of this function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
 This is because the function needs to iterate over each key-value pair in both dictionaries once.
-
-====== Space
-
-The space complexity of the function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
+====== Space The space complexity of the function is O(n + m), where n is the number of elements in the first dictionary and m is the number of elements in the second dictionary.
 This is because a new defaultdict is created to store the merged result.
 The space required for this new defaultdict is proportional to the total number of elements in the two input dictionaries.
 However, it's worth noting that the defaultdict itself does not consume additional space as it generates the output on the fly.
-
 ==== Tests

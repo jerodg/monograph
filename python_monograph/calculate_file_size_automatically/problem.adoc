@@ -12,29 +12,25 @@
 :keywords: problem, python
 
 == Problem
-
 [.lead]
 You need to get the human-readable format of file size given the most appropriate unit.
 
 === Use-Cases
-Calculating the most appropriate size notation of an object is a common task in various fields of computer science and data management. Here are some use cases:
+Calculating the most appropriate size notation of an object is a common task in various fields of computer science and data management.
+Here are some use cases:
 
-1. **File Management Systems**: In file management systems, it's common to display the size of files and directories in a human-readable format. This helps users understand the size of their files without having to convert from bytes.
+1. **File Management Systems**: In file management systems, it's common to display the size of files and directories in a human-readable format.
+This helps users understand the size of their files without having to convert from bytes.
 
-2. **Network Monitoring**: In network monitoring, data transfer rates are often calculated and displayed in a format that's easy to understand. This could be in kilobytes, megabytes, gigabytes per second, etc.
+2. **Network Monitoring**: In network monitoring, data transfer rates are often calculated and displayed in a format that's easy to understand.
+This could be in kilobytes, megabytes, gigabytes per second, etc.
 
-3. **Storage Management**: In storage management, the capacity of storage devices (like hard drives, SSDs, memory cards, etc.) is often displayed in a human-readable format. This helps users understand how much storage they have left.
+3. **Storage Management**: In storage management, the capacity of storage devices (like hard drives, SSDs, memory cards, etc.) is often displayed in a human-readable format.
+This helps users understand how much storage they have left.
 
-4. **Performance Monitoring**: In performance monitoring, the amount of memory used by a process or system is often displayed in a human-readable format. This helps users and administrators understand the memory usage patterns.
+4. **Performance Monitoring**: In performance monitoring, the amount of memory used by a process or system is often displayed in a human-readable format.
+This helps users and administrators understand the memory usage patterns.
 
-5. **Data Processing**: In data processing, the size of datasets is often calculated and displayed in a human-readable format. This helps users understand the size of the data they are working with.
-
-=== Constraints
-
-== Examples
-
-=== Example 0
-
-== Follow-up
-
-== Related Topics
+5. **Data Processing**: In data processing, the size of datasets is often calculated and displayed in a human-readable format.
+This helps users understand the size of the data they are working with.
+=== Constraints == Examples === Example 0 == Follow-up == Related Topics

@@ -12,27 +12,17 @@
 :keywords: solution, python
 
 == Solutions
-
 [.lead]
 === Method 0:
-
 ==== Implementation
-
 [source,python,linenums]
 ----
 
 ----
-
 ==== Explanation
-
 ===== Advantages
-
 ===== Disadvantages
-
 ===== Complexity Analysis
-
 ====== Time
-
 ====== Space
-
 ==== Tests

@@ -12,12 +12,9 @@
 :keywords: solution, python, merge, list, sort
 
 == Solutions
-
 [.lead]
 === Method 0:
-
 ==== Implementation
-
 [source,python,linenums]
 ----
 class ListNode:
@@ -53,9 +50,7 @@ def method_0(l1: ListNode, l2: ListNode) -> ListNode:
 
     return dummy.next
 ----
-
 ==== Explanation
-
 The provided code is a Python implementation of a function that merges two sorted linked lists.
 The function is named `method_0` and it takes two parameters, `l1` and `l2`, which are instances of the `ListNode` class.
 
@@ -113,24 +108,15 @@ return dummy.next
 This function effectively merges two sorted linked lists into a new sorted linked list, maintaining the original sort order.
 
 ===== Advantages
-
 ===== Disadvantages
-
 ===== Complexity Analysis
-
 ====== Time
-
 The time complexity of the method_0 function is O(n + m), where n and m are the lengths of the two input linked lists, l1 and l2. This is because in the worst-case scenario, the function will need to traverse both lists in their entirety.
-
-====== Space
-
-The space complexity of the function is O(1).
+====== Space The space complexity of the function is O(1).
 This is because the function only uses a constant amount of space to store the dummy and current nodes.
 It does not use any additional space that scales with the size of the input lists.
 The new linked list is constructed using the nodes of the original lists, so no additional space is required for this.
-
 === Method 1:
-
 ==== Implementation
 
 [source,python,linenums]
@@ -166,9 +152,7 @@ def method_1(l1: ListNode, l2: ListNode) -> ListNode:
         l2.next = method_1(l1, l2.next)
         return l2
 ----
-
 ==== Explanation
-
 The provided code includes three methods for merging two sorted linked lists in Python.
 The first method, `method_0`, has already been explained.
 Let's move on to the second method, `method_1`.
@@ -218,25 +202,16 @@ This way, the function builds the merged list one node at a time, always choosin
 The third method, `method_2`, is not implemented in the provided code.
 
 ===== Advantages
-
 ===== Disadvantages
-
 ===== Complexity Analysis
-
 ====== Time
-
 The time complexity of the method_1 function is O(n + m), where n and m are the lengths of the two input linked lists, l1 and l2. This is because in the worst-case scenario, the function will need to traverse both lists in their entirety.
-
-====== Space
-
-The space complexity of the function is O(n + m).
+====== Space The space complexity of the function is O(n + m).
 This is due to the recursive nature of the function.
 Each recursive call to method_1 adds a level to the call stack.
 The maximum depth of the recursion is the length of the longer list.
 Therefore, the space complexity is proportional to the lengths of the input lists.
-
 === Method 2:
-
 ==== Implementation
 
 [source,python,linenums]
@@ -285,9 +260,7 @@ def method_2(l1: ListNode, l2: ListNode) -> ListNode:
 
     return dummy.next
 ----
-
 ==== Explanation
-
 The provided code introduces a third method, `method_2`, for merging two sorted linked lists in Python.
 This method uses a priority queue to sort the nodes from both lists.
 
@@ -356,17 +329,10 @@ This method effectively merges two sorted linked lists into a new sorted linked 
 It uses a priority queue to always select the node with the smallest value from the two lists.
 
 ===== Advantages
-
 ===== Disadvantages
-
 ===== Complexity Analysis
-
 ====== Time
-
 The time complexity of the method_2 function is O((n + m) log(n + m)), where n and m are the lengths of the two input linked lists, l1 and l2. This is because each insertion into a heap takes O(log n) time and we do this for each node in both lists.
-
-====== Space
-
-The space complexity of the function is O(n + m).
+====== Space The space complexity of the function is O(n + m).
 This is because in the worst-case scenario, all nodes from both lists could end up in the heap at the same time.
 Therefore, the space complexity is proportional to the total number of nodes.
