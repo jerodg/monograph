@@ -12,9 +12,23 @@
 :keywords: problem, python
 
 == Problem
-
 [.lead]
 You need to remove duplicates from a list.
+
+=== Use-Cases
+Removing duplicates from a list is a common operation in various fields of computer science and data management. Here are some use cases:
+
+1. **Data Cleaning**: In data cleaning, you might have a list with duplicate entries that need to be removed to ensure the accuracy of subsequent data analysis.
+
+2. **Database Operations**: In database operations, removing duplicates from a list can be analogous to the DISTINCT operation in SQL, which is used to return unique values in the output.
+
+3. **Machine Learning**: In machine learning, you might need to remove duplicates from a list of features or labels to ensure that the model is not biased towards any repeated feature or label.
+
+4. **Web Scraping**: In web scraping, you might end up with a list of URLs or data points with duplicates that need to be removed before further processing.
+
+5. **Text Processing**: In text processing, you might have a list of words or sentences where duplicates need to be removed for tasks like frequency analysis or creating a vocabulary for natural language processing.
+
+These are just a few examples. The concept of removing duplicates from a list can be applied in many other scenarios depending on the problem at hand.
 
 === Constraints
 
