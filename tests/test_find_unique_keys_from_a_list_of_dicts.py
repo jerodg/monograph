@@ -24,28 +24,36 @@ from python_monograph.find_unique_keys_from_a_list_of_dicts.solution import meth
 
 @pytest.fixture
 def list_of_dicts():
-    return [{'a': 1, 'b': 2}, {'b': 3, 'c': 4}, {'c': 5, 'd': 6}]
+    return [{"a": 1, "b": 2}, {"b": 3, "c": 4}, {"c": 5, "d": 6}]
+
 
 def test_unique_keys_using_chain_itertools(list_of_dicts):
-    assert set(method_0(list_of_dicts)) == {'a', 'b', 'c', 'd'}
+    assert set(method_0(list_of_dicts)) == {"a", "b", "c", "d"}
+
 
 def test_unique_keys_using_list_dict_comprehension(list_of_dicts):
-    assert set(method_1(list_of_dicts)) == {'a', 'b', 'c', 'd'}
+    assert set(method_1(list_of_dicts)) == {"a", "b", "c", "d"}
+
 
 def test_unique_keys_using_keys_extend_list_set_methods(list_of_dicts):
-    assert set(method_2(list_of_dicts)) == {'a', 'b', 'c', 'd'}
+    assert set(method_2(list_of_dicts)) == {"a", "b", "c", "d"}
+
 
 def test_unique_keys_using_functools_reduce(list_of_dicts):
-    assert set(method_3(list_of_dicts)) == {'a', 'b', 'c', 'd'}
+    assert set(method_3(list_of_dicts)) == {"a", "b", "c", "d"}
+
 
 def test_empty_list_input():
     assert method_0([]) == []
 
+
 def test_single_dict_input():
-    assert set(method_0([{'a': 1, 'b': 2}])) == {'a', 'b'}
+    assert set(method_0([{"a": 1, "b": 2}])) == {"a", "b"}
+
 
 def test_no_common_keys_input():
-    assert set(method_0([{'a': 1}, {'b': 2}, {'c': 3}])) == {'a', 'b', 'c'}
+    assert set(method_0([{"a": 1}, {"b": 2}, {"c": 3}])) == {"a", "b", "c"}
+
 
 if __name__ == "__main__":
     print(__doc__)
