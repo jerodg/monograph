@@ -12,8 +12,10 @@
 :keywords: problem, python
 
 == Problem
-
 [.lead]
+
+=== Use-Cases
+
 === Constraints
 
 == Examples
