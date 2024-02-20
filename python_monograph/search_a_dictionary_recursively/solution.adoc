@@ -25,7 +25,7 @@ def method_0(dictionary, target_key):
 
     Parameters:
     dictionary (dict): The dictionary to be searched.
-    target_key (Any): The key to be searched for in the dictionary.
+    Target_key (Any): The key to be searched for in the dictionary.
 
     Returns:
     Any: The value of the first occurrence of the target key. If the key is not found, it returns None.
