@@ -9,7 +9,6 @@
 :sectnums:
 :toc:
 :icons: font
-:imagesdir:./img
 :keywords: solution, python
 
 == Solutions
