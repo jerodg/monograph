@@ -1,0 +1,29 @@
+:doctitle: Title
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:imagesdir:./img
+:keywords: problem, python
+
+== Problem
+[.lead]
+If we list all the natural numbers below latexmath:[10] that are multiples of latexmath:[3] or latexmath:[5], we get latexmath:[3,5,6] and latexmath:[9].
+The sum of these multiples is latexmath:[23].
+
+Find the sum of all the multiples of latexmath:[3] or latexmath:[5] below latexmath:[1000].
+
+=== Best Practices
+=== Use-Cases
+=== Common Mistakes
+=== Constraints
+== Examples
+=== Example 0
+== Follow-up
+== Related Topics

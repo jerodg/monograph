@@ -1,0 +1,226 @@
+:doctitle: Solution
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:imagesdir:./img
+:keywords: solution, python
+
+== Solutions
+[.lead]
+=== Method 0:
+==== Implementation
+[source,python,linenums]
+----
+def method_0() -> int:
+    """This function calculates and prints the sum of all multiples of 3 or 5 below 1000 using a for loop.
+
+    Returns:
+        int
+    """
+    sum = 0
+    for i in range(1, 1000):
+        if i % 3 == 0 or i % 5 == 0:
+            sum += i
+
+    return sum
+----
+==== Explanation
+The selected code is a Python function named `method_0`.
+This function is designed to calculate and return the sum of all multiples of 3 or 5 that are less than 1000.
+
+The function begins by initializing a variable `sum` to 0. This variable is used to accumulate the sum of the multiples of 3 or 5.
+
+[source,python]
+----
+sum = 0
+----
+
+Next, the function enters a loop that iterates over all numbers from 1 to 999. The `range` function in Python generates a sequence of numbers starting from the first argument (inclusive) and ending at the second argument (exclusive).
+Therefore, `range(1, 1000)` generates all numbers from 1 to 999.
+
+[source,python]
+----
+for i in range(1, 1000):
+----
+
+Inside the loop, the function checks if the current number `i` is a multiple of 3 or 5. This is done using the modulus operator `%`, which returns the remainder of the division of the number by 3 or 5. If the remainder is 0, it means that the number is a multiple of 3 or 5. If `i` is a multiple of either 3 or 5, it is added to the `sum`.
+
+[source,python]
+----
+if i % 3 == 0 or i % 5 == 0:
+    sum += i
+----
+
+After the loop has iterated over all numbers from 1 to 999, the function returns the accumulated sum.
+This sum is the total of all multiples of 3 or 5 below 1000.
+
+[source,python]
+----
+return sum
+----
+
+In summary, `method_0` is a simple and straightforward function that uses a loop and conditional logic to solve the problem of finding the sum of all multiples of 3 or 5 below 1000.
+
+===== Advantages
+1. **Simplicity**: The code is straightforward and easy to understand.
+It uses basic programming constructs like loops and conditionals, which makes it accessible to beginners.
+
+2. **Efficiency**: The time complexity of the code is O(n), where n is the upper limit (1000 in this case).
+This means the execution time grows linearly with the size of the input, which is efficient for this problem.
+===== Disadvantages
+1. **Scalability**: While the code is efficient for small inputs, it may not scale well for larger inputs.
+The time complexity of O(n) means that the execution time will grow quickly for large values of n.
+
+2. **Memory Usage**: The code does not use any extra space, so the space complexity is O(1).
+However, in Python, the `range` function generates a list of numbers, which can consume significant memory for large inputs.
+This can be mitigated by using `xrange` in Python 2 or `range` in Python 3, which generate numbers on the fly and do not use extra memory.
+
+3. **Flexibility**: The code is specifically tailored to find the sum of multiples of 3 or 5. If we wanted to find the sum of multiples of any other numbers, we would need to modify the code.
+A more flexible solution would take the numbers as parameters.
+===== Complexity Analysis
+====== Time
+The time complexity of the code is O(n), where n is the upper limit (1000 in this case).
+This is because the code iterates over a range of numbers from 1 to 1000. The time complexity of a loop is proportional to the number of iterations, so in this case, it's linear time complexity.
+====== Space
+The space complexity of the code is O(1), which means the space required by the algorithm is constant, regardless of the size of the input.
+This is because the code only uses a fixed amount of space to store the variable sum and the loop variable i.
+The range function in Python 3 returns a range object that generates the numbers on demand, so it doesn't take up space proportional to the size of the range.
+==== Tests
+=== Method 1:
+==== Implementation
+[source,python,linenums]
+----
+def method_1() -> int:
+    """This function calculates and prints the sum of all multiples of 3 or 5 below 1000 using list comprehension.
+
+    Returns:
+        int
+    """
+    return sum(i for i in range(1, 1000) if i % 3 == 0 or i % 5 == 0)
+----
+==== Explanation
+The selected code is a Python function named `method_1`.
+This function calculates and returns the sum of all multiples of 3 or 5 that are less than 1000, using a technique called list comprehension.
+
+List comprehension is a concise way to create lists based on existing lists.
+In Python, you can use list comprehension to generate a list of results in a single line of code.
+Here, it's used to generate a list of all numbers from 1 to 999 that are multiples of 3 or 5.
+
+[source,python]
+----
+(i for i in range(1, 1000) if i % 3 == 0 or i % 5 == 0)
+----
+
+The `range(1, 1000)` function generates a sequence of numbers from 1 to 999. The `if` condition checks if the current number `i` is a multiple of 3 or 5. If the condition is true, `i` is included in the list.
+
+The `sum` function is then used to calculate the sum of all numbers in the list.
+The `sum` function in Python returns the sum of all elements in an iterable (like a list or a tuple).
+
+[source,python]
+----
+sum(i for i in range(1, 1000) if i % 3 == 0 or i % 5 == 0)
+----
+
+In summary, `method_1` is a Python function that uses list comprehension to generate a list of multiples of 3 or 5 below 1000, and then calculates the sum of these numbers.
+This approach is more concise than using a loop, and is a common idiom in Python for generating and processing lists.
+
+===== Advantages
+1. **Conciseness**: List comprehension provides a more concise way to create lists based on existing lists.
+It can generate a list of results in a single line of code, which makes the code shorter and easier to read.
+
+2. **Efficiency**: The time complexity of the code is O(n), where n is the upper limit (1000 in this case).
+This means the execution time grows linearly with the size of the input, which is efficient for this problem.
+===== Disadvantages
+1. **Scalability**: While the code is efficient for small inputs, it may not scale well for larger inputs.
+The time complexity of O(n) means that the execution time will grow quickly for large values of n.
+
+2. **Memory Usage**: The code does not use any extra space, so the space complexity is O(1).
+However, in Python, the `range` function generates a list of numbers, which can consume significant memory for large inputs.
+This can be mitigated by using `xrange` in Python 2 or `range` in Python 3, which generate numbers on the fly and do not use extra memory.
+
+3. **Readability**: While list comprehension can make the code more concise, it can also make the code harder to understand for those who are not familiar with this feature of Python.
+This could make the code harder to maintain or debug.
+
+4. **Flexibility**: The code is specifically tailored to find the sum of multiples of 3 or 5. If we wanted to find the sum of multiples of any other numbers, we would need to modify the code.
+A more flexible solution would take the numbers as parameters.
+===== Complexity Analysis
+====== Time
+The time complexity of the code is O(n), where n is the upper limit (1000 in this case).
+This is because the code iterates over a range of numbers from 1 to 1000. The time complexity of a loop is proportional to the number of iterations, so in this case, it's linear time complexity.
+====== Space
+The space complexity of the code is O(1), which means the space required by the algorithm is constant, regardless of the size of the input.
+This is because the code only uses a fixed amount of space to store the variable sum and the loop variable i.
+The range function in Python 3 returns a range object that generates the numbers on demand, so it doesn't take up space proportional to the size of the range.
+==== Tests
+=== Method 2:
+==== Implementation
+[source,python,linenums]
+----
+def method_2(n: int) -> int:
+    """This function calculates and prints the sum of all multiples of 3 or 5 below 1000 using a mathematical approach.
+
+    Returns:
+        None
+    """
+    def sum_divisible_by(n: int) -> int:
+        p = 999 // n
+        return n * (p * (p + 1)) // 2
+
+    return sum_divisible_by(3) + sum_divisible_by(5) - sum_divisible_by(15)
+----
+==== Explanation
+The selected code is a Python function named `method_2`.
+This function calculates the sum of all multiples of 3 or 5 that are less than 1000, using a mathematical approach.
+
+The function `method_2` contains a nested function `sum_divisible_by`.
+This nested function calculates the sum of all numbers less than 1000 that are divisible by a given number `n`.
+
+[source,python]
+----
+def sum_divisible_by(n: int) -> int:
+    p = 999 // n
+    return n * (p * (p + 1)) // 2
+----
+
+The variable `p` is calculated as the integer division of 999 by `n`.
+This gives the number of multiples of `n` that are less than 1000. The sum of all multiples of `n` is then calculated using the formula for the sum of an arithmetic series: `n * (p * (p + 1)) // 2`.
+
+The `method_2` function then uses the `sum_divisible_by` function to calculate the sum of all multiples of 3 or 5 that are less than 1000. It does this by adding the sum of multiples of 3 and the sum of multiples of 5, and then subtracting the sum of multiples of 15. This is to avoid counting numbers that are multiples of both 3 and 5 twice.
+
+[source,python]
+----
+return sum_divisible_by(3) + sum_divisible_by(5) - sum_divisible_by(15)
+----
+
+In summary, `method_2` is a Python function that uses a mathematical approach to calculate the sum of all multiples of 3 or 5 below 1000. This approach is more efficient than using a loop or list comprehension, as it calculates the sum directly without needing to iterate over the numbers.
+
+===== Advantages
+1. **Efficiency**: The time complexity of the code is O(1), which means the execution time is constant, regardless of the size of the input.
+This is because the code calculates the sum directly using a mathematical formula, without needing to iterate over the numbers.
+
+2. **Memory Usage**: The space complexity of the code is also O(1), which means the space required by the algorithm is constant, regardless of the size of the input.
+This is because the code only uses a fixed amount of space to store the variables `n`, `p`, and the return value.
+
+3. **Scalability**: Because of its constant time and space complexity, this method scales well for larger inputs.
+The execution time and memory usage will remain the same even if the upper limit is increased.
+===== Disadvantages
+1. **Readability**: The code uses a mathematical formula to calculate the sum, which may be harder to understand for those who are not familiar with the formula for the sum of an arithmetic series.
+This could make the code harder to maintain or debug.
+
+2. **Flexibility**: The code is specifically tailored to find the sum of multiples of 3 or 5. If we wanted to find the sum of multiples of any other numbers, we would need to modify the code.
+A more flexible solution would take the numbers as parameters.
+===== Complexity Analysis
+====== Time
+The time complexity of the code is O(1), which means the execution time is constant, regardless of the size of the input.
+This is because the code calculates the sum directly using a mathematical formula, without needing to iterate over the numbers.
+====== Space
+The space complexity of the code is also O(1), which means the space required by the algorithm is constant, regardless of the size of the input.
+This is because the code only uses a fixed amount of space to store the variables n, p, and the return value.
+==== Tests
