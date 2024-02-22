@@ -19,7 +19,7 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-# fixme: these all need verification
+# todo: these all need verification
 def method_0(arr: list) -> list:
     """This function shuffles an array in a specific manner. It ensures that any elements at even indices are no larger than any elements at odd indices.
 

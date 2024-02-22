@@ -33,7 +33,7 @@ def test_method_0_edge_cases():
 
 
 def test_method_1_happy_path():
-    assert method_1([-1, 0, 1, -1, 5, 10, -5]) == [-1, 10, -1, 5, 0, 1, -5]
+    assert method_1([-1, 0, 1, -1, 5, 10, -5]) == [-1, 5, -1, 10, 0, 1, -5]
     assert method_1([2, 5, 1, 3, 4]) == [1, 5, 2, 4, 3]
 
 

@@ -1,4 +1,4 @@
-:doctitle: Title
+:doctitle: Array Shuffling Problem
 :author: Jerod Gawne
 :email: jerodg@pm.me
 :docdate: 04 January 2024
@@ -13,26 +13,25 @@
 
 == Problem
 [.lead]
-Input: an array of integers, e.x. [-1, 0, 1, -1, 5, 10, -5]
-
- +
-
-Output: shuffle (reordered output) the array so that any elements in even indices are no larger than any elements in odd indices.
-One possible solution for the
-
-above example is [-1, 5, -1, 10, 0, 1, -5]
-
- +
-
-another example:
-
-INPUT:  [2, 5, 1, 3, 4]
-
-OUTPUT: [1, 5, 2, 4, 3]
+Given an array of integers, ensure that any elements at even indices are no larger than any elements at odd indices.
 
 === Use-Cases
 === Constraints
+
+
 == Examples
 === Example 0
+[source,python,linenums]
+----
+INPUT:  [-1, 0, 1, -1, 5, 10, -5]
+OUTPUT: [-1, 5, -1, 10, 0, 1, -5]
+----
+
+=== Example 1
+[source,python,linenums]
+----
+INPUT:  [2, 5, 1, 3, 4]
+OUTPUT: [1, 5, 2, 4, 3]
+----
 == Follow-up
 == Related Topics
