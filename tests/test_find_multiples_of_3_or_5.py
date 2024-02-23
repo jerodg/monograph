@@ -17,8 +17,9 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from python_monograph.find_multiples_of_3_or_5.solution import (method_0, method_1, method_2, method_3, method_4, method_5,
-                                                                method_6, method_7, method_8, method_9, method_10, method_11)
+from python_monograph.find_multiples_of_3_or_5.solution import (method_0, method_1, method_10, method_11, method_2, method_3,
+                                                                method_4, method_5, method_6, method_7, method_8, method_9)
+
 
 def test_method_0_returns_correct_sum():
     assert method_0() == 233168

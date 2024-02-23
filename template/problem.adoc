@@ -13,12 +13,20 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 === Best Practices
+
 === Use-Cases
+
 === Common Mistakes
+
 === Constraints
+
 == Examples
+
 === Example 0
+
 == Follow-up
+
 == Related Topics

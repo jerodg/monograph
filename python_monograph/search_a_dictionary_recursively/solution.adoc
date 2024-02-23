@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(dictionary, target_key):
@@ -42,7 +45,9 @@ def method_0(dictionary, target_key):
 
     return None
 ----
+
 ==== Explanation
+
 The provided code is a Python function named `method_0`.
 This function is designed to search for a specific key in a dictionary.
 The search is performed recursively, meaning the function will search not only the top-level dictionary but also any nested dictionaries.
@@ -68,6 +73,7 @@ In summary, `method_0` is a Python function that performs a recursive search for
 It returns the value associated with the first occurrence of the key it finds, or `None` if the key is not found.
 
 ===== Advantages
+
 1. **Simplicity**: The function is straightforward and easy to understand.
 It uses basic Python constructs like loops and conditionals, making it accessible to developers of all skill levels.
 
@@ -114,6 +120,7 @@ def method_1(dictionary, target_key) -> Generator[Any, None, None]:
 ----
 
 ==== Explanation The provided code defines a Python function named `method_1`.
+
 This function is designed to search for a specific key in a dictionary and its nested dictionaries.
 Unlike `method_0`, `method_1` uses a generator to yield all occurrences of the target key, not just the first one.
 
@@ -132,8 +139,7 @@ If the `target_key` is not found, the function does not yield anything.
 
 In summary, `method_1` is a Python function that performs a recursive search for a specific key in a dictionary and its nested dictionaries.
 Unlike `method_0`, it uses a generator to yield all occurrences of the key, not just the first one.
-===== Advantages
-1. **Generators**: The function uses Python generators, which are a simple and powerful tool for creating iterators.
+===== Advantages 1. **Generators**: The function uses Python generators, which are a simple and powerful tool for creating iterators.
 They are especially useful when the result set can be large and only one result is needed at a time.
 
 2. **All Occurrences**: Unlike `method_0`, `method_1` yields all occurrences of the target key, not just the first one.

@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to reverse a sentence.
 
 === Use-Cases
+
 Reversing a sentence is a common operation in various fields of computer science and data management.
 Here are some use cases:
 

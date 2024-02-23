@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(data: List[str], substr: str) -> bool:
@@ -36,7 +39,9 @@ def method_0(data: List[str], substr: str) -> bool:
             https://docs.python.org/3/library/functions.html?highlight=any#any"""
     return any(substr in x for x in data)
 ----
+
 ==== Explanation
+
 The selected Python code defines a function named `method_0` that checks if a substring is present in any of the strings in a list.
 
 [source,python]
@@ -66,9 +71,13 @@ The `any()` function then checks this sequence and returns `True` if `substr` is
 In summary, `method_0` is a function that checks if a substring is present in any of the strings in a list, returning a boolean value to indicate the result.
 
 ===== Advantages
+
 ===== Disadvantages
+
 ===== Complexity Analysis
+
 ====== Time
+
 The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
 This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
 ====== Space The space complexity of this function is O(1), as we are not using any additional space that scales with the input size.
@@ -98,7 +107,9 @@ def method_1(data: List[str], substr: str) -> bool:
         if row.find(substr) != -1:  # Returns -1 if not found
             return True
 ----
+
 ==== Explanation
+
 The selected code is a Python function named `method_1`.
 This function is designed to check if a substring is present in any of the strings in a list.
 The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
@@ -128,9 +139,13 @@ This function is a straightforward and efficient way to check if a substring exi
 It stops searching as soon as it finds the substring, which can save time when dealing with large lists.
 
 ===== Advantages
+
 ===== Disadvantages
+
 ===== Complexity Analysis
+
 ====== Time
+
 The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
 This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
 ====== Space The space complexity of this function is O(1), as we are not using any additional space that scales with the input size.
@@ -154,7 +169,9 @@ def method_2(data: List[str], substr: str) -> bool:
             https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find"""
     return True if [x for x in data if x.find(substr) != -1] else False
 ----
+
 ==== Explanation
+
 The selected code is a Python function named `method_2`.
 This function is designed to check if a substring is present in any of the strings in a list.
 The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
@@ -182,9 +199,13 @@ This function is a compact and efficient way to check if a substring exists in a
 It leverages the power of list comprehensions in Python to perform the check in a single line of code.
 
 ===== Advantages
+
 ===== Disadvantages
+
 ===== Complexity Analysis
+
 ====== Time
+
 The time complexity of this function is O(nm), where n is the number of strings in the list and m is the average length of the strings.
 This is because the join() method concatenates all the strings into one, which takes O(nm) time, and then we are checking if the substring exists in this concatenated string, which also takes O(n*m) time in the worst case.
 ====== Space The space complexity of this function is O(nm), as we are creating a new string that is the concatenation of all the strings in the list.
@@ -209,7 +230,9 @@ def method_3(data: List[str], substr: str) -> bool:
             https://docs.python.org/3/library/stdtypes.html?highlight=join#str.join"""
     return substr in "\t".join(data)
 ----
+
 ==== Explanation
+
 The selected code is a Python function named `method_3`.
 This function is designed to check if a substring is present in a concatenated string of all the strings in a list.
 The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
@@ -244,9 +267,13 @@ This function is a simple and efficient way to check if a substring exists in an
 It leverages the power of Python's string methods to perform the check in a single line of code.
 
 ===== Advantages
+
 ===== Disadvantages
+
 ===== Complexity Analysis
+
 ====== Time
+
 The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
 This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
 ====== Space The space complexity of this function is O(1), as we are not using any additional space that scales with the input size.
@@ -272,7 +299,9 @@ def method_4(data: List[str], substr: str) -> bool:
         if substr in row:
             return True
 ----
+
 ==== Explanation
+
 The selected code is a Python function named `method_4`.
 This function is designed to check if a substring is present in any of the strings in a list.
 The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
@@ -302,9 +331,13 @@ This function is a straightforward and efficient way to check if a substring exi
 It leverages the power of Python's `in` keyword to perform the check in a simple and readable way.
 
 ===== Advantages
+
 ===== Disadvantages
+
 ===== Complexity Analysis
+
 ====== Time
+
 The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
 This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
 ====== Space The space complexity of this function is O(n), as we are creating a new list that contains all the strings in which the substring is found.
@@ -329,7 +362,9 @@ def method_5(data: List[str], substr: str) -> bool:
             https://docs.python.org/3/tutorial/controlflow.html?highlight=loop#for-statements"""
     return True if [x for x in data if substr in x] else False
 ----
+
 ==== Explanation
+
 The selected code is a Python function named `method_5`.
 This function is designed to check if a substring is present in any of the strings in a list.
 The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
@@ -364,9 +399,13 @@ This function is a concise and efficient way to check if a substring exists in a
 It leverages the power of Python's list comprehensions to perform the check in a single line of code.
 
 ===== Advantages
+
 ===== Disadvantages
+
 ===== Complexity Analysis
+
 ====== Time
+
 The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
 This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
 ====== Space The space complexity of this function is O(n), as we are creating a new list that contains all the strings in which the substring is found.

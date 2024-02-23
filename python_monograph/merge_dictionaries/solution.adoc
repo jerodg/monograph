@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(x: dict, y: dict) -> dict:
@@ -31,7 +34,9 @@ def method_0(x: dict, y: dict) -> dict:
     temp.update(y)
     return temp
 ----
+
 ==== Explanation
+
 The provided code is a Python function named `method_0` that merges two dictionaries.
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
@@ -66,6 +71,7 @@ In summary, `method_0` is a simple and straightforward way to merge two dictiona
 It creates a new dictionary that includes all key-value pairs from both input dictionaries, with values from the second dictionary overwriting those from the first in case of duplicate keys.
 
 ===== Advantages
+
 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses built-in Python dictionary methods, which makes it accessible for developers of all experience levels.
 
@@ -110,6 +116,7 @@ def method_1(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_1` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function begins by converting each dictionary into a list of its items using the `items` method.
@@ -136,8 +143,7 @@ return dict(...)
 In summary, `method_1` is a simple way to merge two dictionaries in Python.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
-===== Advantages
-1. **Simplicity:** This method is straightforward and easy to understand.
+===== Advantages 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses built-in Python dictionary and list methods, which makes it accessible for developers of all experience levels.
 
 2. **Preservation of Original Dictionaries:** The `items` method does not modify the original dictionaries during the merge process.
@@ -184,6 +190,7 @@ def method_2(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_2` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses a feature introduced in Python 3.5, known as dictionary unpacking or the "curly star" method.
@@ -201,8 +208,7 @@ The key-value pairs from `y` will overwrite the ones from `x` in case of duplica
 In summary, `method_2` is a concise and efficient way to merge two dictionaries in Python.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
-===== Advantages
-1. **Simplicity:** This method is straightforward and easy to understand.
+===== Advantages 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses a built-in Python feature, which makes it accessible for developers of all experience levels.
 
 2. **Efficiency:** This method is generally faster than other methods of merging dictionaries, especially for large dictionaries.
@@ -242,6 +248,7 @@ def method_3(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_3` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the `ChainMap` class from the `collections` module. `ChainMap` is a class that provides the ability to link multiple mappings together such that they end up being a single unit.
@@ -264,8 +271,7 @@ This is done because `ChainMap` returns a view on the original dictionaries, but
 In summary, `method_3` is a way to merge two dictionaries in Python using the `ChainMap` class.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the first dictionary is preserved.
-===== Advantages
-1. **Preservation of Original Dictionaries:** The `ChainMap` method does not modify the original dictionaries during the merge process.
+===== Advantages 1. **Preservation of Original Dictionaries:** The `ChainMap` method does not modify the original dictionaries during the merge process.
 This can be beneficial if you need to use the original dictionaries later in your code.
 
 2. **Efficiency:** `ChainMap` is generally more memory efficient than other methods of merging dictionaries, especially for large dictionaries, as it does not create a new dictionary but rather a view on the original dictionaries.
@@ -309,6 +315,7 @@ def method_4(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_4` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the `chain` function from the `itertools` module. `chain` is a function that takes several iterables as arguments and returns a single iterable that combines all of them.
@@ -331,8 +338,7 @@ This is done because the requirement here is to get a new dictionary, not an ite
 In summary, `method_4` is a way to merge two dictionaries in Python using the `chain` function from the `itertools` module.
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
-===== Advantages
-1. **Simplicity:** This method is straightforward and easy to understand.
+===== Advantages 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses built-in Python functions, which makes it accessible for developers of all experience levels.
 
 2. **Efficiency:** The `chain` function is generally more efficient than other methods of merging dictionaries, especially for large dictionaries, as it does not create a new dictionary but rather a single iterable that combines the items of the input dictionaries.
@@ -375,6 +381,7 @@ def method_5(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_5` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the dictionary union operator `|`, which is a feature introduced in Python 3.9. This operator merges two dictionaries into a new one.
@@ -394,8 +401,7 @@ In summary, `method_5` is a way to merge two dictionaries in Python using the di
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is simple and efficient, but it requires Python 3.9 or later.
-===== Advantages
-1. **Simplicity:** This method is straightforward and easy to understand.
+===== Advantages 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses a built-in Python operator, which makes it accessible for developers of all experience levels.
 
 2. **Efficiency:** The dictionary union operator is generally more efficient than other methods of merging dictionaries, especially for large dictionaries, as it does not create a new dictionary but rather a single dictionary that combines the items of the input dictionaries.
@@ -432,6 +438,7 @@ def method_6(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_6` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses the `next` function and a generator expression to achieve this.
@@ -454,8 +461,7 @@ In summary, `method_6` is a way to merge two dictionaries in Python using a gene
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is efficient in terms of memory usage, but it may be less intuitive than other methods due to the use of a generator expression.
-===== Advantages
-1. **Efficiency:** This method is efficient in terms of memory usage.
+===== Advantages 1. **Efficiency:** This method is efficient in terms of memory usage.
 The generator expression generates the output on the fly and does not store it in memory, which can be beneficial for large dictionaries.
 
 2. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
@@ -499,6 +505,7 @@ def method_7(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_7` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses a lambda function to achieve this.
@@ -521,8 +528,7 @@ In summary, `method_7` is a way to merge two dictionaries in Python using a lamb
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is efficient in terms of memory usage, but it may be less intuitive than other methods due to the use of a lambda function.
-===== Advantages
-1. **Efficiency:** This method is efficient in terms of memory usage.
+===== Advantages 1. **Efficiency:** This method is efficient in terms of memory usage.
 The lambda function generates the output on the fly and does not store it in memory, which can be beneficial for large dictionaries.
 
 2. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
@@ -566,6 +572,7 @@ def method_8(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_8` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns a new dictionary that is a combination of the two.
 
 The function uses a dictionary comprehension to achieve this.
@@ -587,8 +594,7 @@ In summary, `method_8` is a way to merge two dictionaries in Python using a dict
 It creates a new dictionary that includes all key-value pairs from both input dictionaries.
 In case of duplicate keys, the value from the second dictionary is preserved.
 This method is efficient in terms of memory usage and execution speed, but it may be less intuitive than other methods due to the use of a dictionary comprehension.
-===== Advantages
-1. **Efficiency:** This method is efficient in terms of memory usage and execution speed.
+===== Advantages 1. **Efficiency:** This method is efficient in terms of memory usage and execution speed.
 The dictionary comprehension generates the output on the fly and does not store it in memory, which can be beneficial for large dictionaries.
 
 2. **Overwriting of Duplicate Keys:** In case of duplicate keys, the value from the second dictionary will overwrite the value from the first.
@@ -630,6 +636,7 @@ def method_9(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_9` that merges two dictionaries.
+
 It takes two dictionaries as arguments, `x` and `y`, and returns the updated dictionary `x`.
 
 The function uses the `update` method of Python dictionaries to achieve this.
@@ -658,8 +665,7 @@ In summary, `method_9` is a way to merge two dictionaries in Python using the `u
 It modifies the original dictionary `x` by adding all key-value pairs from the second dictionary `y`.
 In case of duplicate keys, the value from `y` is preserved.
 This method is straightforward and easy to understand, but it modifies the original dictionary, which might not be desirable in all cases.
-===== Advantages
-1. **Simplicity:** This method is straightforward and easy to understand.
+===== Advantages 1. **Simplicity:** This method is straightforward and easy to understand.
 It uses the built-in `update` method of Python dictionaries, which makes it accessible for developers of all experience levels.
 
 2. **In-place Update:** The `update` method modifies the original dictionary in-place, which means no additional space is required to create a new dictionary.
@@ -704,6 +710,7 @@ def method_10(x: dict, y: dict) -> dict:
 ----
 
 ==== Explanation The provided code is a Python function named `method_10` that merges two dictionaries.
+
 It uses a `defaultdict` from the `collections` module to handle the merging process.
 A `defaultdict` is a dictionary subclass that calls a factory function to supply missing values, in this case, a list.
 
@@ -750,8 +757,7 @@ return merged
 In summary, `method_10` is a Python function that merges two dictionaries into a `defaultdict` where each key maps to a list of values.
 If a key is present in both input dictionaries, its corresponding value in the `merged` dictionary is a list containing the values from both dictionaries.
 This method preserves all values and does not overwrite any of them, which might be desirable in certain use cases.
-===== Advantages
-1. **Preservation of All Values:** This method preserves all values from both dictionaries, even if the keys are the same.
+===== Advantages 1. **Preservation of All Values:** This method preserves all values from both dictionaries, even if the keys are the same.
 This is because it uses a list to store the values for each key.
 If a key is present in both dictionaries, its corresponding value in the merged dictionary will be a list containing the values from both dictionaries.
 This can be beneficial if you want to keep all values for keys that appear in both dictionaries.

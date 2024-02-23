@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Singly Linked List:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 class Node:
@@ -221,10 +224,16 @@ class LinkedList:
             current = next_node
         self.head = prev
 ----
-==== Explanation
-The provided code is a Python implementation of a singly linked list. It consists of two classes: `Node` and `LinkedList`.
 
-The `Node` class is a simple data structure that represents an element in the linked list. It has two attributes: `data` and `next`. The `data` attribute holds the value of the node, and `next` is a reference to the next node in the list. The `Node` class is initialized with `data` and sets `next` to `None`.
+==== Explanation
+
+The provided code is a Python implementation of a singly linked list.
+It consists of two classes: `Node` and `LinkedList`.
+
+The `Node` class is a simple data structure that represents an element in the linked list.
+It has two attributes: `data` and `next`.
+The `data` attribute holds the value of the node, and `next` is a reference to the next node in the list.
+The `Node` class is initialized with `data` and sets `next` to `None`.
 
 [source,python]
 ----
@@ -234,7 +243,9 @@ class Node:
         self.next = None
 ----
 
-The `LinkedList` class represents the actual linked list. It has a single attribute, `head`, which is a reference to the first node in the list. If the list is empty, `head` is `None`.
+The `LinkedList` class represents the actual linked list.
+It has a single attribute, `head`, which is a reference to the first node in the list.
+If the list is empty, `head` is `None`.
 
 [source,python]
 ----
@@ -243,7 +254,9 @@ class LinkedList:
         self.head = None
 ----
 
-The `LinkedList` class also includes several methods for manipulating the list. For example, `insert_at_beginning` creates a new node with the provided data and inserts it at the beginning of the list. It does this by setting the `next` attribute of the new node to the current head of the list, and then updating the list's head to the new node.
+The `LinkedList` class also includes several methods for manipulating the list.
+For example, `insert_at_beginning` creates a new node with the provided data and inserts it at the beginning of the list.
+It does this by setting the `next` attribute of the new node to the current head of the list, and then updating the list's head to the new node.
 
 [source,python]
 ----
@@ -253,7 +266,8 @@ def insert_at_beginning(self, data):
     self.head = new_node
 ----
 
-The `insert_at_end` method is similar, but it inserts the new node at the end of the list. It does this by iterating through the list to find the last node, and then setting the `next` attribute of the last node to the new node.
+The `insert_at_end` method is similar, but it inserts the new node at the end of the list.
+It does this by iterating through the list to find the last node, and then setting the `next` attribute of the last node to the new node.
 
 [source,python]
 ----
@@ -268,7 +282,8 @@ def insert_at_end(self, data):
     last_node.next = new_node
 ----
 
-The `delete_node` method removes the first node in the list that has a specific key. It does this by iterating through the list until it finds a node with the matching key, then updating the `next` attribute of the previous node to skip over the node to be deleted.
+The `delete_node` method removes the first node in the list that has a specific key.
+It does this by iterating through the list until it finds a node with the matching key, then updating the `next` attribute of the previous node to skip over the node to be deleted.
 
 [source,python]
 ----
@@ -293,56 +308,63 @@ def delete_node(self, key):
 Other methods in the `LinkedList` class include `print_list` (which prints the data of all nodes in the list), `search` (which checks if a node with a specific key exists in the list), `update` (which updates the value of the first node with a specific old value to a new value), `sort` (which sorts the list in ascending order), and `reverse` (which reverses the order of the list).
 
 ===== Advantages
+
 1. **Dynamic Size**: Unlike arrays, the size of a linked list can be increased or decreased dynamically, which provides flexibility and efficiency in memory management.
-2. **Insertion and Deletion**: Insertion and deletion of nodes are easier as compared to array. In an array, you need to shift elements to create space or fill the space caused by deletion, but in a linked list, you just need to update the address present in the next pointer of a node.
+2. **Insertion and Deletion**: Insertion and deletion of nodes are easier as compared to array.
+In an array, you need to shift elements to create space or fill the space caused by deletion, but in a linked list, you just need to update the address present in the next pointer of a node.
 
 ===== Disadvantages
+
 1. **Memory Usage**: Each node in the linked list requires extra storage for pointers, which leads to an overhead of extra memory.
-2. **Traversal**: Accessing an element in a linked list requires sequential traversal from the head node, which can be time-consuming. Unlike arrays, elements in a linked list cannot be accessed directly.
-3. **Reverse Traversing**: Singly linked lists are linear and can only be traversed in one direction. This means that they cannot be traversed in reverse without first reversing the list, which can be computationally expensive.
+2. **Traversal**: Accessing an element in a linked list requires sequential traversal from the head node, which can be time-consuming.
+Unlike arrays, elements in a linked list cannot be accessed directly.
+3. **Reverse Traversing**: Singly linked lists are linear and can only be traversed in one direction.
+This means that they cannot be traversed in reverse without first reversing the list, which can be computationally expensive.
 
 ===== Complexity Analysis
+
 The time and space complexity for the selected code are as follows:
 
 1. `insert_at_beginning(data)`:
-   - Time Complexity: O(1), because inserting at the beginning of the linked list is a constant time operation as we have direct access to the head of the list.
-   - Space Complexity: O(1), because only a constant amount of space is used.
+- Time Complexity: O(1), because inserting at the beginning of the linked list is a constant time operation as we have direct access to the head of the list.
+- Space Complexity: O(1), because only a constant amount of space is used.
 
 2. `insert_at_end(data)`:
-   - Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the last node.
-   - Space Complexity: O(1), because only a constant amount of space is used.
+- Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the last node.
+- Space Complexity: O(1), because only a constant amount of space is used.
 
 3. `delete_node(key)`:
-   - Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the node to be deleted.
-   - Space Complexity: O(1), because only a constant amount of space is used.
+- Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the node to be deleted.
+- Space Complexity: O(1), because only a constant amount of space is used.
 
 4. `print_list()`:
-   - Time Complexity: O(n), because we have to traverse the entire list to print all nodes.
-   - Space Complexity: O(1), because only a constant amount of space is used.
+- Time Complexity: O(n), because we have to traverse the entire list to print all nodes.
+- Space Complexity: O(1), because only a constant amount of space is used.
 
 5. `search(key)`:
-   - Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the node.
-   - Space Complexity: O(1), because only a constant amount of space is used.
+- Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the node.
+- Space Complexity: O(1), because only a constant amount of space is used.
 
 6. `update(old_value, new_value)`:
-   - Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the node to be updated.
-   - Space Complexity: O(1), because only a constant amount of space is used.
+- Time Complexity: O(n), because in the worst case, we have to traverse the entire list to find the node to be updated.
+- Space Complexity: O(1), because only a constant amount of space is used.
 
 7. `sort()`:
-   - Time Complexity: O(n^2), because we are using a simple bubble sort algorithm to sort the linked list, which has a quadratic time complexity.
-   - Space Complexity: O(1), because we are sorting the list in place and not using any additional space.
+- Time Complexity: O(n^2), because we are using a simple bubble sort algorithm to sort the linked list, which has a quadratic time complexity.
+- Space Complexity: O(1), because we are sorting the list in place and not using any additional space.
 
 8. `reverse()`:
-   - Time Complexity: O(n), because we have to traverse the entire list to reverse it.
-   - Space Complexity: O(1), because we are reversing the list in place and not using any additional space.
+- Time Complexity: O(n), because we have to traverse the entire list to reverse it.
+- Space Complexity: O(1), because we are reversing the list in place and not using any additional space.
 
 Please note that 'n' is the number of nodes in the linked list.
 
 ==== Tests
 
-
 === Doubly Linked List:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 class Node:
@@ -567,12 +589,20 @@ class DoublyLinkedList:
             print(temp.data, end=' ')
             temp = temp.next
 ----
+
 ==== Explanation
-The provided code is a Python implementation of a doubly linked list. A doubly linked list is a type of linked list in which each node contains a reference to the next node as well as the previous node in the sequence. This allows for more efficient operations in some scenarios compared to a singly linked list.
+
+The provided code is a Python implementation of a doubly linked list.
+A doubly linked list is a type of linked list in which each node contains a reference to the next node as well as the previous node in the sequence.
+This allows for more efficient operations in some scenarios compared to a singly linked list.
 
 The code defines two classes: `Node` and `DoublyLinkedList`.
 
-The `Node` class is used to create new nodes for the linked list. Each node has three attributes: `data`, `next`, and `prev`. The `data` attribute stores the value of the node. The `next` and `prev` attributes are pointers to the next and previous nodes in the list, respectively. The `__init__` method is used to initialize these attributes.
+The `Node` class is used to create new nodes for the linked list.
+Each node has three attributes: `data`, `next`, and `prev`.
+The `data` attribute stores the value of the node.
+The `next` and `prev` attributes are pointers to the next and previous nodes in the list, respectively.
+The `__init__` method is used to initialize these attributes.
 
 [source,python]
 ----
@@ -583,11 +613,14 @@ class Node:
         self.prev = None
 ----
 
-The `DoublyLinkedList` class represents the actual linked list. It has a single attribute, `head`, which points to the first node in the list.
+The `DoublyLinkedList` class represents the actual linked list.
+It has a single attribute, `head`, which points to the first node in the list.
 
-The `DoublyLinkedList` class also includes several methods for manipulating the linked list. These include `insert_at_beginning`, `insert_at_end`, `delete_node`, `search`, `update`, `sort`, `reverse`, and `print_list`.
+The `DoublyLinkedList` class also includes several methods for manipulating the linked list.
+These include `insert_at_beginning`, `insert_at_end`, `delete_node`, `search`, `update`, `sort`, `reverse`, and `print_list`.
 
-For example, the `insert_at_beginning` method creates a new node with the given data and inserts it at the beginning of the list. If the list is not empty, it adjusts the `prev` pointer of the old head node to point to the new node.
+For example, the `insert_at_beginning` method creates a new node with the given data and inserts it at the beginning of the list.
+If the list is not empty, it adjusts the `prev` pointer of the old head node to point to the new node.
 
 [source,python]
 ----
@@ -629,72 +662,88 @@ def sort(self):
         current = current.next
 ----
 
-These are just a few examples of the methods provided in the `DoublyLinkedList` class. Each method is designed to perform a specific operation on the linked list, making it a versatile and useful data structure for many different types of programming tasks.
+These are just a few examples of the methods provided in the `DoublyLinkedList` class.
+Each method is designed to perform a specific operation on the linked list, making it a versatile and useful data structure for many different types of programming tasks.
 
 ===== Advantages
-The selected code implements a doubly linked list in Python. It has several advantages and disadvantages:
+
+The selected code implements a doubly linked list in Python.
+It has several advantages and disadvantages:
 
 Advantages:
 1. **Dynamic Size**: Unlike arrays, the size of a linked list can be increased or decreased dynamically, which provides flexibility and efficiency in memory management.
-2. **Efficient Insertions/Deletions**: Insertions and deletions at any place in a linked list are generally more efficient than arrays or singly linked lists. This is because we don't need to shift elements, just change the pointers.
+2. **Efficient Insertions/Deletions**: Insertions and deletions at any place in a linked list are generally more efficient than arrays or singly linked lists.
+This is because we don't need to shift elements, just change the pointers.
 3. **Bidirectional**: A doubly linked list can be traversed in both forward and backward direction.
 
 The methods in the `DoublyLinkedList` class also have their own advantages and disadvantages:
 
-- `insert_at_beginning` and `insert_at_end`: These methods allow for efficient (O(1)) insertion of a new node at the beginning or end of the list. However, if the position of the new node is not at the beginning or end, these methods are not suitable.
+- `insert_at_beginning` and `insert_at_end`: These methods allow for efficient (O(1)) insertion of a new node at the beginning or end of the list.
+However, if the position of the new node is not at the beginning or end, these methods are not suitable.
 
-- `delete_node`: This method allows for efficient (O(1)) deletion of a node if we have a pointer to the node. However, if we only have the key, we need to search for the node first, which takes O(n) time.
+- `delete_node`: This method allows for efficient (O(1)) deletion of a node if we have a pointer to the node.
+However, if we only have the key, we need to search for the node first, which takes O(n) time.
 
-- `search`: This method allows us to check if a node with a specific key exists in the list. However, in the worst case, it needs to traverse the entire list, which takes O(n) time.
+- `search`: This method allows us to check if a node with a specific key exists in the list.
+However, in the worst case, it needs to traverse the entire list, which takes O(n) time.
 
-- `update`: This method allows us to update the value of a node. However, like `delete_node`, it needs to search for the node first if we only have the old value, which takes O(n) time.
+- `update`: This method allows us to update the value of a node.
+However, like `delete_node`, it needs to search for the node first if we only have the old value, which takes O(n) time.
 
-- `sort`: This method sorts the nodes in the list in ascending order. However, it uses a simple bubble sort algorithm, which has a time complexity of O(n^2) and is not efficient for large lists.
+- `sort`: This method sorts the nodes in the list in ascending order.
+However, it uses a simple bubble sort algorithm, which has a time complexity of O(n^2) and is not efficient for large lists.
 
-- `reverse`: This method reverses the order of the nodes in the list. It is efficient (O(n)) but requires careful handling of the pointers to avoid breaking the list.
+- `reverse`: This method reverses the order of the nodes in the list.
+It is efficient (O(n)) but requires careful handling of the pointers to avoid breaking the list.
 
-- `print_list`: This method prints the data of all nodes in the list. It is straightforward and efficient (O(n)), but it only prints to the console and does not return a value.
+- `print_list`: This method prints the data of all nodes in the list.
+It is straightforward and efficient (O(n)), but it only prints to the console and does not return a value.
 
 ===== Disadvantages
+
 1. **Extra Memory**: Each node in the doubly linked list needs to store an extra pointer, which requires extra memory.
-2. **Traversal**: Accessing an element in a linked list requires sequential traversal from the head node, which can be time-consuming. Unlike arrays, elements in a linked list cannot be accessed directly.
+2. **Traversal**: Accessing an element in a linked list requires sequential traversal from the head node, which can be time-consuming.
+Unlike arrays, elements in a linked list cannot be accessed directly.
 3. **Complexity**: The code for insertion and deletion in a doubly linked list is a bit complex because we have to maintain the previous and next pointers.
 
 ===== Complexity Analysis
+
 The time and space complexity for the selected code are as follows:
 
 1. `insert_at_beginning(data)`:
-   - Time Complexity: O(1), as we are adding the node at the beginning of the list.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(1), as we are adding the node at the beginning of the list.
+- Space Complexity: O(1), as no extra space is used.
 
 2. `insert_at_end(data)`:
-   - Time Complexity: O(n), where n is the number of nodes in the list. This is because we need to traverse the entire list to find the last node.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(n), where n is the number of nodes in the list.
+This is because we need to traverse the entire list to find the last node.
+- Space Complexity: O(1), as no extra space is used.
 
 3. `delete_node(key)`:
-   - Time Complexity: O(n), as in the worst case we need to traverse the entire list to find the node to be deleted.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(n), as in the worst case we need to traverse the entire list to find the node to be deleted.
+- Space Complexity: O(1), as no extra space is used.
 
 4. `search(key)`:
-   - Time Complexity: O(n), as in the worst case we need to traverse the entire list to find the node.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(n), as in the worst case we need to traverse the entire list to find the node.
+- Space Complexity: O(1), as no extra space is used.
 
 5. `update(old_value, new_value)`:
-   - Time Complexity: O(n), as in the worst case we need to traverse the entire list to find the node to be updated.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(n), as in the worst case we need to traverse the entire list to find the node to be updated.
+- Space Complexity: O(1), as no extra space is used.
 
 6. `sort()`:
-   - Time Complexity: O(n^2), as we are using a simple bubble sort algorithm to sort the nodes in the list.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(n^2), as we are using a simple bubble sort algorithm to sort the nodes in the list.
+- Space Complexity: O(1), as no extra space is used.
 
 7. `reverse()`:
-   - Time Complexity: O(n), as we need to traverse the entire list to reverse the links.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(n), as we need to traverse the entire list to reverse the links.
+- Space Complexity: O(1), as no extra space is used.
 
 8. `print_list()`:
-   - Time Complexity: O(n), as we need to traverse the entire list to print all the nodes.
-   - Space Complexity: O(1), as no extra space is used.
+- Time Complexity: O(n), as we need to traverse the entire list to print all the nodes.
+- Space Complexity: O(1), as no extra space is used.
 
-In general, the space complexity for the entire `DoublyLinkedList` class is O(n), where n is the number of nodes in the list. This is because each node in the list contributes to the total space used.
+In general, the space complexity for the entire `DoublyLinkedList` class is O(n), where n is the number of nodes in the list.
+This is because each node in the list contributes to the total space used.
 
 ==== Tests

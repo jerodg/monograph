@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(s: str) -> tuple[int, str]:
@@ -41,10 +44,15 @@ def method_0(s: str) -> tuple[int, str]:
 
     return max_length, s[start:start + max_length]
 ----
-==== Explanation
-The selected code is a Python function named `method_0`. This function is designed to find the longest substring without repeating characters in a given string. The function takes a string `s` as an input and returns a tuple containing the length of the longest substring without repeating characters and the substring itself.
 
-The function uses a sliding window approach with two pointers, `start` and `end`, and a dictionary `used_chars` to keep track of the characters and their indices. The `start` and `end` pointers are initialized to 0, and the `used_chars` dictionary is initially empty.
+==== Explanation
+
+The selected code is a Python function named `method_0`.
+This function is designed to find the longest substring without repeating characters in a given string.
+The function takes a string `s` as an input and returns a tuple containing the length of the longest substring without repeating characters and the substring itself.
+
+The function uses a sliding window approach with two pointers, `start` and `end`, and a dictionary `used_chars` to keep track of the characters and their indices.
+The `start` and `end` pointers are initialized to 0, and the `used_chars` dictionary is initially empty.
 
 [source,python]
 ----
@@ -53,7 +61,8 @@ max_length = 0
 used_chars = {}
 ----
 
-The function then enters a loop where the `end` pointer moves through the string. For each character at the `end` pointer, the function checks if it is in the `used_chars` dictionary and if its index is greater than or equal to `start`.
+The function then enters a loop where the `end` pointer moves through the string.
+For each character at the `end` pointer, the function checks if it is in the `used_chars` dictionary and if its index is greater than or equal to `start`.
 
 [source,python]
 ----
@@ -61,7 +70,8 @@ for end in range(len(s)):
     if s[end] in used_chars and start <= used_chars[s[end]]:
 ----
 
-If the character is found in the dictionary and its index is greater than or equal to `start`, the `start` pointer is moved to the next index. This is done to ensure that the substring being considered does not contain any repeating characters.
+If the character is found in the dictionary and its index is greater than or equal to `start`, the `start` pointer is moved to the next index.
+This is done to ensure that the substring being considered does not contain any repeating characters.
 
 [source,python]
 ----
@@ -76,14 +86,16 @@ else:
     max_length = max(max_length, end - start + 1)
 ----
 
-Regardless of whether the character was in the dictionary or not, the character and its index are then added to the dictionary. This is done to keep track of the characters and their indices for future iterations.
+Regardless of whether the character was in the dictionary or not, the character and its index are then added to the dictionary.
+This is done to keep track of the characters and their indices for future iterations.
 
 [source,python]
 ----
 used_chars[s[end]] = end
 ----
 
-The function continues until the `end` pointer has moved through the entire string. At the end, it returns the length of the longest substring without repeating characters and the substring itself.
+The function continues until the `end` pointer has moved through the entire string.
+At the end, it returns the length of the longest substring without repeating characters and the substring itself.
 
 [source,python]
 ----
@@ -93,27 +105,42 @@ return max_length, s[start:start + max_length]
 In summary, `method_0` is a Python function that uses a sliding window approach to find the longest substring without repeating characters in a given string.
 
 ===== Advantages
-1. **Efficiency**: The sliding window approach is efficient because it only needs to iterate through the string once. This results in a time complexity of O(n), where n is the length of the string.
-2. **Simplicity**: The code is relatively simple and easy to understand. It uses basic data structures (a dictionary and a string) and control structures (a for loop and if-else statements).
+
+1. **Efficiency**: The sliding window approach is efficient because it only needs to iterate through the string once.
+This results in a time complexity of O(n), where n is the length of the string.
+2. **Simplicity**: The code is relatively simple and easy to understand.
+It uses basic data structures (a dictionary and a string) and control structures (a for loop and if-else statements).
 3. **Scalability**: The sliding window approach can handle large inputs effectively because it does not require additional space as the size of the input increases.
 
 ===== Disadvantages
-1. **Memory Usage**: The code uses a dictionary to keep track of the characters and their indices. This can lead to high memory usage if the string contains a large number of unique characters.
-2. **Overhead**: The sliding window approach involves moving two pointers and updating a dictionary in each iteration. This can add a significant overhead, especially for large inputs.
-3. **Limited Use Case**: This approach specifically solves the problem of finding the longest substring without repeating characters. It may not be applicable or efficient for other related problems, such as finding the longest substring with at most k distinct characters.
+
+1. **Memory Usage**: The code uses a dictionary to keep track of the characters and their indices.
+This can lead to high memory usage if the string contains a large number of unique characters.
+2. **Overhead**: The sliding window approach involves moving two pointers and updating a dictionary in each iteration.
+This can add a significant overhead, especially for large inputs.
+3. **Limited Use Case**: This approach specifically solves the problem of finding the longest substring without repeating characters.
+It may not be applicable or efficient for other related problems, such as finding the longest substring with at most k distinct characters.
 
 ===== Complexity Analysis
+
 ====== Time
-The time complexity of the code is O(n), where n is the length of the string. This is because the code iterates over the string once. Each operation within the loop (checking if a character is in the dictionary, updating the start pointer, and updating the dictionary) can be done in constant time.
+
+The time complexity of the code is O(n), where n is the length of the string.
+This is because the code iterates over the string once.
+Each operation within the loop (checking if a character is in the dictionary, updating the start pointer, and updating the dictionary) can be done in constant time.
 
 ====== Space
-The space complexity of the code is O(min(n, m)), where n is the length of the string and m is the size of the character set. In the worst-case scenario, the dictionary used_chars could end up storing every unique character from the string. However, if the size of the character set is smaller than the length of the string (for example, if the string contains repeated sequences of a smaller set of characters), the space complexity would be O(m).
+
+The space complexity of the code is O(min(n, m)), where n is the length of the string and m is the size of the character set.
+In the worst-case scenario, the dictionary used_chars could end up storing every unique character from the string.
+However, if the size of the character set is smaller than the length of the string (for example, if the string contains repeated sequences of a smaller set of characters), the space complexity would be O(m).
 
 ==== Tests
 
-
 === Method 1:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_1(s: str) -> tuple[int, str]:
@@ -139,10 +166,15 @@ def method_1(s: str) -> tuple[int, str]:
 
     return max_length, s[start:start + max_length]
 ----
-==== Explanation
-The provided code is a Python function named `method_1`. This function is designed to find the longest substring without repeating characters in a given string. It takes a string `s` as an input and returns a tuple containing the length of the longest substring without repeating characters and the substring itself.
 
-The function uses a sliding window approach with two pointers, `start` and `end`, and a set `unique_chars` to keep track of the unique characters in the current substring. The `start` and `end` pointers are initialized to 0, and the `unique_chars` set is initially empty.
+==== Explanation
+
+The provided code is a Python function named `method_1`.
+This function is designed to find the longest substring without repeating characters in a given string.
+It takes a string `s` as an input and returns a tuple containing the length of the longest substring without repeating characters and the substring itself.
+
+The function uses a sliding window approach with two pointers, `start` and `end`, and a set `unique_chars` to keep track of the unique characters in the current substring.
+The `start` and `end` pointers are initialized to 0, and the `unique_chars` set is initially empty.
 
 [source,python]
 ----
@@ -151,7 +183,8 @@ max_length = 0
 unique_chars = set()
 ----
 
-The function then enters a loop where the `end` pointer moves through the string. For each character at the `end` pointer, the function checks if it is in the `unique_chars` set.
+The function then enters a loop where the `end` pointer moves through the string.
+For each character at the `end` pointer, the function checks if it is in the `unique_chars` set.
 
 [source,python]
 ----
@@ -159,7 +192,9 @@ for end in range(len(s)):
     while s[end] in unique_chars:
 ----
 
-If the character is found in the set, it means we have found a duplicate character. In this case, we remove the character at the `start` from the set and move the `start` pointer to the right. We repeat this step until the duplicate character is removed from the set.
+If the character is found in the set, it means we have found a duplicate character.
+In this case, we remove the character at the `start` from the set and move the `start` pointer to the right.
+We repeat this step until the duplicate character is removed from the set.
 
 [source,python]
 ----
@@ -181,25 +216,41 @@ We then update the length of the longest substring without repeating characters 
 max_length = max(max_length, end - start + 1)
 ----
 
-The function continues these steps until the `end` pointer reaches the end of the string. At the end, it returns the length of the longest substring without repeating characters and the substring itself.
+The function continues these steps until the `end` pointer reaches the end of the string.
+At the end, it returns the length of the longest substring without repeating characters and the substring itself.
 
-In summary, `method_1` is a Python function that uses a sliding window approach to find the longest substring without repeating characters in a given string. It differs from `method_0` in that it uses a set to keep track of unique characters instead of a dictionary to keep track of characters and their indices.
+In summary, `method_1` is a Python function that uses a sliding window approach to find the longest substring without repeating characters in a given string.
+It differs from `method_0` in that it uses a set to keep track of unique characters instead of a dictionary to keep track of characters and their indices.
 
 ===== Advantages
-1. **Efficiency**: The sliding window approach is efficient because it only needs to iterate through the string once. This results in a time complexity of O(n), where n is the length of the string.
-2. **Simplicity**: The code is relatively simple and easy to understand. It uses basic data structures (a set and a string) and control structures (a for loop and while loop).
+
+1. **Efficiency**: The sliding window approach is efficient because it only needs to iterate through the string once.
+This results in a time complexity of O(n), where n is the length of the string.
+2. **Simplicity**: The code is relatively simple and easy to understand.
+It uses basic data structures (a set and a string) and control structures (a for loop and while loop).
 3. **Scalability**: The sliding window approach can handle large inputs effectively because it does not require additional space as the size of the input increases.
 
 ===== Disadvantages
-1. **Memory Usage**: The code uses a set to keep track of the unique characters in the current substring. This can lead to high memory usage if the string contains a large number of unique characters.
-2. **Overhead**: The sliding window approach involves moving two pointers and updating a set in each iteration. This can add a significant overhead, especially for large inputs.
-3. **Limited Use Case**: This approach specifically solves the problem of finding the longest substring without repeating characters. It may not be applicable or efficient for other related problems, such as finding the longest substring with at most k distinct characters.
+
+1. **Memory Usage**: The code uses a set to keep track of the unique characters in the current substring.
+This can lead to high memory usage if the string contains a large number of unique characters.
+2. **Overhead**: The sliding window approach involves moving two pointers and updating a set in each iteration.
+This can add a significant overhead, especially for large inputs.
+3. **Limited Use Case**: This approach specifically solves the problem of finding the longest substring without repeating characters.
+It may not be applicable or efficient for other related problems, such as finding the longest substring with at most k distinct characters.
 
 ===== Complexity Analysis
+
 ====== Time
-The time complexity of the code is O(n), where n is the length of the string. This is because the code iterates over the string once. Each operation within the loop (checking if a character is in the set, updating the start pointer, and updating the set) can be done in constant time.
+
+The time complexity of the code is O(n), where n is the length of the string.
+This is because the code iterates over the string once.
+Each operation within the loop (checking if a character is in the set, updating the start pointer, and updating the set) can be done in constant time.
 
 ====== Space
-The space complexity of the code is O(min(n, m)), where n is the length of the string and m is the size of the character set. In the worst-case scenario, the set unique_chars could end up storing every unique character from the string. However, if the size of the character set is smaller than the length of the string (for example, if the string contains repeated sequences of a smaller set of characters), the space complexity would be O(m).
+
+The space complexity of the code is O(min(n, m)), where n is the length of the string and m is the size of the character set.
+In the worst-case scenario, the set unique_chars could end up storing every unique character from the string.
+However, if the size of the character set is smaller than the length of the string (for example, if the string contains repeated sequences of a smaller set of characters), the space complexity would be O(m).
 
 ==== Tests

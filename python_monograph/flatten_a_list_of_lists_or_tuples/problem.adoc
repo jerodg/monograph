@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You have a list of lists (or tuples) and you want to flatten it into a single list.
 
 === Use-Cases
+
 Flattening a list of lists (or tuples) into a single list is a common operation in various fields of computer science and data management.
 Here are some use cases:
 

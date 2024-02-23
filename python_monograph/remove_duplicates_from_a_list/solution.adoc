@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(ls: list) -> list:
@@ -28,7 +31,9 @@ def method_0(ls: list) -> list:
         result: (list)"""
     return list(set(ls))
 ----
+
 ==== Explanation
+
 The selected code is a Python function named `method_0`.
 This function is designed to remove duplicate elements from a list.
 The function takes a list as an argument and returns a list with the duplicates removed.
@@ -56,6 +61,7 @@ This function is a simple and efficient way to remove duplicates from a list whe
 It's a good example of how Python's built-in data structures and functions can be used to write concise and readable code.
 
 ===== Advantages
+
 1. **Simplicity**: The code is straightforward and easy to understand.
 It uses built-in Python data structures and functions, which makes it readable and concise.
 2. **Efficiency**: Converting a list to a set is a quick operation in Python.
@@ -90,6 +96,7 @@ def method_1(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_1`.
+
 This function is designed to remove duplicate elements from a list.
 The function takes a list as an argument and returns a list with the duplicates removed.
 
@@ -114,13 +121,11 @@ If the order of elements is important, a different method would need to be used.
 
 This function is a simple and efficient way to remove duplicates from a list when the order of elements is not important.
 It's a good example of how Python's built-in data structures and functions can be used to write concise and readable code.
-===== Advantages
-1. **Simplicity**: The code is straightforward and easy to understand.
+===== Advantages 1. **Simplicity**: The code is straightforward and easy to understand.
 It uses built-in Python data structures and functions, which makes it readable and concise.
 2. **Efficiency**: Converting a list to a set is a quick operation in Python.
 It's an efficient way to remove duplicates, especially for large lists.
-===== Disadvantages
-1. **Order is not preserved**: Sets in Python are unordered.
+===== Disadvantages 1. **Order is not preserved**: Sets in Python are unordered.
 This means that the order of elements in the original list is not preserved when duplicates are removed.
 If the order of elements is important, a different method would need to be used.
 2. **Not suitable for lists of unhashable items**: The method won't work for lists that contain unhashable items (like lists or dictionaries) because sets only allow hashable items.
@@ -150,6 +155,7 @@ def method_2(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_2`.
+
 This function is designed to remove duplicate elements from a list using a combination of a set and list comprehension.
 The function takes a list as an argument and returns a list with the duplicates removed.
 
@@ -181,12 +187,10 @@ If the order of elements is important, a different method would need to be used.
 
 This function is a more complex but efficient way to remove duplicates from a list when the order of elements is not important.
 It's a good example of how Python's built-in data structures and list comprehensions can be used to write efficient and concise code.
-===== Advantages
-1. **Efficiency**: This method is efficient, especially for large lists.
+===== Advantages 1. **Efficiency**: This method is efficient, especially for large lists.
 It uses a set to store unique elements, which allows for fast membership tests.
 2. **Readability**: The use of list comprehension makes the code more readable and concise.
-===== Disadvantages
-1. **Order is not preserved**: This method does not preserve the order of elements in the list.
+===== Disadvantages 1. **Order is not preserved**: This method does not preserve the order of elements in the list.
 The order of the elements in the `unique` set is not the same as the order of the elements in the original list.
 If the order of elements is important, a different method would need to be used.
 2. **Not suitable for lists of unhashable items**: The method won't work for lists that contain unhashable items (like lists or dictionaries) because sets only allow hashable items.
@@ -216,6 +220,7 @@ def method_3(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_3`.
+
 This function is designed to remove duplicate elements from a list while preserving the order of the original elements.
 The function takes a list as an argument and returns a new list with the duplicates removed.
 
@@ -242,13 +247,11 @@ This ensures that only the first occurrence of each element is included in the n
 
 This function is a simple and efficient way to remove duplicates from a list when the order of elements is important.
 It's a good example of how Python's built-in functions and list comprehensions can be used to write efficient and readable code.
-===== Advantages
-1. **Preserves Order**: This method preserves the order of elements in the list.
+===== Advantages 1. **Preserves Order**: This method preserves the order of elements in the list.
 It ensures that only the first occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 2. **Readability**: The use of list comprehension makes the code more readable and concise.
 It's a good example of how Python's built-in functions and list comprehensions can be used to write efficient and readable code.
-===== Disadvantages
-1. **Efficiency**: This method is not as efficient as the methods that use a set to remove duplicates.
+===== Disadvantages 1. **Efficiency**: This method is not as efficient as the methods that use a set to remove duplicates.
 It uses the slice notation `ls[:n]` to create a new list that includes all elements before the current element.
 This operation has a time complexity of O(n), which makes the overall time complexity of the function O(n^2).
 Therefore, this method can be slow for large lists.
@@ -284,6 +287,7 @@ def method_4(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_4`.
+
 This function is designed to remove duplicate elements from a list while preserving the order of the original elements.
 The function takes a list as an argument and returns a new list with the duplicates removed.
 
@@ -326,13 +330,11 @@ return unique
 
 This function is a simple and straightforward way to remove duplicates from a list in Python when the order of elements is important.
 It's a good example of how Python's built-in list methods and control flow structures can be used to write efficient and readable code.
-===== Advantages
-1. **Preserves Order**: This method preserves the order of elements in the list.
+===== Advantages 1. **Preserves Order**: This method preserves the order of elements in the list.
 It ensures that only the first occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 2. **Readability**: The use of a for-loop and list methods makes the code more readable and easier to understand.
 It's a good example of how Python's built-in list methods and control flow structures can be used to write efficient and readable code.
-===== Disadvantages
-1. **Efficiency**: This method is not as efficient as the methods that use a set or dictionary to remove duplicates.
+===== Disadvantages 1. **Efficiency**: This method is not as efficient as the methods that use a set or dictionary to remove duplicates.
 It uses the `in` operator to check if an item is in the `unique` list.
 This operation has a time complexity of O(n), and since it is done for each element in the list, the overall time complexity of the function is O(n^2).
 Therefore, this method can be slow for large lists.
@@ -363,6 +365,7 @@ def method_5(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_5`.
+
 This function is designed to remove duplicate elements from a list while preserving the order of the original elements.
 However, unlike some other methods, this function keeps the last occurrence of each element instead of the first.
 
@@ -387,13 +390,11 @@ If `a` is already in the slice of the list, it skips `a`.
 
 This ensures that only the last occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 Finally, the function returns the new list.
-===== Advantages
-1. **Preserves Order**: This method preserves the order of elements in the list.
+===== Advantages 1. **Preserves Order**: This method preserves the order of elements in the list.
 It ensures that only the last occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 2. **Readability**: The use of list comprehension makes the code more readable and concise.
 It's a good example of how Python's built-in functions and list comprehensions can be used to write efficient and readable code.
-===== Disadvantages
-1. **Efficiency**: This method is not as efficient as the methods that use a set or dictionary to remove duplicates.
+===== Disadvantages 1. **Efficiency**: This method is not as efficient as the methods that use a set or dictionary to remove duplicates.
 It uses the slice notation `ls[i + 1 :]` to create a new list that includes all elements after the current element.
 This operation has a time complexity of O(n), which makes the overall time complexity of the function O(n^2).
 Therefore, this method can be slow for large lists.
@@ -424,6 +425,7 @@ def method_6(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_6`.
+
 This function is designed to remove duplicate elements from a list while preserving the order of the original elements.
 It does this by utilizing Python's built-in `dict` and `list` functions.
 
@@ -458,15 +460,13 @@ return list(dict.fromkeys(ls))
 
 The `list()` function creates a list that includes the keys from the dictionary.
 Since the dictionary was created using `fromkeys(ls)`, the list includes the elements from the list `ls`, without duplicates and preserving the order of the original elements.
-===== Advantages
-1. **Preserves Order**: This method preserves the order of elements in the list.
+===== Advantages 1. **Preserves Order**: This method preserves the order of elements in the list.
 It ensures that only the first occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 2. **Efficiency**: This method is efficient, especially for large lists.
 It uses a dictionary to store unique elements, which allows for fast membership tests.
 The time complexity of creating a dictionary from a list is O(n), where n is the number of elements in the list.
 3. **Readability**: The use of Python's built-in `dict` and `list` functions makes the code more readable and easier to understand.
-===== Disadvantages
-1. **Memory Usage**: This method creates a new dictionary and a new list, which can lead to high memory usage, especially for large lists.
+===== Disadvantages 1. **Memory Usage**: This method creates a new dictionary and a new list, which can lead to high memory usage, especially for large lists.
 2. **Not suitable for lists of unhashable items**: The method won't work for lists that contain unhashable items (like lists or dictionaries) because dictionaries only allow hashable items.
 ===== Complexity Analysis ====== Time The time complexity of this method is O(n), where n is the number of elements in the list.
 This is because the dict.fromkeys(ls) function creates a dictionary where the keys are the elements from the list ls, and this operation has a time complexity of O(n).
@@ -493,6 +493,7 @@ def method_7(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_7`.
+
 This function is designed to remove duplicate elements from a list while preserving the order of the original elements.
 It does this by utilizing the `pandas` library, which is a powerful data manipulation library in Python.
 
@@ -533,15 +534,13 @@ return pd.Series(ls).drop_duplicates().tolist()
 
 The `tolist()` method returns the Series as a list.
 Since the Series was created from the list `ls` and duplicates were removed using `drop_duplicates()`, the returned list includes the elements from the list `ls`, without duplicates and preserving the order of the original elements.
-===== Advantages
-1. **Preserves Order**: This method preserves the order of elements in the list.
+===== Advantages 1. **Preserves Order**: This method preserves the order of elements in the list.
 It ensures that only the first occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 2. **Efficiency**: This method is efficient, especially for large lists.
 It uses the `pandas` library, which is optimized for performance and can handle large datasets efficiently.
 3. **Readability**: The use of `pandas` makes the code more readable and easier to understand.
 It's a good example of how Python's libraries can be used to write efficient and readable code.
-===== Disadvantages
-1. **Dependency on `pandas`**: This method relies on the `pandas` library.
+===== Disadvantages 1. **Dependency on `pandas`**: This method relies on the `pandas` library.
 While `pandas` is a powerful and commonly used library in Python, it might not be available in all environments.
 If the `pandas` library is not installed or cannot be used for some reason, this method won't work.
 2. **Memory Usage**: `pandas` can be memory-intensive, especially for large datasets.
@@ -574,6 +573,7 @@ def method_8(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_8`.
+
 This function is designed to remove duplicate elements from a list.
 It does this by utilizing the `numpy` library, which is a powerful library in Python for numerical computations.
 
@@ -604,13 +604,11 @@ return np.unique(ls).tolist()
 
 The `tolist()` method returns the array as a (nested) list.
 Since the array was created from the list `ls` and duplicates were removed using `unique()`, the returned list includes the unique elements from the list `ls`, sorted in ascending order.
-===== Advantages
-1. **Efficiency**: The `numpy.unique()` function is highly optimized and can be faster than equivalent Python code, especially for large arrays.
+===== Advantages 1. **Efficiency**: The `numpy.unique()` function is highly optimized and can be faster than equivalent Python code, especially for large arrays.
 2. **Simplicity**: The code is straightforward and easy to understand.
 It uses built-in `numpy` functions, which makes it readable and concise.
 3. **Order Preservation**: The `numpy.unique()` function returns the unique elements in sorted order, which can be an advantage if you need the output list to be sorted.
-===== Disadvantages
-1. **Dependency on `numpy`**: This method relies on the `numpy` library.
+===== Disadvantages 1. **Dependency on `numpy`**: This method relies on the `numpy` library.
 While `numpy` is a powerful and commonly used library in Python, it might not be available in all environments.
 If the `numpy` library is not installed or cannot be used for some reason, this method won't work.
 2. **Memory Usage**: `numpy` can be memory-intensive, especially for large arrays.
@@ -643,6 +641,7 @@ def method_9(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_9`.
+
 This function is designed to remove duplicate elements from a list while preserving the order of the original elements.
 It does this by utilizing the `itertools.groupby` function, which is a part of Python's built-in `itertools` module, a collection of tools for handling iterators.
 
@@ -676,14 +675,12 @@ Finally, the function uses a list comprehension to iterate over the groups, and 
 The `next()` function retrieves the next item from the iterator.
 Since `itertools.groupby` returns groups of consecutive elements in the iterable that have the same key, the first element of each group is a unique element from the list `ls`.
 Therefore, the list comprehension returns a list of unique elements from the list `ls`, preserving the order of the original elements.
-===== Advantages
-1. **Preserves Order**: This method preserves the order of elements in the list.
+===== Advantages 1. **Preserves Order**: This method preserves the order of elements in the list.
 It ensures that only the first occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 2. **Efficiency**: This method is efficient, especially for large lists.
 It uses the `itertools.groupby` function, which groups consecutive elements that have the same key, reducing the number of comparisons needed to identify duplicates.
 3. **Readability**: The use of Python's built-in `itertools` module and list comprehension makes the code more readable and easier to understand.
-===== Disadvantages
-1. **Sorting Requirement**: This method requires the list to be sorted before it can group by each element.
+===== Disadvantages 1. **Sorting Requirement**: This method requires the list to be sorted before it can group by each element.
 If the original order of elements is important and should be preserved, this method might not be suitable.
 2. **Memory Usage**: This method creates a new list to store the unique elements, which can lead to high memory usage, especially for large lists.
 3. **Dependency on `itertools`**: While `itertools` is a built-in Python module, its usage can make the code more complex and harder to understand for beginners or developers not familiar with it.
@@ -713,6 +710,7 @@ def method_10(ls: list) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_10`.
+
 This function is designed to remove duplicate elements from a list while preserving the order of the original elements.
 It does this by utilizing the `OrderedDict` class from Python's built-in `collections` module.
 
@@ -746,16 +744,14 @@ return list(OrderedDict.fromkeys(ls))
 The `list()` function is a built-in Python function that creates a list from an iterable.
 In this case, it creates a list from the keys of the `OrderedDict`, which are the unique elements from the list `ls` in their original order.
 Therefore, the function returns a list of unique elements from the list `ls`, preserving the order of the original elements.
-===== Advantages
-1. **Preserves Order**: This method preserves the order of elements in the list.
+===== Advantages 1. **Preserves Order**: This method preserves the order of elements in the list.
 It ensures that only the first occurrence of each element is included in the new list, effectively removing duplicates while preserving the order of the original elements.
 2. **Efficiency**: This method is efficient, especially for large lists.
 It uses the `OrderedDict` class, which is implemented as a doubly-linked list.
 This allows it to maintain the insertion order of the keys, making it faster than regular dictionaries for certain operations.
 3. **Readability**: The use of Python's built-in `OrderedDict` class makes the code more readable and easier to understand.
 It's a good example of how Python's built-in classes can be used to write efficient and readable code.
-===== Disadvantages
-1. **Memory Usage**: This method creates a new `OrderedDict` and a new list, which can lead to high memory usage, especially for large lists.
+===== Disadvantages 1. **Memory Usage**: This method creates a new `OrderedDict` and a new list, which can lead to high memory usage, especially for large lists.
 If memory usage is a concern, other methods might be more suitable.
 2. **Dependency on `collections`**: While `collections` is a built-in Python module, its usage can make the code more complex and harder to understand for beginners or developers not familiar with it.
 3. **Overhead**: The `OrderedDict` class has more overhead than regular dictionaries due to the additional linked list that is used to maintain the order of the keys.

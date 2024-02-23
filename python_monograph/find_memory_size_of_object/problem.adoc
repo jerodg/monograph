@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to find the memory size of an object in Python.
 
 === Use-Cases
+
 Finding the memory size of an object in Python is a common task in various fields of computer science and data management.
 Here are some use cases:
 

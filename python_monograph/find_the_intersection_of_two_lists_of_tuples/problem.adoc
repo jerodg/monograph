@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to find the intersection of two lists of tuples.
 
 === Use-Cases
+
 Finding the intersection of two lists of tuples is a common task in various fields of computer science and data management.
 Here are some use cases:
 

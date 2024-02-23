@@ -12,6 +12,7 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 The built-in sort doesn't take into account numbers with more than one digit.
 
@@ -30,6 +31,7 @@ For instance, you are looking for something like this:
 This way elm0 comes before elm10.
 
 === Use-Cases
+
 Naturally sorting a list is a common operation in various fields of computer science and data management.
 Here are some use cases:
 

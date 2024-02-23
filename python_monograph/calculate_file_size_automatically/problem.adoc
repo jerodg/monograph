@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to get the human-readable format of file size given the most appropriate unit.
 
 === Use-Cases
+
 Calculating the most appropriate size notation of an object is a common task in various fields of computer science and data management.
 Here are some use cases:
 

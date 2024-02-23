@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def convert_bytes(size, notation: str = "decimal") -> str:
@@ -48,7 +51,9 @@ def convert_bytes(size, notation: str = "decimal") -> str:
 
     return f"{size:3.2f} {suffixes[index]}"
 ----
+
 ==== Explanation
+
 The unit names for binary notation are as follows:
 B: Byte KiB: Kibibyte MiB: Mebibyte GiB: Gibibyte TiB: Tebibyte PiB: Pebibyte EiB: Exbibyte ZiB: Zebibyte YiB: Yobibyte Each unit represents a power of 1024 (which is 2^10), starting from Byte (B) which is 2^0.
 
@@ -95,6 +100,7 @@ return f"{size:3.2f} {suffixes[index]}"
 In summary, the `convert_bytes` function converts a size in bytes to the largest possible unit in either decimal or binary notation, depending on the `notation` argument.
 
 ===== Advantages
+
 1. **Flexibility**: The method can convert bytes to either binary or decimal notation.
 This is achieved by passing the `notation` argument to the function, which can be either 'binary' or 'decimal'.
 2. **Simplicity**: The code is straightforward and easy to understand.

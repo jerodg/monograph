@@ -18,6 +18,7 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
+
 class Node:
     """
     A class to represent a node in a doubly linked list.
@@ -52,6 +53,7 @@ class Node:
         self.data = data
         self.next = None
         self.prev = None
+
 
 class DoublyLinkedList:
     """
@@ -237,9 +239,8 @@ class DoublyLinkedList:
 
         temp = self.head
         while temp:
-            print(temp.data, end=' ')
+            print(temp.data, end=" ")
             temp = temp.next
-
 
 
 if __name__ == "__main__":

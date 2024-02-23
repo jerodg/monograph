@@ -12,6 +12,7 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to find the equilibrium index of an array.
 Equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes.
@@ -33,6 +34,7 @@ Steps to solve the problem:
 {empty}2. return -1 in case of no point.
 
 === Use-Cases
+
 Finding the equilibrium index of an array is a common task in various fields of computer science and data analysis.
 Here are some use cases:
 
@@ -73,5 +75,7 @@ A[0] + A[1] + A[2] = A[4] + A[5] + A[6]
 *Input*: A[] = \{1, 2, 3}  +
 *Output*: -1
 ----
+
 == Follow-up
+
 == Related Topics

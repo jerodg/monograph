@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to find out if two circles intersect, overlap, or encompass eachother.
 
 === Use-Cases
+
 Checking if two circles intersect, overlap, or encompass each other is a common task in various fields of computer science, mathematics, and physics.
 Here are some use cases:
 

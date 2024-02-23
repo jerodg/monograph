@@ -51,15 +51,23 @@ image::logo.png[Logo,align=center]
 {docs-link}[Explore the docs »]
 
 == About
+
 image::screenshot.png[Logo,align=center]
 
 === Built With
+
 == Getting Started
+
 === Prerequisites
+
 === Installation
+
 == Usage
+
 == Roadmap
+
 == Contributing
+
 Contributions are what make the open source community such an amazing place to be, learn, inspire, and create.
 Any contributions you make are *greatly appreciated*.
 

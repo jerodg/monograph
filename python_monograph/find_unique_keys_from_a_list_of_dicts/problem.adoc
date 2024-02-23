@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to find all the unique keys from a list of dicts.
 
 === Use-Cases
+
 Finding all the unique keys from a list of dictionaries is a common task in various fields of computer science and data management.
 Here are some use cases:
 

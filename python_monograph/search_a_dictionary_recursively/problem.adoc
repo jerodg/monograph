@@ -12,8 +12,10 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 === Use-Cases
+
 Searching a dictionary is a common operation in Python and can be used in a variety of scenarios:
 
 1. **Configuration Lookup**: Dictionaries are often used to store configuration settings for an application.

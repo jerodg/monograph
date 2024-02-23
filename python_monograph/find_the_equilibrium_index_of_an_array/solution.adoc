@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(arr: list) -> int:
@@ -54,7 +57,9 @@ def method_0(arr: list) -> int:
     # If no equilibrium index is found, return -1
     return -1
 ----
+
 ==== Explanation
+
 The provided Python code defines a function named `method_0` that calculates the equilibrium index of an array.
 The equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes.
 
@@ -116,6 +121,7 @@ If the sums are equal, it returns the index.
 If no equilibrium index is found, it returns -1.
 
 ===== Advantages
+
 - Simplicity: The code is straightforward and easy to understand.
 It doesn't require any advanced data structures or algorithms.
 - No additional space: The code doesn't use any extra space, as it doesn't create any new data structures.
@@ -163,6 +169,7 @@ def method_1(arr: list) -> int:
 ----
 
 ==== Explanation The provided Python code defines a function named `method_1` that calculates the equilibrium index of an array in an optimized way.
+
 The equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes.
 
 The function `method_1` takes a list `arr` as an argument.
@@ -209,15 +216,13 @@ return -1
 This function uses an optimized approach to find the equilibrium index by calculating the sum of elements on the left and right in a single pass.
 If the sums are equal, it returns the index.
 If no equilibrium index is found, it returns -1.
-===== Advantages
-- Efficiency: The code is more efficient than the brute force approach as it calculates the sum of elements on the left and right in a single pass.
+===== Advantages - Efficiency: The code is more efficient than the brute force approach as it calculates the sum of elements on the left and right in a single pass.
 This reduces the time complexity to O(n).
 - Simplicity: The code is straightforward and easy to understand.
 It doesn't require any advanced data structures or algorithms.
 - No additional space: The code doesn't use any extra space, as it doesn't create any new data structures.
 The space complexity is O(1).
-===== Disadvantages
-- Single pass: While the single pass approach is more efficient, it may not be suitable for all scenarios.
+===== Disadvantages - Single pass: While the single pass approach is more efficient, it may not be suitable for all scenarios.
 For example, if the array is being modified concurrently by another thread, a single pass approach may lead to incorrect results.
 - No error checking: The code doesn't check if the input is a valid list.
 If the input is not a list or is a list with non-numeric elements, the code will throw an error.

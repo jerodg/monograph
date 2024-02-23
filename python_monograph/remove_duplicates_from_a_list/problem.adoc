@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to remove duplicates from a list.
 
 === Use-Cases
+
 Removing duplicates from a list is a common operation in various fields of computer science and data management.
 Here are some use cases:
 

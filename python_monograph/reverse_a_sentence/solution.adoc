@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(sentence: str) -> str:
@@ -28,7 +31,9 @@ def method_0(sentence: str) -> str:
         result: (str)"""
     return "".join(reversed(sentence))
 ----
+
 ==== Explanation
+
 The selected Python code is a function named `method_0`.
 This function is designed to reverse a sentence, which is passed to it as an argument.
 The argument `sentence` is expected to be a string.
@@ -58,6 +63,7 @@ The `join()` function is called on an empty string (`""`), which means that the 
 In summary, `method_0` takes a string, reverses the order of its characters, and returns the reversed string.
 
 ===== Advantages
+
 - Simplicity: The code is straightforward and easy to understand.
 It uses built-in Python functions, which makes it efficient and reliable.
 - Universality: This method works for any string, regardless of its content or length.
@@ -93,6 +99,7 @@ def method_1(sentence: str) -> str:
 ----
 
 ==== Explanation The selected Python code is a function named `method_1`.
+
 This function is designed to reverse the letters of each word in a sentence, while preserving the order of the words.
 The sentence is passed to the function as an argument, and the function returns the modified sentence.
 
@@ -109,13 +116,11 @@ re.sub(r"(\w+)", lambda x: x.group()[::-1], sentence)
 The lambda function `lambda x: x.group()[::-1]` takes a match object `x`, gets the matched word with `x.group()`, and reverses it with Python's slicing syntax `[::-1]`.
 
 In summary, `method_1` takes a sentence, reverses the letters of each word while preserving the order of the words, and returns the modified sentence.
-===== Advantages
-- Word Order Preservation: This method reverses the letters of each word while keeping the words in the same order.
+===== Advantages - Word Order Preservation: This method reverses the letters of each word while keeping the words in the same order.
 This can be useful in cases where you want to preserve the order of the words while reversing the characters within each word.
 - Flexibility: Regular expressions are very flexible and can be adapted to match complex patterns.
 This can be useful if you need to modify the function to handle more complex cases in the future.
-===== Disadvantages
-- Complexity: Regular expressions can be difficult to understand and debug, especially for complex patterns.
+===== Disadvantages - Complexity: Regular expressions can be difficult to understand and debug, especially for complex patterns.
 This can make the code harder to maintain.
 - Performance: Regular expressions can be slower than other methods, especially for large strings.
 This is because the regular expression engine needs to interpret the pattern and apply it to the string, which can take some time.
@@ -143,6 +148,7 @@ def method_2(sentence: str) -> str:
 ----
 
 ==== Explanation The selected code is a Python function named `method_2`.
+
 This function takes a single argument, `sentence`, which is expected to be a string.
 The purpose of this function is to reverse the order of characters in the provided string.
 
@@ -165,13 +171,11 @@ The third argument, `-1`, is the step, which means that the slicing will go back
 
 The reversed string is then returned as the result of the function.
 This function will work with any string input, including empty strings and strings with special characters.
-===== Advantages
-- **Simplicity**: The code is straightforward and easy to understand.
+===== Advantages - **Simplicity**: The code is straightforward and easy to understand.
 It uses Python's built-in `slice` function, which makes it efficient and reliable.
 - **Performance**: The slicing operation in Python is highly optimized and faster compared to other methods like using a loop to reverse a string.
 - **Universality**: This method works for any string, regardless of its content or length.
-===== Disadvantages
-- **Word Order**: This method reverses the entire sentence, including the order of the words.
+===== Disadvantages - **Word Order**: This method reverses the entire sentence, including the order of the words.
 This might not be the desired outcome in cases where you want to preserve the order of the words while reversing the characters within each word.
 - **Non-In-Place**: The slicing operation does not reverse the string in-place.
 Instead, it creates a new string that is the reverse of the original.
@@ -198,6 +202,7 @@ def method_3(sentence: str) -> str:
 ----
 
 ==== Explanation The selected code is a Python function named `method_3`.
+
 This function takes a single argument, `sentence`, which is expected to be a string.
 The purpose of this function is to reverse the order of characters in the provided string.
 
@@ -220,13 +225,11 @@ The third argument, `-1`, is the step, which means that the slicing will go back
 
 The reversed string is then returned as the result of the function.
 This function will work with any string input, including empty strings and strings with special characters.
-===== Advantages
-- **Simplicity**: The code is straightforward and easy to understand.
+===== Advantages - **Simplicity**: The code is straightforward and easy to understand.
 It uses Python's built-in slicing syntax, which makes it efficient and reliable.
 - **Performance**: The slicing operation in Python is highly optimized and faster compared to other methods like using a loop to reverse a string.
 - **Universality**: This method works for any string, regardless of its content or length.
-===== Disadvantages
-- **Word Order**: This method reverses the entire sentence, including the order of the words.
+===== Disadvantages - **Word Order**: This method reverses the entire sentence, including the order of the words.
 This might not be the desired outcome in cases where you want to preserve the order of the words while reversing the characters within each word.
 - **Non-In-Place**: The slicing operation does not reverse the string in-place.
 Instead, it creates a new string that is the reverse of the original.
@@ -260,6 +263,7 @@ def method_4(sentence: str) -> str:
 ----
 
 ==== Explanation The selected code is a Python function named `method_4`.
+
 This function takes a single argument, `sentence`, which is expected to be a string.
 The purpose of this function is to reverse the order of the words in the provided string.
 
@@ -304,11 +308,9 @@ return " ".join(res[::-1])
 
 This function will work with any string input, including empty strings and strings with special characters.
 It will reverse the order of the words, but not the characters within each word.
-===== Advantages
-- **Word Order**: This method reverses the order of the words in the sentence, which can be useful in certain contexts where you want to change the order of the words but not the characters within each word.
+===== Advantages - **Word Order**: This method reverses the order of the words in the sentence, which can be useful in certain contexts where you want to change the order of the words but not the characters within each word.
 - **Universality**: This method works for any string, regardless of its content or length.
-===== Disadvantages
-- **Redundancy**: The code creates multiple lists (`s`, `l`, and `res`) which can be avoided.
+===== Disadvantages - **Redundancy**: The code creates multiple lists (`s`, `l`, and `res`) which can be avoided.
 This redundancy can make the code less efficient and harder to read.
 - **Non-In-Place**: The method does not reverse the order of words in-place.
 Instead, it creates a new string that is the reverse of the original.
@@ -340,6 +342,7 @@ def method_5(sentence: str) -> str:
 ----
 
 ==== Explanation The selected code is a Python function named `method_5`.
+
 This function takes a single argument, `sentence`, which is expected to be a string.
 The purpose of this function is to reverse the order of the words in the provided string.
 
@@ -376,13 +379,11 @@ return reversed_sentence
 
 This function will work with any string input, including empty strings and strings with special characters.
 It will reverse the order of the words, but not the characters within each word.
-===== Advantages
-- **Simplicity**: The code is straightforward and easy to understand.
+===== Advantages - **Simplicity**: The code is straightforward and easy to understand.
 It uses Python's built-in functions and slicing syntax, which makes it efficient and reliable.
 - **Performance**: The slicing operation in Python is highly optimized and faster compared to other methods like using a loop to reverse a string.
 - **Universality**: This method works for any string, regardless of its content or length.
-===== Disadvantages
-- **Non-In-Place**: The method does not reverse the order of words in-place.
+===== Disadvantages - **Non-In-Place**: The method does not reverse the order of words in-place.
 Instead, it creates a new string that is the reverse of the original.
 This could potentially use a lot of memory for very large strings.
 - **Single Use**: This method is specifically designed to reverse the order of words in a string.
@@ -409,6 +410,7 @@ def method_6(sentence: str) -> str:
 ----
 
 ==== Explanation The selected code is a Python function named `method_6`.
+
 This function takes a single argument, `sentence`, which is expected to be a string.
 The purpose of this function is to reverse the order of the words in the provided string.
 
@@ -450,13 +452,11 @@ This reversed string is then returned as the result of the function.
 
 This function will work with any string input, including empty strings and strings with special characters.
 It will reverse the order of the words, but not the characters within each word.
-===== Advantages
-- **Simplicity**: The code is straightforward and easy to understand.
+===== Advantages - **Simplicity**: The code is straightforward and easy to understand.
 It uses Python's built-in functions and slicing syntax, which makes it efficient and reliable.
 - **Performance**: The slicing operation in Python is highly optimized and faster compared to other methods like using a loop to reverse a string.
 - **Universality**: This method works for any string, regardless of its content or length.
-===== Disadvantages
-- **Non-In-Place**: The method does not reverse the order of words in-place.
+===== Disadvantages - **Non-In-Place**: The method does not reverse the order of words in-place.
 Instead, it creates a new string that is the reverse of the original.
 This could potentially use a lot of memory for very large strings.
 - **Single Use**: This method is specifically designed to reverse the order of words in a string.
@@ -483,6 +483,7 @@ def method_7(sentence: str) -> str:
 ----
 
 ==== Explanation The selected code is a Python function named `method_7`.
+
 This function takes a single argument, `sentence`, which is expected to be a string.
 The purpose of this function is to reverse the order of the words in the provided string.
 
@@ -514,12 +515,10 @@ When used with `reduce()`, this effectively reverses the order of the words in t
 The result of the `reduce()` function is then returned as the result of the `method_7` function.
 This function will work with any string input, including empty strings and strings with special characters.
 It will reverse the order of the words, but not the characters within each word.
-===== Advantages
-- **Functional Programming**: The use of the `reduce()` function is a functional programming approach, which can lead to cleaner, more readable code.
+===== Advantages - **Functional Programming**: The use of the `reduce()` function is a functional programming approach, which can lead to cleaner, more readable code.
 - **Efficiency**: The `reduce()` function can be more efficient than using a loop to reverse the words in a string, especially for large strings.
 - **Universality**: This method works for any string, regardless of its content or length.
-===== Disadvantages
-- **Readability**: The use of the `reduce()` function and a lambda function can make the code harder to understand for developers who are not familiar with functional programming concepts.
+===== Disadvantages - **Readability**: The use of the `reduce()` function and a lambda function can make the code harder to understand for developers who are not familiar with functional programming concepts.
 - **Non-In-Place**: The method does not reverse the order of words in-place.
 Instead, it creates a new string that is the reverse of the original.
 This could potentially use a lot of memory for very large strings.

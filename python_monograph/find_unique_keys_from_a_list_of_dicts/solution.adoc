@@ -12,9 +12,12 @@
 :keywords: solution, python
 
 == Solutions
+
 [.lead]
 === Method 0:
+
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(arr: List[dict]) -> list:
@@ -27,7 +30,9 @@ def method_0(arr: List[dict]) -> list:
             (list)"""
     return list(set(chain.from_iterable(sub.keys() for sub in arr)))
 ----
+
 ==== Explanation
+
 The code above is a Python function named `method_0` that takes a list of dictionaries (`arr`) as an argument and returns a list of unique keys from all dictionaries in the list.
 
 The function uses the `chain` function from the `itertools` module to flatten the list of keys from all dictionaries.
@@ -50,6 +55,7 @@ The function is efficient in finding all unique keys in a list of dictionaries.
 However, it creates several intermediate data structures (a generator, a set, and a list), which can consume more memory when dealing with large inputs.
 
 ===== Advantages
+
 - The use of `itertools.chain` makes the code concise and easy to understand.
 It allows the function to handle the keys from all dictionaries in a single line of code.
 - The function effectively finds all unique keys in a list of dictionaries.
@@ -83,6 +89,7 @@ def method_1(arr: List[dict]) -> list:
 ----
 
 ==== Explanation The code in question is a Python function named `method_0`.
+
 This function is designed to take a list of dictionaries as an input and return a list of unique keys from all the dictionaries in the list.
 
 The function begins by using the `chain` function from Python's `itertools` module.
@@ -103,13 +110,11 @@ This is because each key is processed once by the `chain` function and the `set`
 The space complexity is also O(n), due to the storage of all keys in a set and a list.
 
 While the function is efficient in finding all unique keys in a list of dictionaries, it does create several intermediate data structures (a generator, a set, and a list), which can consume more memory when dealing with large inputs.
-===== Advantages
-- The use of `itertools.chain` makes the code concise and easy to understand.
+===== Advantages - The use of `itertools.chain` makes the code concise and easy to understand.
 It allows the function to handle the keys from all dictionaries in a single line of code.
 - The function effectively finds all unique keys in a list of dictionaries.
 By converting the list of keys to a set, it automatically removes any duplicate keys.
-===== Disadvantages
-- The function creates several intermediate data structures (a generator, a set, and a list), which can consume more memory when dealing with large inputs.
+===== Disadvantages - The function creates several intermediate data structures (a generator, a set, and a list), which can consume more memory when dealing with large inputs.
 This could potentially lead to performance issues if the list of dictionaries is very large.
 - The function does not preserve the order of the keys.
 If the order of keys is important, this method would not be suitable.
@@ -142,6 +147,7 @@ def method_2(arr: List[dict]) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_2`.
+
 This function is designed to extract all unique keys from a list of dictionaries.
 
 The function starts by initializing an empty list `new_list`.
@@ -162,13 +168,11 @@ This is done in the line `list(set(new_list))`.
 In terms of complexity, the function has a time complexity of O(n), where n is the total number of keys in all dictionaries.
 This is because each key is processed once by the loop and the `set` function.
 The space complexity is also O(n), due to the storage of all keys in `new_list` and a set.
-===== Advantages
-- The function is straightforward and easy to understand.
+===== Advantages - The function is straightforward and easy to understand.
 It uses basic Python constructs like for loops and list methods, which makes it accessible to developers with a basic understanding of Python.
 - The function effectively finds all unique keys in a list of dictionaries.
 By extending a list with the keys from each dictionary and then converting this list to a set, it automatically removes any duplicate keys.
-===== Disadvantages
-- The function creates several intermediate data structures (a list for each dictionary's keys, a combined list of all keys, and a set), which can consume more memory when dealing with large inputs.
+===== Disadvantages - The function creates several intermediate data structures (a list for each dictionary's keys, a combined list of all keys, and a set), which can consume more memory when dealing with large inputs.
 This could potentially lead to performance issues if the list of dictionaries is very large.
 - The function does not preserve the order of the keys.
 If the order of keys is important, this method would not be suitable.
@@ -200,6 +204,7 @@ def method_3(arr: List[dict]) -> list:
 ----
 
 ==== Explanation The selected code is a Python function named `method_3`.
+
 This function is designed to extract all unique keys from a list of dictionaries.
 
 The function uses the `reduce` function from the `functools` module. `reduce` applies a function of two arguments cumulatively to the items of an iterable, from left to right, so as to reduce the iterable to a single output.
@@ -222,14 +227,12 @@ This is done in the line `list(...)`.
 In terms of complexity, the function has a time complexity of O(n), where n is the total number of keys in all dictionaries.
 This is because each key is processed once by the `reduce` function and the `keys()` method.
 The space complexity is also O(n), due to the storage of all keys in a single dictionary.
-===== Advantages
-- The function is concise and efficient.
+===== Advantages - The function is concise and efficient.
 It uses the `reduce` function to merge all dictionaries into one, which simplifies the process of finding unique keys.
 - The function effectively finds all unique keys in a list of dictionaries.
 By merging all dictionaries into one and then extracting the keys, it automatically removes any duplicate keys.
 - The use of `reduce` and a lambda function makes the code more Pythonic and easier to understand for developers familiar with these concepts.
-===== Disadvantages
-- The function creates an intermediate dictionary that contains all keys and values from all dictionaries in the input list.
+===== Disadvantages - The function creates an intermediate dictionary that contains all keys and values from all dictionaries in the input list.
 This could potentially consume a lot of memory when dealing with large inputs.
 - The function does not preserve the order of the keys.
 If the order of keys is important, this method would not be suitable.

@@ -12,12 +12,15 @@
 :keywords: solution, python, sum, list, array, hash, hashtable, dictionary
 
 == Solutions
+
 [.lead]
 === Method 0: Brute Force
+
 The brute force approach is an inelegant approach that gets the job done.
 Loop through each element i and find if there is another value that equals to target−i.
 
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_0(nums: list[int], target: int) -> list[int]:
@@ -35,9 +38,13 @@ def method_0(nums: list[int], target: int) -> list[int]:
             if n + m == target:
                 return [i, j + i + 1]
 ----
+
 ==== Explanation
+
 ==== Complexity Analysis
+
 ===== Time
+
 The time complexity of method_0 is O(n^2^).
 This is because there are two nested loops in the function.
 The outer loop runs n times, where n is the length of the input list nums.
@@ -63,6 +70,7 @@ Then, in the second iteration, we check if each element's complement (target−n
 If it does exist, we return current element's index and its complement's index.
 Beware that the complement must not be nums[i] itself!
 ==== Implementation
+
 [source,python,linenums]
 ----
 def method_1(nums: list[int], target: int) -> list[int]:
@@ -83,7 +91,9 @@ def method_1(nums: list[int], target: int) -> list[int]:
         if target - n in d and i != d[target - n]:
             return [i, d[target - n]]
 ----
+
 ==== Explanation
+
 The provided code is a Python function named `method_1` that solves the Two Sum problem.
 The Two Sum problem is a common coding problem where given an array of integers `nums` and an integer `target`, you need to find two numbers such that they add up to `target`.
 
@@ -129,6 +139,7 @@ In the worst-case scenario, every element from nums is stored in the dictionary,
 While we are iterating and inserting elements into the hash table, we also look back to check if the current element's complement already exists in the hash table.
 If it exists, we have found a solution and return the indices immediately.
 ==== Implementation
+
 [source,python,linenums]
 def method_2(nums: list[int], target: int) -> list[int]:
     """One-pass Hash Table

@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to merge one or more dictionaries.
 
 === Use-Cases
+
 Merging one or more dictionaries is a common task in various fields of computer science and data management.
 Here are some use cases:
 

@@ -45,6 +45,7 @@ def method_0(dictionary, target_key):
 
     return None
 
+
 def method_1(dictionary, target_key) -> Generator[Any]:
     """This function searches for a target key in a dictionary recursively using a generator.
     It iterates over the dictionary's items. If the key matches the target key, it yields the value.

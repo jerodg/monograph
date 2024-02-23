@@ -20,6 +20,7 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 import math
 from typing import Union
 
+
 # todo: need tests
 # todo: graph this
 class Circle(object):

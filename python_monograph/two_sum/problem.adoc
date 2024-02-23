@@ -12,10 +12,12 @@
 :keywords: problem, python, sum, list, array, hash, hashtable, dictionary
 
 == Problem
+
 [.lead]
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 
 === Constraints
+
 - 2 <= nums.length <= 104
 - -109 <= nums[i] <= 109
 - -109 <= target <= 109

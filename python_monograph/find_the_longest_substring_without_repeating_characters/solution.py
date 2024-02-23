@@ -18,6 +18,7 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
+
 def method_0(s: str) -> tuple[int, str]:
     """This function finds the longest substring without repeating characters in a given string.
 
@@ -40,7 +41,8 @@ def method_0(s: str) -> tuple[int, str]:
 
         used_chars[s[end]] = end
 
-    return max_length, s[start:start + max_length]
+    return max_length, s[start : start + max_length]
+
 
 def method_1(s: str) -> tuple[int, str]:
     """This function finds the longest substring without repeating characters in a given string using a different approach.
@@ -63,7 +65,7 @@ def method_1(s: str) -> tuple[int, str]:
         unique_chars.add(s[end])
         max_length = max(max_length, end - start + 1)
 
-    return max_length, s[start:start + max_length]
+    return max_length, s[start : start + max_length]
 
 
 if __name__ == "__main__":
