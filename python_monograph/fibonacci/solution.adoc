@@ -96,7 +96,7 @@ Each element in the list uses a constant amount of space, so the total space use
 
 [source,python,linenums]
 ----
-include::./tests/test_method_00.py[]
+include::./tests/test_solution_00.py[]
 ----
 
 === Method 01
@@ -191,7 +191,7 @@ The maximum depth of the stack will be `n`, hence the space complexity is O(n).
 
 [source,python,linenums]
 ----
-include::./tests/test_method_01.py[]
+include::./tests/test_solution_01.py[]
 ----
 
 === Method 02
@@ -279,5 +279,5 @@ The function does not use recursion or any data structures that would increase t
 
 [source,python,linenums]
 ----
-include::./tests/test_method_02.py[]
+include::./tests/test_solution_02.py[]
 ----

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Test Calculate File Size Automatically
+"""Python Monograph: Test Calculate Data Size Automatically Method_00
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -19,7 +19,7 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 import pytest
 
-from python_monograph.calculate_file_size_automatically.solution import convert_bytes
+from python_monograph.calculate_data_size_automatically.solution_00 import convert_bytes
 
 
 def test_convert_bytes_decimal_notation():

@@ -15,11 +15,11 @@
 == Problem
 
 [.lead]
-=== Constraints
+=== Constraint(s)
 
-=== Example
+=== Example(s)
 
-== Use-Cases
+== Use-Case(s)
 
 == Common Mistakes
 

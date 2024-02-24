@@ -33,7 +33,7 @@ Given stem:[n], return the stem:[n]^th^ number in the sequence.
 
 stem:[0 <= n <= 30]
 
-== Example
+=== Example(s)
 
 The Fibonacci sequence to stem:[6] is stem:[fs = [0, 1, 1, 2, 3, 5, 8]].
 With zero-based indexing, stem:[fs[5]] = 5.
