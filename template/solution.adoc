@@ -12,28 +12,24 @@
 :imagesdir:./img
 :keywords: solution, python
 
-== Solutions
+== Solution(s)
 
 [.lead]
-=== Method 0:
+=== Method 0
 
 ==== Implementation
 
 [source,python,linenums]
 ----
-
+include::./[]
 ----
 
 ==== Explanation
 
-===== Advantages
+==== Advantages
 
-===== Disadvantages
+==== Disadvantages
 
-===== Complexity Analysis
-
-====== Time
-
-====== Space
+==== Complexity Analysis
 
 ==== Tests

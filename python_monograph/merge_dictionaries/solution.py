@@ -24,7 +24,8 @@ from itertools import chain
 def method_0(x: dict, y: dict) -> dict:
     """Merge two dictionaries by creating a copy of the first dictionary and updating it with the second one.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     The original dictionaries are not modified.
 
@@ -43,7 +44,8 @@ def method_0(x: dict, y: dict) -> dict:
 def method_1(x: dict, y: dict) -> dict:
     """Merge two dictionaries by adding items from both.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     The original dictionaries are not modified.
 
@@ -60,7 +62,8 @@ def method_1(x: dict, y: dict) -> dict:
 def method_2(x: dict, y: dict) -> dict:
     """Merge two dictionaries using the unpacking operator.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     This method requires Python 3.5 or later.
 
@@ -77,7 +80,8 @@ def method_2(x: dict, y: dict) -> dict:
 def method_3(x: dict, y: dict) -> dict:
     """Merge two dictionaries using ChainMap from collections.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the first dictionary is used.
     The original dictionaries are not modified.
 
@@ -94,7 +98,8 @@ def method_3(x: dict, y: dict) -> dict:
 def method_4(x: dict, y: dict) -> dict:
     """Merge two dictionaries using itertools.chain.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     The original dictionaries are not modified.
 
@@ -111,7 +116,8 @@ def method_4(x: dict, y: dict) -> dict:
 def method_5(x: dict, y: dict) -> dict:
     """Merge two dictionaries using the union operator.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     This method requires Python 3.9 or later.
 
@@ -128,7 +134,8 @@ def method_5(x: dict, y: dict) -> dict:
 def method_6(x: dict, y: dict) -> dict:
     """Merge two dictionaries using a generator expression and the next function.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     The original dictionaries are not modified.
 
@@ -145,7 +152,8 @@ def method_6(x: dict, y: dict) -> dict:
 def method_7(x: dict, y: dict) -> dict:
     """Merge two dictionaries using a lambda function and the update method.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     The original dictionaries are not modified.
 
@@ -162,7 +170,8 @@ def method_7(x: dict, y: dict) -> dict:
 def method_8(x: dict, y: dict) -> dict:
     """Merge two dictionaries using dictionary comprehension.
 
-    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both dictionaries.
+    This function takes two dictionaries as input and returns a new dictionary that contains all the keys and values from both
+    dictionaries.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     The original dictionaries are not modified.
 
@@ -179,7 +188,8 @@ def method_8(x: dict, y: dict) -> dict:
 def method_9(x: dict, y: dict) -> dict:
     """Merge two dictionaries using the update method.
 
-    This function takes two dictionaries as input and updates the first dictionary with the keys and values from the second dictionary.
+    This function takes two dictionaries as input and updates the first dictionary with the keys and values from the second
+    dictionary.
     If a key is present in both dictionaries, the value from the second dictionary is used.
     The original first dictionary is modified.
 

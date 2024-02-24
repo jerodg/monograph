@@ -192,6 +192,7 @@ def method_2(n: int) -> int:
 ----
 
 ==== Explanation The selected code is a Python function named `method_2`.
+
 This function calculates the sum of all multiples of 3 or 5 that are less than 1000, using a mathematical approach.
 
 The function `method_2` contains a nested function `sum_divisible_by`.

@@ -49,14 +49,16 @@ def method_0(dictionary, target_key):
 def method_1(dictionary, target_key) -> Generator[Any]:
     """This function searches for a target key in a dictionary recursively using a generator.
     It iterates over the dictionary's items. If the key matches the target key, it yields the value.
-    If the value is a dictionary, it yields from a recursive call to itself with the value (the nested dictionary) and the target key as arguments.
+    If the value is a dictionary, it yields from a recursive call to itself with the value (the nested dictionary) and the target
+    key as arguments.
 
     Parameters:
     dictionary (dict): The dictionary to be searched.
     target_key (Any): The key to be searched for in the dictionary.
 
     Returns:
-    Generator[Any, None, None]: A generator that yields the values of all occurrences of the target key. If the key is not found, it does not yield anything.
+    Generator[Any, None, None]: A generator that yields the values of all occurrences of the target key. If the key is not found,
+    it does not yield anything.
     """
     for key, value in dictionary.items():
         if key == target_key:

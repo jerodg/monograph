@@ -151,7 +151,8 @@ def method_7(n: int = 1000) -> int:
 
 
 def method_8(n: int = 1000) -> int:
-    """Method 8: Using a mathematical approach with multiple loops to calculate and print the sum of all multiples of 3 or 5  below 1000.
+    """Method 8: Using a mathematical approach with multiple loops to calculate and print the sum of all multiples of 3 or 5
+    below 1000.
 
     Returns:
         int
@@ -167,7 +168,8 @@ def method_8(n: int = 1000) -> int:
 
 
 def method_9(n: int = 1000) -> int:
-    """Method 9: Using a mathematical approach with multiple loops to calculate and print the sum of all multiples of 3 or 5 below 1000.
+    """Method 9: Using a mathematical approach with multiple loops to calculate and print the sum of all multiples of 3 or 5
+    below 1000.
 
     Returns:
         int
@@ -200,7 +202,8 @@ def method_9(n: int = 1000) -> int:
 
 
 def method_10(n: int = 1000) -> int:
-    """Method 10: Using a mathematical approach with a while loop to calculate and print the sum of all multiples of 3 or 5 below 1000.
+    """Method 10: Using a mathematical approach with a while loop to calculate and print the sum of all multiples of 3 or 5 below
+    1000.
 
     Returns:
         int

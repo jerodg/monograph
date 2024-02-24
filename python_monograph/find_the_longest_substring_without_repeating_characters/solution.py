@@ -26,7 +26,8 @@ def method_0(s: str) -> tuple[int, str]:
         s (str): The input string.
 
     Returns:
-        tuple[int, str]: A tuple containing the length of the longest substring without repeating characters and the substring itself.
+        tuple[int, str]: A tuple containing the length of the longest substring without repeating characters and the substring
+        itself.
     """
 
     start = 0
@@ -51,7 +52,8 @@ def method_1(s: str) -> tuple[int, str]:
         s (str): The input string.
 
     Returns:
-        tuple[int, str]: A tuple containing the length of the longest substring without repeating characters and the substring itself.
+        tuple[int, str]: A tuple containing the length of the longest substring without repeating characters and the substring
+        itself.
     """
 
     start = 0

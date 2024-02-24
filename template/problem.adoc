@@ -1,4 +1,4 @@
-:doctitle: Title
+:doctitle: Problem
 :author: Jerod Gawne
 :email: jerodg@pm.me
 :docdate: 04 January 2024
@@ -9,23 +9,23 @@
 :sectnums:
 :toc:
 :icons: font
-:imagesdir:./img
+:imagesdir: ./img
 :keywords: problem, python
 
 == Problem
 
 [.lead]
-=== Best Practices
-
-=== Use-Cases
-
-=== Common Mistakes
-
 === Constraints
 
-== Examples
+=== Example
 
-=== Example 0
+== Use-Cases
+
+== Common Mistakes
+
+== Best Practices
+
+== Test Strategies
 
 == Follow-up
 

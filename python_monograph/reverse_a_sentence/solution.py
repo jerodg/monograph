@@ -40,7 +40,8 @@ def method_0(sentence: str) -> str:
 def method_1(sentence: str) -> str:
     """Reverse the letters of each word in a sentence, preserving word order, and using regex.sub().
 
-    This function takes a string as input and returns a new string where the letters of each word are reversed, but the order of the words in the sentence is preserved.
+    This function takes a string as input and returns a new string where the letters of each word are reversed, but the order of
+    the words in the sentence is preserved.
     The function uses regular expressions to identify words and a lambda function to reverse the letters of each word.
     The original string is not modified.
 
@@ -112,7 +113,8 @@ def method_5(sentence: str) -> str:
     """Reverse the order of words in a sentence using split and join.
 
     This function takes a string as input and returns a new string where the order of words in the sentence is reversed.
-    The function uses the split method to create a list of words from the input string, and then reverses the order of words using slicing.
+    The function uses the split method to create a list of words from the input string, and then reverses the order of words
+    using slicing.
     The reversed list of words is then joined back into a string using the join method.
     The original string is not modified.
 
@@ -132,7 +134,8 @@ def method_6(sentence: str) -> str:
     """Reverse the order of words in a sentence using list comprehension.
 
     This function takes a string as input and returns a new string where the order of words in the sentence is reversed.
-    The function uses list comprehension to create a list of words from the input string, and then reverses the order of words using slicing.
+    The function uses list comprehension to create a list of words from the input string, and then reverses the order of words
+    using slicing.
     The reversed list of words is then joined back into a string using the join method.
     The original string is not modified.
 

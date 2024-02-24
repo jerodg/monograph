@@ -78,7 +78,8 @@ def method_3(ls: list) -> list:
     """Remove duplicates from a list using list comprehension.
 
     This function takes a list as input and returns a new list that contains the unique elements from the input list.
-    The function uses list comprehension to remove duplicates, which preserves the order of elements and keeps the first occurrence of each element.
+    The function uses list comprehension to remove duplicates, which preserves the order of elements and keeps the first
+    occurrence of each element.
     The original list is not modified.
 
     Args:
@@ -94,7 +95,8 @@ def method_4(ls: list) -> list:
     """Remove duplicates from a list using a for-loop.
 
     This function takes a list as input and returns a new list that contains the unique elements from the input list.
-    The function uses a for-loop to remove duplicates, which preserves the order of elements and keeps the first occurrence of each element.
+    The function uses a for-loop to remove duplicates, which preserves the order of elements and keeps the first occurrence of
+    each element.
     The original list is not modified.
 
     Args:
@@ -115,7 +117,8 @@ def method_5(ls: list) -> list:
     """Remove duplicates from a list using list comprehension, preserving order and keeping the last occurrence.
 
     This function takes a list as input and returns a new list that contains the unique elements from the input list.
-    The function uses list comprehension to remove duplicates, which preserves the order of elements and keeps the last occurrence of each element.
+    The function uses list comprehension to remove duplicates, which preserves the order of elements and keeps the last
+    occurrence of each element.
     The original list is not modified.
 
     Args:
@@ -131,7 +134,8 @@ def method_6(ls: list) -> list:
     """Remove duplicates from a list using dict.
 
     This function takes a list as input and returns a new list that contains the unique elements from the input list.
-    The function uses dict to remove duplicates, which preserves the order of elements and keeps the first occurrence of each element.
+    The function uses dict to remove duplicates, which preserves the order of elements and keeps the first occurrence of each
+    element.
     The original list is not modified.
 
     Args:
@@ -147,7 +151,8 @@ def method_7(ls: list) -> list:
     """Remove duplicates from a list using pandas.
 
     This function takes a list as input and returns a new list that contains the unique elements from the input list.
-    The function uses pandas Series and the drop_duplicates method to remove duplicates, which preserves the order of elements and keeps the first occurrence of each element.
+    The function uses pandas Series and the drop_duplicates method to remove duplicates, which preserves the order of elements
+    and keeps the first occurrence of each element.
     The original list is not modified.
 
     Args:
@@ -196,7 +201,8 @@ def method_10(ls: list) -> list:
     """Remove duplicates from a list using OrderedDict.
 
     This function takes a list as input and returns a new list that contains the unique elements from the input list.
-    The function uses OrderedDict to remove duplicates, which preserves the order of elements and keeps the first occurrence of each element.
+    The function uses OrderedDict to remove duplicates, which preserves the order of elements and keeps the first occurrence of
+    each element.
     The original list is not modified.
 
     Args:
