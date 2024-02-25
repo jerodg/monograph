@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Check if a Substring is in a List of Strings Method 04
+"""Python Monograph: Check if a Substring is in a List of Strings Solution 04
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -20,7 +20,7 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from typing import List
 
 
-def method_4(data: List[str], substr: str) -> bool:
+def solution_04(data: List[str], substr: str) -> bool:
     """This function checks if a given substring is found in any of the strings in a list using a for-loop.
 
     The function iterates over each string in the list using a for-loop.
@@ -35,19 +35,34 @@ def method_4(data: List[str], substr: str) -> bool:
     Returns:
         bool: True if the substring is found in any string in the list, False otherwise.
 
+    Raises:
+        TypeError: If the substring or any element in the list is None.
+
     Example:
-    >>> method_4(["apple", "banana", "cherry"], "app")
+    >>> solution_04(["apple", "banana", "cherry"], "app")
         True
-    >>> method_4(["apple", "banana", "cherry"], "z")
+    >>> solution_04(["apple", "banana", "cherry"], "z")
         False
 
     References:
         https://docs.python.org/3/tutorial/controlflow.html?highlight=loop#for-statements
     """
-    for row in data:
-        if substr in row:
-            return True
+    # Check if the substring is None
+    if substr is None:
+        raise TypeError('NoneType found in substr')
 
+    try:
+        # Iterate over each string in the list
+        for row in data:
+            # Check if the substring is found in the string
+            if substr in row:
+                # If the substring is found, return True
+                return True
+    except TypeError:
+        # If any element in the list is None, raise a TypeError
+        raise TypeError('NoneType found in list')
+
+    # If the substring is not found in any string after iterating over the entire list, return False
     return False
 
 

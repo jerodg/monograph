@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Check if Two Circles Intersect, Overlap, or Encompass
+"""Python Monograph: Check if a Substring is in a List of Strings Solution 03
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -17,60 +17,69 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
+import pytest
 
-from python_monograph.check_if_a_substring_is_in_a_list_strings.solution_00 import (
-    method_0,
-    method_1,
-    method_2,
-    method_3,
-    method_4,
-    method_5,
-)
+from python_monograph.check_if_a_substring_is_in_a_list_strings.solution_03 import solution_03
 
 
-def test_substring_present_in_list_using_any():
-    assert method_0(["Hello", "World"], "World") == True
+def test_substring_found_in_list():
+    assert solution_03(["apple", "banana", "cherry"], "app") == True
 
 
-def test_substring_not_present_in_list_using_any():
-    assert method_0(["Hello", "World"], "Python") == False
+def test_substring_not_found_in_list():
+    assert solution_03(["apple", "banana", "cherry"], "z") == False
 
 
-def test_substring_present_in_list_using_find():
-    assert method_1(["Hello", "World"], "World") == True
+def test_substring_found_in_one_string_only():
+    assert solution_03(["apple", "banana", "cherry"], "ban") == True
 
 
-def test_substring_not_present_in_list_using_find():
-    assert method_1(["Hello", "World"], "Python") == False
+def test_substring_found_in_all_strings():
+    assert solution_03(["apple", "banana", "cherry"], "a") == True
 
 
-def test_substring_present_in_list_using_find_list_comprehension():
-    assert method_2(["Hello", "World"], "World") == True
+def test_substring_is_empty_string():
+    assert solution_03(["apple", "banana", "cherry"], "") == True
 
 
-def test_substring_not_present_in_list_using_find_list_comprehension():
-    assert method_2(["Hello", "World"], "Python") == False
+def test_list_is_empty():
+    assert solution_03([], "app") == False
 
 
-def test_substring_present_in_list_using_join():
-    assert method_3(["Hello", "World"], "World") == True
+def test_list_contains_empty_string():
+    assert solution_03(["apple", "", "cherry"], "app") == True
 
 
-def test_substring_not_present_in_list_using_join():
-    assert method_3(["Hello", "World"], "Python") == False
+def test_list_contains_only_empty_strings():
+    assert solution_03(["", "", ""], "app") == False
 
 
-def test_substring_present_in_list_using_for_loop():
-    assert method_4(["Hello", "World"], "World") == True
+def test_list_contains_none():
+    with pytest.raises(TypeError):
+        solution_03(["apple", None, "cherry"], "app")
 
 
-def test_substring_not_present_in_list_using_for_loop():
-    assert method_4(["Hello", "World"], "Python") == False
+def test_substring_is_none():
+    with pytest.raises(TypeError):
+        solution_03(["apple", "banana", "cherry"], None)
 
 
-def test_substring_present_in_list_using_list_comprehension():
-    assert method_5(["Hello", "World"], "World") == True
+def test_list_contains_non_string_elements():
+    with pytest.raises(TypeError):
+        solution_03(["apple", 123, "cherry"], "app")
 
 
-def test_substring_not_present_in_list_using_list_comprehension():
-    assert method_5(["Hello", "World"], "Python") == False
+def test_list_contains_strings_with_special_characters():
+    assert solution_03(["app$le", "banana", "cherry"], "$") == True
+
+
+def test_substring_contains_special_characters():
+    assert solution_03(["apple", "banana", "cherry"], "$") == False
+
+
+def test_list_contains_strings_with_numbers():
+    assert solution_03(["apple1", "banana", "cherry"], "1") == True
+
+
+def test_substring_contains_numbers():
+    assert solution_03(["apple", "banana", "cherry"], "1") == False

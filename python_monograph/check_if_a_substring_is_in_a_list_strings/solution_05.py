@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Check if a Substring is in a List of Strings Method 05
+"""Python Monograph: Check if a Substring is in a List of Strings Solution 05
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -20,7 +20,7 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from typing import List
 
 
-def method_5(data: List[str], substr: str) -> bool:
+def solution_05(data: List[str], substr: str) -> bool:
     """This function checks if a given substring is found in any of the strings in a list using a list comprehension.
 
     The function uses a list comprehension to iterate over each string in the list.
@@ -36,15 +36,29 @@ def method_5(data: List[str], substr: str) -> bool:
     Returns:
         bool: True if the substring is found in any string in the list, False otherwise.
 
+    Raises:
+        TypeError: If the substring or any element in the list is None.
+
     Example:
-    >>> method_5(["apple", "banana", "cherry"], "app")
+    >>> solution_05(["apple", "banana", "cherry"], "app")
         True
-    >>> method_5(["apple", "banana", "cherry"], "z")
+    >>> solution_05(["apple", "banana", "cherry"], "z")
         False
 
     References:
         https://docs.python.org/3/tutorial/controlflow.html?highlight=loop#for-statements
     """
+    # Check if the list contains None
+    if None in data:
+        raise TypeError('NoneType found in list')
+
+    # Check if the substring is None
+    if substr is None:
+        raise TypeError('NoneType found in substr')
+
+    # Use list comprehension to check if the substring is in any string in the list
+    # If the list comprehension returns a list with at least one element, return True
+    # If the list comprehension returns an empty list, return False
     return True if [x for x in data if substr in x] else False
 
 

@@ -20,7 +20,7 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from typing import List
 
 
-def method_02(data: List[str], substr: str) -> bool:
+def solution_02(data: List[str], substr: str) -> bool:
     """This function checks if a given substring is found in any of the strings in a list using the find() method and a list
     comprehension.
 
@@ -41,14 +41,17 @@ def method_02(data: List[str], substr: str) -> bool:
         bool: True if the substring is found in any string in the list, False otherwise.
 
     Example:
-    >>> method_02(["apple", "banana", "cherry"], "app")
+    >>> solution_02(["apple", "banana", "cherry"], "app")
         True
-    >>> method_02(["apple", "banana", "cherry"], "z")
+    >>> solution_02(["apple", "banana", "cherry"], "z")
         False
 
     References:
         https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find
     """
+    if None in data:
+        raise AttributeError('NoneType found in list')
+
     return True if [x for x in data if x.find(substr) != -1] else False
 
 

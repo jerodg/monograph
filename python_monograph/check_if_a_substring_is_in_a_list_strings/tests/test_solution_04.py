@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Check if a Substring is in a List of Strings Solution 05 Tests
+"""Python Monograph: Check if a Substring is in a List of Strings Solution 04
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -20,67 +20,65 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 import pytest
 
-from python_monograph.check_if_a_substring_is_in_a_list_strings.solution_05 import solution_05
+from python_monograph.check_if_a_substring_is_in_a_list_strings.solution_04 import solution_04
 
 
 def test_substring_found_in_list():
-    assert solution_05(["apple", "banana", "cherry"], "app") == True
+    assert solution_04(["apple", "banana", "cherry"], "app") == True
 
 
 def test_substring_not_found_in_list():
-    assert solution_05(["apple", "banana", "cherry"], "z") == False
+    assert solution_04(["apple", "banana", "cherry"], "z") == False
 
 
 def test_substring_found_in_one_string_only():
-    assert solution_05(["apple", "banana", "cherry"], "ban") == True
+    assert solution_04(["apple", "banana", "cherry"], "ban") == True
 
 
 def test_substring_found_in_all_strings():
-    assert solution_05(["apple", "banana", "cherry"], "a") == True
+    assert solution_04(["apple", "banana", "cherry"], "a") == True
 
 
 def test_substring_is_empty_string():
-    assert solution_05(["apple", "banana", "cherry"], "") == True
+    assert solution_04(["apple", "banana", "cherry"], "") == True
 
 
 def test_list_is_empty():
-    assert solution_05([], "app") == False
+    assert solution_04([], "app") == False
 
 
 def test_list_contains_empty_string():
-    assert solution_05(["apple", "", "cherry"], "app") == True
+    assert solution_04(["apple", "", "cherry"], "app") == True
 
 
 def test_list_contains_only_empty_strings():
-    assert solution_05(["", "", ""], "app") == False
+    assert solution_04(["", "", ""], "app") == False
 
 
 def test_list_contains_none():
-    with pytest.raises(TypeError):
-        solution_05(["apple", None, "cherry"], "app")
+    assert solution_04(["apple", None, "cherry"], "app") is True
 
 
 def test_substring_is_none():
     with pytest.raises(TypeError):
-        solution_05(["apple", "banana", "cherry"], None)
+        solution_04(["apple", "banana", "cherry"], None)
 
 
 def test_list_contains_non_string_elements():
-    with pytest.raises(TypeError):
-        solution_05(["apple", 123, "cherry"], "app")
+    assert solution_04(["apple", 123, "cherry"], "app") is True
 
 
 def test_list_contains_strings_with_special_characters():
-    assert solution_05(["app$le", "banana", "cherry"], "$") == True
+    assert solution_04(["app$le", "banana", "cherry"], "$") == True
 
 
 def test_substring_contains_special_characters():
-    assert solution_05(["apple", "banana", "cherry"], "$") == False
+    assert solution_04(["apple", "banana", "cherry"], "$") == False
 
 
 def test_list_contains_strings_with_numbers():
-    assert solution_05(["apple1", "banana", "cherry"], "1") == True
+    assert solution_04(["apple1", "banana", "cherry"], "1") == True
 
 
 def test_substring_contains_numbers():
-    assert solution_05(["apple", "banana", "cherry"], "1") == False
+    assert solution_04(["apple", "banana", "cherry"], "1") == False

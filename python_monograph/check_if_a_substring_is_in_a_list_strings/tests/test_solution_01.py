@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Check if Two Circles Intersect, Overlap, or Encompass
+"""Python Monograph: Check if a Substring is in a List of Strings Solution 01 Tests
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 

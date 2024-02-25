@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Check if a Substring is in a List of Strings Method 03
+"""Python Monograph: Check if a Substring is in a List of Strings Solution 03
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -20,7 +20,7 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from typing import List
 
 
-def method_3(data: List[str], substr: str) -> bool:
+def solution_03(data: List[str], substr: str) -> bool:
     """This function checks if a given substring is found in a joined string of a list using the join() method.
 
     The join() method concatenates all the strings in the list into a single string with a specified delimiter.
@@ -36,15 +36,24 @@ def method_3(data: List[str], substr: str) -> bool:
         bool: True if the substring is found in the joined string, False otherwise.
 
     Example:
-    >>> method_3(["apple", "banana", "cherry"], "app")
+    >>> solution_03(["apple", "banana", "cherry"], "app")
         True
-    >>> method_3(["apple", "banana", "cherry"], "z")
+    >>> solution_03(["apple", "banana", "cherry"], "z")
         False
 
     References:
         https://docs.python.org/3/library/stdtypes.html?highlight=join#str.join
     """
-    return substr in "\t".join(data)
+    if substr is None:
+        raise TypeError('NoneType found in substr')
+
+    if None in data:
+        raise TypeError('NoneType found in list')
+
+    try:
+        return substr in "\t".join(data)
+    except TypeError:
+        raise TypeError('NoneType found in list')
 
 
 if __name__ == "__main__":
