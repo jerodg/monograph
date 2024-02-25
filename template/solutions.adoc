@@ -1,4 +1,4 @@
-:doctitle: Solution
+:doctitle: Solutions
 :author: Jerod Gawne
 :email: jerodg@pm.me
 :docdate: 04 January 2024
@@ -15,7 +15,7 @@
 == Solution(s)
 
 [.lead]
-=== Method 0
+=== Solution 00
 
 ==== Implementation
 
@@ -33,3 +33,8 @@ include::./[]
 ==== Complexity Analysis
 
 ==== Tests
+
+[source,python,linenums]
+----
+include::./tests/[]
+----

@@ -1,0 +1,76 @@
+:doctitle: Data Types Quiz
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:imagesdir: ./img
+:keywords: problem, python
+
+== Python provides a Boolean data type. Objects of Boolean type may have one of two values, _____ or _____.
+- True, False
+
+== In Python 3, the maximum value for an integer is 2^63^ - 1:
+- False
+
+NOTE: In Python 3, there is no explicit limit to the size of an integer value. The amount of available address space (hardware)
+forms a practical limit depending on the machine Python runs on.
+
+== How would you express the hexadecimal value `+a5+` as a base-16 integer constant in Python?
+
+- 0xa5
+
+== How would you express the constant floating-point value 3.2 × 10^-12^ in Python:
+- 3.2e-12
+
+NOTE: We’re looking for a _constant_ value, so an _expression_ like `+3.2 * 10 ** -12+` would *not* be a valid answer in this case.
+
+== Which of the following are valid ways to specify the string literal `+foo'bar+` in Python:
+
+a) `+"foo'bar"+` +
+b) `+'foo\'bar'+` +
+c) `+'foo'bar'+` +
+d) `+"""foo'bar"""+` +
+e) `+'foo''bar'+` +
+
+- a, b, d
+
+== Write an expression for a string literal consisting of the following ASCII characters:
+
+* Horizontal Tab character
+* Newline (ASCII Linefeed) character
+* The character with hexadecimal value `+7E+`
+
+- `+'\t\n\x7E'+`
+
+== Consider this statement:
+
+[source,python]
+----
+print(r'foo\\bar\nbaz')
+----
+
+Which of the following is the correct REPL output?
+
+a) `+foo\\bar\nbaz+` +
+b) `+foo\bar\nbaz+` +
+c) `+foo\\barnbaz+` +
+d) `+foo\bar+` +
+e) `+baz+` +
+
+- `foo\\bar\nbaz`
+
+
+== Which of the following is not a Python built-in function: +
+a) `+map()+` +
+b) `+isinstance()+` +
+c) `+round()+` +
+d) `+repr()+` +
+e) `+diff()+` +
+
+- `diff()`

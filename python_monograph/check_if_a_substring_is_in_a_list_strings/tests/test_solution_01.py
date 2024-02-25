@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Test Fibonacci Sequence Solution 01
+"""Python Monograph: Check if Two Circles Intersect, Overlap, or Encompass
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -17,36 +17,28 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-import pytest
-
 from python_monograph.check_if_a_substring_is_in_a_list_strings.solution_01 import solution_01
 
 
-def test_solution_01_with_zero():
-    assert solution_01(0) == 0
+def test_substring_present_in_list():
+    assert solution_01(["apple", "banana", "cherry"], "app") == True
 
 
-def test_solution_01_with_one():
-    assert solution_01(1) == 1
+def test_substring_not_present_in_list():
+    assert solution_01(["apple", "banana", "cherry"], "z") == False
 
 
-def test_solution_01_with_small_number():
-    assert solution_01(6) == 8
+def test_substring_present_in_empty_string():
+    assert solution_01(["apple", "banana", "cherry", ""], "") == True
 
 
-def test_solution_01_with_large_number():
-    assert solution_01(30) == 832040
+def test_substring_not_present_in_empty_list():
+    assert solution_01([], "app") == False
 
 
-def test_solution_01_with_negative_number():
-    with pytest.raises(ValueError):
-        solution_01(-1)
+def test_substring_case_sensitivity():
+    assert solution_01(["apple", "banana", "cherry"], "APP") == False
 
 
-def test_solution_01_with_non_integer():
-    with pytest.raises(TypeError):
-        solution_01(2.5)
-
-
-if __name__ == "__main__":
-    print(__doc__)
+def test_substring_in_list_with_special_characters():
+    assert solution_01(["apple@", "#banana", "cherry!"], "@") == True

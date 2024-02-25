@@ -1,4 +1,4 @@
-:doctitle: Solution
+:doctitle: Check if Substring is in a List of Strings Solutions
 :author: Jerod Gawne
 :email: jerodg@pm.me
 :docdate: 04 January 2024
@@ -14,111 +14,115 @@
 == Solutions
 
 [.lead]
-=== Method 0:
+=== Solution 00
 
 ==== Implementation
 
 [source,python,linenums]
 ----
-def method_0(data: List[str], substr: str) -> bool:
-    """Method 0: Using the any() method
-
-    Return True if any element of the iterable is true, otherwise, False.
-
-    Notes:
-            Does not provide the location of the substr.
-
-    Args:
-            data (List[str]):
-            substr: str
-
-    Returns:
-            boolean (bool):
-
-    References:
-            https://docs.python.org/3/library/functions.html?highlight=any#any"""
-    return any(substr in x for x in data)
+include::./solution_00.py[]
 ----
 
 ==== Explanation
 
-The selected Python code defines a function named `method_0` that checks if a substring is present in any of the strings in a list.
+The provided Python code defines a function named `method_00` that checks if a given substring is present in any of the strings in a list.
+The function takes two parameters: `data` and `substr`. `data` is a list of strings where the substring will be searched, and `substr` is the substring to search in the list of strings.
+
+The function signature is as follows:
 
 [source,python]
 ----
-def method_0(data: List[str], substr: str) -> bool:
+def method_00(data: List[str], substr: str) -> bool:
 ----
 
-The function takes two parameters: `data`, which is a list of strings, and `substr`, which is the substring to be searched for.
-The function returns a boolean value, `True` if the substring is found in any of the strings in the list, and `False` otherwise.
+This indicates that the function `method_00` takes in two arguments, `data` which is a list of strings, and `substr` which is a string.
+The function returns a boolean value.
 
-The core of the function is a single line of code that uses the built-in Python function `any()`.
+The function uses the built-in Python function `any()`.
+The `any()` function returns `True` if at least one element of an iterable is true, otherwise it returns `False`.
+In this case, the iterable is a generator expression that checks if the substring `substr` is in each string `x` in the list `data`.
+
+The relevant line of code is:
 
 [source,python]
 ----
 return any(substr in x for x in data)
 ----
 
-The `any()` function returns `True` if at least one element of the iterable it is given is `True`, and `False` otherwise.
-In this case, the iterable is a generator expression that checks if `substr` is in each string `x` in the list `data`.
+This line of code will return `True` if the substring `substr` is found in any string in the list `data`, and `False` otherwise.
 
-The `in` keyword in Python is used to check if a value is present in a sequence (like a list or a string).
-In this context, it checks if the substring `substr` is found within the string `x`.
+NOTE: It's important to note that this function does not provide the location of the substring in the string.
+It only checks for the existence of the substring in the list of strings.
 
-So, the expression `substr in x for x in data` generates a sequence of boolean values, one for each string in `data`, indicating whether `substr` is found in that string.
-The `any()` function then checks this sequence and returns `True` if `substr` is found in any string, and `False` if it is not found in any string.
+==== Advantages
+1. **Simplicity**: The method is straightforward and easy to understand.
+It uses built-in Python functions and language features, making it accessible to developers familiar with Python.
 
-In summary, `method_0` is a function that checks if a substring is present in any of the strings in a list, returning a boolean value to indicate the result.
+2. **Efficiency**: The `any()` function stops iterating as soon as it finds an element in the iterable that satisfies the condition.
+This means that in the best-case scenario (the substring is found in the first string), the function has a time complexity of O(1).
+In the worst-case scenario (the substring is not found or is in the last string), the function has a time complexity of O(n), where n is the total number of characters in all strings in the list.
 
-===== Advantages
+3. **Versatility**: This method can handle any list of strings and any substring, including empty strings and lists.
 
-===== Disadvantages
+==== Disadvantages
 
-===== Complexity Analysis
+1. **Lack of Detailed Information**: The method only checks for the existence of the substring in the list of strings.
+It does not provide the location of the substring in the string or in which string(s) the substring was found.
 
-====== Time
+2. **Case Sensitivity**: Python's `in` operator is case-sensitive, which means that the method might not work as expected if the case of the substring and the strings in the list do not match.
+If case-insensitive matching is required, additional steps would need to be taken (such as converting all strings to lower or upper case before the check).
 
-The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
-This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
-====== Space The space complexity of this function is O(1), as we are not using any additional space that scales with the input size.
-The generator expression does not create a new list but generates each value on the fly, so it does not use additional space proportional to the size of the input list.
-=== Method 1:
+3. **No Pattern Matching**: The method checks for exact matches of the substring in the strings in the list.
+It does not support pattern matching or regular expressions.
+If more complex searches are required, a different method might be more suitable.
+
+==== Complexity Analysis
+**Time Complexity**: The time complexity of the function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
+This is because for each string in the list, the function checks if the substring exists within it.
+The 'in' operator, used to check if the substring exists in a string, has a time complexity of O(m), where m is the length of the string.
+Therefore, if there are n strings in the list, the total time complexity becomes O(n*m).
+
+**Space Complexity**: The space complexity of the function is O(1), which means it uses constant space.
+This is because the function only uses a fixed amount of space to store the input and variables, and does not use any additional data structures whose size depends on the input.
+The generator expression used in the 'any' function does not generate all its values at once, but one at a time, thus it doesn't use additional space proportional to the size of the input list.
+
+==== Tests
+
+[source,python,linenums]
+----
+include::./tests/test_solution_00.py[]
+----
+
+
+=== Solution 01
+
 ==== Implementation
 
 [source,python,linenums]
 ----
-def method_1(data: List[str], substr: str) -> bool:
-    """Method #1: Using the find() method with a for-loop
-
-    Return the lowest (first) index in the str where substring sub is found within the slice s[start:end].
-    Optional arguments start and end are interpreted as in slice notation. Return -1 if sub is not found.
-
-
-    Args:
-            data (List[str]):
-            substr (str):
-
-    Returns:
-            boolean (bool)
-
-    References:
-            https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find"""
-    for row in data:
-        if row.find(substr) != -1:  # Returns -1 if not found
-            return True
+include::./solution_01.py[]
 ----
 
 ==== Explanation
 
-The selected code is a Python function named `method_1`.
-This function is designed to check if a substring is present in any of the strings in a list.
-The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
+The provided Python code defines a function named `method_01` that checks if a given substring is present in any of the strings in a list.
+The function takes two parameters: `data` and `substr`. `data` is a list of strings where the substring will be searched, and `substr` is the substring to search in the list of strings.
 
-The function uses the `find()` method in a for-loop to search for the substring.
-The `find()` method is a built-in Python method for strings that returns the lowest index of the substring if it is found in the given string.
-If it's not found, `find()` returns -1.
+The function signature is as follows:
 
-Here's a snippet of the code that performs this operation:
+[source,python]
+----
+def method_01(data: List[str], substr: str) -> bool:
+----
+
+This indicates that the function `method_01` takes in two arguments, `data` which is a list of strings, and `substr` which is a string.
+The function returns a boolean value.
+
+The function uses the `find()` method of Python strings.
+The `find()` method returns the lowest index in the string where the substring is found.
+If the substring is not found, the `find()` method returns -1. In this case, the function iterates over each string `row` in the list `data`, and checks if the substring `substr` is found in `row`.
+
+The relevant lines of code are:
 
 [source,python]
 ----
@@ -127,287 +131,44 @@ for row in data:
         return True
 ----
 
-In this code, `row` represents each string in the `data` list.
-The `find(substr)` method is called on `row` to search for the `substr`.
-If `find()` does not return -1, it means that the substring is found in `row`, and the function immediately returns `True`.
+These lines of code will return `True` if the substring `substr` is found in any string in the list `data`, and `False` otherwise.
 
-If the function goes through all the strings in the list without finding the substring (i.e., `find()` returns -1 for all strings), the function will end without returning anything.
-In Python, if a function ends without hitting a return statement, it automatically returns `None`.
-Therefore, in this case, the function effectively returns `None` when the substring is not found in any of the strings in the list.
+It's important to note that this function does not provide the location of the substring in the string.
+It only checks for the existence of the substring in the list of strings.
 
-This function is a straightforward and efficient way to check if a substring exists in any string in a list.
-It stops searching as soon as it finds the substring, which can save time when dealing with large lists.
+==== Advantages
+1. **Simplicity**: The method is straightforward and easy to understand.
+It uses built-in Python functions and language features, making it accessible to developers familiar with Python.
 
-===== Advantages
+2. **Efficiency**: The `find()` method stops iterating as soon as it finds an element in the iterable that satisfies the condition.
+This means that in the best-case scenario (the substring is found in the first string), the function has a time complexity of O(1).
+In the worst-case scenario (the substring is not found or is in the last string), the function has a time complexity of O(n), where n is the total number of characters in all strings in the list.
 
-===== Disadvantages
+3. **Versatility**: This method can handle any list of strings and any substring, including empty strings and lists.
 
-===== Complexity Analysis
+==== Disadvantages
+1. **Lack of Detailed Information**: The method only checks for the existence of the substring in the list of strings.
+It does not provide the location of the substring in the string or in which string(s) the substring was found.
 
-====== Time
+2. **Case Sensitivity**: Python's `find()` method is case-sensitive, which means that the method might not work as expected if the case of the substring and the strings in the list do not match.
+If case-insensitive matching is required, additional steps would need to be taken (such as converting all strings to lower or upper case before the check).
 
-The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
-This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
-====== Space The space complexity of this function is O(1), as we are not using any additional space that scales with the input size.
-The for-loop iterates over the list in-place, so it does not use additional space proportional to the size of the input list.
-=== Method 2:
-==== Implementation
+3. **No Pattern Matching**: The method checks for exact matches of the substring in the strings in the list.
+It does not support pattern matching or regular expressions.
+If more complex searches are required, a different method might be more suitable.
 
-[source,python,linenums]
-----
-def method_2(data: List[str], substr: str) -> bool:
-    """Method #1a: Using the find() method with a list comprehension
+==== Complexity Analysis
+**Time Complexity**: The time complexity of the function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
+This is because for each string in the list, the function checks if the substring exists within it.
+The 'find()' method, used to check if the substring exists in a string, has a time complexity of O(m), where m is the length of the string.
+Therefore, if there are n strings in the list, the total time complexity becomes O(n*m).
 
-    Args:
-            data (List[str]):
-            substr (str):
+**Space Complexity**: The space complexity of the function is O(1), which means it uses constant space.
+This is because the function only uses a fixed amount of space to store the input and variables, and does not use any additional data structures whose size depends on the input.
 
-    Returns:
-            boolean (bool)
-
-    References:
-            https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find"""
-    return True if [x for x in data if x.find(substr) != -1] else False
-----
-
-==== Explanation
-
-The selected code is a Python function named `method_2`.
-This function is designed to check if a substring is present in any of the strings in a list.
-The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
-
-The function uses the `find()` method in combination with a list comprehension to search for the substring.
-The `find()` method is a built-in Python method for strings that returns the lowest index of the substring if it is found in the given string.
-If it's not found, `find()` returns -1.
-
-Here's a snippet of the code that performs this operation:
-
-[source,python]
-----
-[x for x in data if x.find(substr) != -1]
-----
-
-In this code, `x` represents each string in the `data` list.
-The `find(substr)` method is called on `x` to search for the `substr`.
-If `find()` does not return -1, it means that the substring is found in `x`, and `x` is included in the new list created by the list comprehension.
-
-The function then checks if this new list is not empty.
-If the list is not empty, it means that the substring was found in at least one string in the list, and the function returns `True`.
-If the list is empty, it means that the substring was not found in any string in the list, and the function returns `False`.
-
-This function is a compact and efficient way to check if a substring exists in any string in a list.
-It leverages the power of list comprehensions in Python to perform the check in a single line of code.
-
-===== Advantages
-
-===== Disadvantages
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(nm), where n is the number of strings in the list and m is the average length of the strings.
-This is because the join() method concatenates all the strings into one, which takes O(nm) time, and then we are checking if the substring exists in this concatenated string, which also takes O(n*m) time in the worst case.
-====== Space The space complexity of this function is O(nm), as we are creating a new string that is the concatenation of all the strings in the list.
-This new string can potentially have a length equal to the total length of all the strings in the list, which is nm.
-Therefore, the space complexity is proportional to the size of this new string, which is O(n*m).
-=== Method 3:
-==== Implementation
+==== Tests
 
 [source,python,linenums]
 ----
-def method_3(data: List[str], substr: str) -> bool:
-    """Method #2: Using the join() method
-
-    Args:
-            data (List[str]):
-            substr (str):
-
-    Returns:
-            boolean (bool)
-
-    References:
-            https://docs.python.org/3/library/stdtypes.html?highlight=join#str.join"""
-    return substr in "\t".join(data)
+include::./tests/test_solution_01.py[]
 ----
-
-==== Explanation
-
-The selected code is a Python function named `method_3`.
-This function is designed to check if a substring is present in a concatenated string of all the strings in a list.
-The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
-
-The function uses the `join()` method to concatenate all the strings in the list into one string.
-The `join()` method is a built-in Python method for strings that concatenates a list of strings into one string, with a specified string as the separator.
-In this case, the separator is a tab character (`"\t"`).
-
-Here's a snippet of the code that performs this operation:
-
-[source,python]
-----
-"\t".join(data)
-----
-
-In this code, `data` is the list of strings, and `"\t"` is the separator.
-The `join()` method concatenates all the strings in `data` into one string, with a tab character between each pair of strings.
-
-After concatenating the strings, the function checks if the substring `substr` is present in this concatenated string.
-This is done using the `in` keyword in Python, which checks if a substring is present in a string.
-
-Here's a snippet of the code that performs this check:
-
-[source,python]
-----
-substr in "\t".join(data)
-----
-
-In this code, `substr in "\t".join(data)` returns `True` if `substr` is found in the concatenated string, and `False` otherwise.
-
-This function is a simple and efficient way to check if a substring exists in any string in a list.
-It leverages the power of Python's string methods to perform the check in a single line of code.
-
-===== Advantages
-
-===== Disadvantages
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
-This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
-====== Space The space complexity of this function is O(1), as we are not using any additional space that scales with the input size.
-The for-loop iterates over the list in-place, so it does not use additional space proportional to the size of the input list.
-=== Method 4:
-==== Implementation
-
-[source,python,linenums]
-----
-def method_4(data: List[str], substr: str) -> bool:
-    """Method #3: Using a for-loop
-
-    Args:
-            data (List[str]):
-            substr (str):
-
-    Returns:
-            boolean (bool)
-
-    References:
-            https://docs.python.org/3/tutorial/controlflow.html?highlight=loop#for-statements"""
-    for row in data:
-        if substr in row:
-            return True
-----
-
-==== Explanation
-
-The selected code is a Python function named `method_4`.
-This function is designed to check if a substring is present in any of the strings in a list.
-The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
-
-The function uses a for-loop to iterate over each string in the `data` list.
-For each string, it checks if the substring `substr` is present in the string.
-This is done using the `in` keyword in Python, which checks if a substring is present in a string.
-
-Here's a snippet of the code that performs this operation:
-
-[source,python]
-----
-for row in data:
-    if substr in row:
-        return True
-----
-
-In this code, `row` represents each string in the `data` list.
-The `if substr in row` statement checks if `substr` is present in `row`.
-If `substr` is found in `row`, the function immediately returns `True`.
-
-If the function iterates over all the strings in the list without finding the substring, it will finish without returning anything.
-In Python, if a function finishes without hitting a return statement, it returns `None` by default.
-Therefore, if the substring is not found in any string in the list, the function will return `None`.
-
-This function is a straightforward and efficient way to check if a substring exists in any string in a list.
-It leverages the power of Python's `in` keyword to perform the check in a simple and readable way.
-
-===== Advantages
-
-===== Disadvantages
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
-This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
-====== Space The space complexity of this function is O(n), as we are creating a new list that contains all the strings in which the substring is found.
-In the worst case, the substring could be in all the strings, so the new list would have the same length as the input list, which is n.
-Therefore, the space complexity is proportional to the size of this new list, which is O(n).
-=== Method 5:
-==== Implementation
-
-[source,python,linenums]
-----
-def method_5(data: List[str], substr: str) -> bool:
-    """Method #3: Using a list comprehension
-
-    Args:
-            data (List[str]):
-            substr (str):
-
-    Returns:
-            boolean (bool)
-
-    References:
-            https://docs.python.org/3/tutorial/controlflow.html?highlight=loop#for-statements"""
-    return True if [x for x in data if substr in x] else False
-----
-
-==== Explanation
-
-The selected code is a Python function named `method_5`.
-This function is designed to check if a substring is present in any of the strings in a list.
-The function takes two arguments: `data` and `substr`. `data` is a list of strings, and `substr` is the substring to be searched for.
-
-The function uses a list comprehension to create a new list that contains all the strings in `data` where the substring `substr` is found.
-List comprehensions are a concise way to create lists based on existing lists in Python.
-
-Here's a snippet of the code that performs this operation:
-
-[source,python]
-----
-[x for x in data if substr in x]
-----
-
-In this code, `x for x in data if substr in x` generates a new list that contains all the strings in `data` where `substr` is found.
-The `if substr in x` part is a condition that filters the list comprehension, so only strings where `substr` is found are included in the new list.
-
-After creating the new list, the function checks if the list is empty.
-If the list is not empty, it means that the substring was found in at least one string in `data`, so the function returns `True`.
-If the list is empty, it means that the substring was not found in any string in `data`, so the function returns `False`.
-
-Here's a snippet of the code that performs this check:
-
-[source,python]
-----
-return True if [x for x in data if substr in x] else False
-----
-
-In this code, `True if [x for x in data if substr in x] else False` returns `True` if the list comprehension is not empty, and `False` otherwise.
-
-This function is a concise and efficient way to check if a substring exists in any string in a list.
-It leverages the power of Python's list comprehensions to perform the check in a single line of code.
-
-===== Advantages
-
-===== Disadvantages
-
-===== Complexity Analysis
-
-====== Time
-
-The time complexity of this function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
-This is because for each string, we are checking if the substring exists in it, which takes O(m) time.
-====== Space The space complexity of this function is O(n), as we are creating a new list that contains all the strings in which the substring is found.
-In the worst case, the substring could be in all the strings, so the new list would have the same length as the input list, which is n.
-Therefore, the space complexity is proportional to the size of this new list, which is O(n).

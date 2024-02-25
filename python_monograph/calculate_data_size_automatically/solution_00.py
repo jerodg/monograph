@@ -19,16 +19,15 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-def convert_bytes(size, notation: str = "decimal") -> str:
-    """
-    Convert a given size in bytes to a human-readable format using either decimal or binary notation.
+def method_00(size: int, notation: str = "decimal") -> str:
+    """Convert a given size in bytes to a human-readable format using either decimal or binary notation.
 
     This function takes a size in bytes and a notation (either 'decimal' or 'binary') and returns a string
     representing the size in a human-readable format. The 'decimal' notation uses a base of 1000 and the 'binary'
     notation uses a base of 1024.
 
     Args:
-        size (int or float): The size in bytes to convert.
+        size (int): The size in bytes to convert.
         notation (str): The notation to use for the conversion. Must be either 'decimal' or 'binary'. Defaults to 'decimal'.
 
     Returns:

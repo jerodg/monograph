@@ -17,6 +17,7 @@
 You need to get the human-readable format of file size given the most appropriate unit.
 
 === Constraint(s)
+stem:[-9223372036854775807 <= n <= 9223372036854775807]
 
 === Example(s)
 .Input
@@ -28,7 +29,7 @@ You need to get the human-readable format of file size given the most appropriat
 .Output
 [source,python,linenums]
 ----
-1.46 KiB
+"1.46 KiB"
 ----
 
 == Use-Case(s)
@@ -106,39 +107,41 @@ Remember, the goal of testing is not just to show that your software works, but 
 == Follow-up
 A possible follow-up for getting the human-readable format of data size given the most appropriate unit could be:
 
-1. **Implementing Additional Notations**: The current implementation supports binary and decimal notations. You could extend this to support other notations such as hexadecimal.
+1. **Implementing Additional Notations**: The current implementation supports binary and decimal notations. You could extend this to support other notations such as hexadecimal. [Python Hexadecimal](https://docs.python.org/3/library/functions.html#hex)
 
-2. **Adding More Units**: The current implementation likely supports up to exabytes (EB). As data sizes continue to grow, you might need to add support for larger units such as zettabytes (ZB) and yottabytes (YB).
+2. **Adding More Units**: The current implementation likely supports up to exabytes (EB). As data sizes continue to grow, you might need to add support for larger units such as zettabytes (ZB) and yottabytes (YB). [Data Measurement Chart](https://www.nasuni.com/blog/data-size-chart/)
 
-3. **Improving Error Handling**: The current implementation could be improved by adding more robust error handling. For example, you could add checks to ensure that the size input is a positive number and throw an appropriate error if it's not.
+3. **Improving Error Handling**: The current implementation could be improved by adding more robust error handling. For example, you could add checks to ensure that the size input is a positive number and throw an appropriate error if it's not. [Python Exceptions](https://docs.python.org/3/tutorial/errors.html)
 
-4. **Optimizing Performance**: If the function is being called frequently, it might be worth investigating ways to optimize its performance. For example, you could use a lookup table to avoid the need for a loop.
+4. **Optimizing Performance**: If the function is being called frequently, it might be worth investigating ways to optimize its performance. For example, you could use a lookup table to avoid the need for a loop. [Python Performance Optimization](https://docs.python.org/3/library/timeit.html)
 
-5. **Adding Localization**: If your software is used internationally, you might need to localize the units. For example, in some languages, the word for "byte" might be different.
+5. **Adding Localization**: If your software is used internationally, you might need to localize the units. For example, in some languages, the word for "byte" might be different. [Python Internationalization](https://docs.python.org/3/library/gettext.html)
 
-6. **Creating a User Interface**: If this function is part of a larger software application, you might want to create a user interface that allows users to select the unit they want to use and enter the size they want to convert.
+6. **Creating a User Interface**: If this function is part of a larger software application, you might want to create a user interface that allows users to select the unit they want to use and enter the size they want to convert. [Python GUI Programming](https://docs.python.org/3/library/tkinter.html)
 
-7. **Writing Unit Tests**: If not already done, writing unit tests for this function would be a good follow-up task. This will help ensure that the function works as expected and makes it easier to make changes in the future.
+7. **Writing Unit Tests**: If not already done, writing unit tests for this function would be a good follow-up task. This will help ensure that the function works as expected and makes it easier to make changes in the future. [Python Unit Testing](https://docs.python.org/3/library/unittest.html)
 
 == Related Topics
 Related topics for getting the human-readable format of data size given the most appropriate unit include:
 
-1. **Data Types and Variables**: Understanding different data types, especially integers and floating-point numbers, is crucial as the size of data is usually represented using these types.
+1. **Data Types and Variables**: Understanding different data types, especially integers and floating-point numbers, is crucial as the size of data is usually represented using these types. [Python Data Types](https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator)
 
-2. **String Formatting**: The human-readable format of data size is typically a string that includes a numeric value and a unit. Knowledge of string formatting in Python, such as using f-strings or the `format` method, is important.
+2. **String Formatting**: The human-readable format of data size is typically a string that includes a numeric value and a unit. Knowledge of string formatting in Python, such as using f-strings or the `format` method, is important. [Python String Formatting](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
 
-3. **Mathematical Operations**: Basic mathematical operations like division and the use of the modulus operator can be involved in converting data size to a human-readable format.
+3. **Mathematical Operations**: Basic mathematical operations like division and the use of the modulus operator can be involved in converting data size to a human-readable format. [Python Arithmetic Operations](https://docs.python.org/3/tutorial/introduction.html#numbers)
 
-4. **Control Structures**: Control structures like loops and conditional statements are often used in the conversion process.
+4. **Control Structures**: Control structures like loops and conditional statements are often used in the conversion process. [Python Control Flow](https://docs.python.org/3/tutorial/controlflow.html)
 
-5. **Error Handling**: It's important to know how to handle potential errors, such as invalid inputs.
+5. **Error Handling**: It's important to know how to handle potential errors, such as invalid inputs. [Python Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
 
-6. **Unit Testing**: Writing unit tests can help ensure your function works as expected and handles edge cases properly.
+6. **Unit Testing**: Writing unit tests can help ensure your function works as expected and handles edge cases properly. [Python Unit Testing](https://docs.python.org/3/library/unittest.html)
 
-7. **File I/O**: Since this task is often related to file sizes, understanding file input/output (I/O) operations in Python can be beneficial.
+7. **File I/O**: Since this task is often related to file sizes, understanding file input/output (I/O) operations in Python can be beneficial. [Python Input and Output](https://docs.python.org/3/tutorial/inputoutput.html)
 
-8. **Operating System (OS) Module**: The OS module in Python provides functions for interacting with the operating system, including retrieving file sizes.
+8. **Operating System (OS) Module**: The OS module in Python provides functions for interacting with the operating system, including retrieving file sizes. [Python OS Module](https://docs.python.org/3/library/os.html)
 
-9. **Memory Management**: Understanding how memory is managed in a computer system can provide a deeper understanding of data sizes.
+9. **Memory Management**: Understanding how memory is managed in a computer system can provide a deeper understanding of data sizes. [Python Memory Management](https://docs.python.org/3/c-api/memory.html)
 
-10. **Networking**: In the context of network data transfer, understanding networking concepts can be beneficial.
+10. **Networking**: In the context of network data transfer, understanding networking concepts can be beneficial. [Python Networking](https://docs.python.org/3/library/socket.html)
+
+== References

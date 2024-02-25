@@ -19,6 +19,18 @@
 
 === Example(s)
 
+.Input
+[source,python,linenums]
+----
+
+----
+
+.Output
+[source,python,linenums]
+----
+
+----
+
 == Use-Case(s)
 
 == Common Mistakes
@@ -27,6 +39,10 @@
 
 == Test Strategies
 
+== Performance Optimization
+
 == Follow-up
 
 == Related Topics
+
+== References

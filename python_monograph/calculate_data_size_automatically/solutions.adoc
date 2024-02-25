@@ -98,7 +98,7 @@ The time complexity of this code is O(1). This is because the function performs 
 The space complexity of this code is also O(1). This is because the function uses a fixed amount of space to store the `suffixes` list and a few variables (`size`, `notation`, `base`, `index`). The space usage does not increase with the size of the input.
 
 ==== Tests
-Coverage: 100% files, 91% lines covered
+Coverage: 100% files, 90% lines covered
 
 [source,python,linenums]
 ----
