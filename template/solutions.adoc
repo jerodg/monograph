@@ -21,7 +21,7 @@
 
 [source,python,linenums]
 ----
-include::./[]
+include::./solution_00.py[]
 ----
 
 ==== Explanation
@@ -36,5 +36,5 @@ include::./[]
 
 [source,python,linenums]
 ----
-include::./tests/[]
+include::./tests/test_solution_00.py[]
 ----
