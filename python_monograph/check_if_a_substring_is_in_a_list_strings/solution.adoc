@@ -25,66 +25,72 @@ include::./solution_00.py[]
 
 ==== Explanation
 
-The provided Python code defines a function named `method_00` that checks if a given substring is present in any of the strings in a list.
-The function takes two parameters: `data` and `substr`. `data` is a list of strings where the substring will be searched, and `substr` is the substring to search in the list of strings.
+The provided Python code defines a function named `solution_00` that checks if a given substring is present in any of the strings in a list.
+The function takes two parameters: `data`, which is a list of strings, and `substr`, which is the substring to be searched for.
 
-The function signature is as follows:
+The function begins with a docstring that provides a detailed explanation of its purpose, parameters, return value, and usage.
+It also includes a note that the function does not provide the location of the substring in the string, and references to the Python documentation for the `any()` function.
+
+The function's logic starts with two error checking conditions.
+The first condition checks if the `substr` parameter is `None`.
+If it is, a `TypeError` is raised with the message "NoneType found in substr".
+This is to ensure that the function does not attempt to search for a `None` value, which would not make sense in this context.
 
 [source,python]
 ----
-def method_00(data: List[str], substr: str) -> bool:
+if substr is None:
+    raise TypeError("NoneType found in substr")
 ----
 
-This indicates that the function `method_00` takes in two arguments, `data` which is a list of strings, and `substr` which is a string.
-The function returns a boolean value.
+The second condition checks if any element in the `data` list is `None`.
+If it is, a `TypeError` is raised with the message "NoneType found in list".
+This is to ensure that the function does not attempt to search within a `None` value, which would result in an error.
 
-The function uses the built-in Python function `any()`.
-The `any()` function returns `True` if at least one element of an iterable is true, otherwise it returns `False`.
-In this case, the iterable is a generator expression that checks if the substring `substr` is in each string `x` in the list `data`.
+[source,python]
+----
+if None in data:
+    raise TypeError("NoneType found in list")
+----
 
-The relevant line of code is:
+After these error checks, the function uses the `any()` function in combination with a generator expression to check if the substring is in any string in the list.
+The `any()` function returns `True` if at least one element is `True`, and the 'in' operator checks if the substring is a part of each string.
+The 'for' loop iterates over each string in the list.
+If the substring is found in any string, the function returns `True`.
+Otherwise, it returns `False`.
 
 [source,python]
 ----
 return any(substr in x for x in data)
 ----
 
-This line of code will return `True` if the substring `substr` is found in any string in the list `data`, and `False` otherwise.
-
-NOTE: It's important to note that this function does not provide the location of the substring in the string.
-It only checks for the existence of the substring in the list of strings.
+This function is a concise and efficient way to check if a substring is present in any string in a list, and it includes robust error checking to handle potential issues with the input data.
 
 ==== Advantages
-1. **Simplicity**: The method is straightforward and easy to understand.
-It uses built-in Python functions and language features, making it accessible to developers familiar with Python.
-
-2. **Efficiency**: The `any()` function stops iterating as soon as it finds an element in the iterable that satisfies the condition.
-This means that in the best-case scenario (the substring is found in the first string), the function has a time complexity of O(1).
-In the worst-case scenario (the substring is not found or is in the last string), the function has a time complexity of O(n), where n is the total number of characters in all strings in the list.
-
-3. **Versatility**: This method can handle any list of strings and any substring, including empty strings and lists.
+1. **Efficiency**: The `any()` function is a built-in Python function, which is highly optimized and efficient.
+It stops and returns `True` as soon as it finds a `True` element, making it a quick way to check for the presence of a substring.
+2. **Simplicity**: The use of a generator expression simplifies the code by combining the iteration over the list and the search for the substring into a single line.
+This makes the code more concise and easier to read.
+3. **Error Handling**: The function includes error checking to handle potential issues with the input data.
+It checks if the substring or any element in the list is `None` and raises a `TypeError` if it is.
 
 ==== Disadvantages
+1. **Limited Information**: The function only returns a boolean value indicating whether the substring was found in the list.
+It does not provide any information about where the substring was found.
+If this information is needed, the function would need to be modified or a different approach would need to be used.
+2. **Case Sensitivity**: The `in` operator is case sensitive, so the function will not find a match if the case of the substring does not match the case of the strings in the list.
+If case-insensitive matching is required, the function would need to be modified.
+3. **Error Handling**: While the function does handle `None` values in the input, it might not be the most appropriate way to handle this situation.
+It might be better to simply ignore `None` values or to return a specific value indicating that the list or the substring contained invalid data.
 
-1. **Lack of Detailed Information**: The method only checks for the existence of the substring in the list of strings.
-It does not provide the location of the substring in the string or in which string(s) the substring was found.
-
-2. **Case Sensitivity**: Python's `in` operator is case-sensitive, which means that the method might not work as expected if the case of the substring and the strings in the list do not match.
-If case-insensitive matching is required, additional steps would need to be taken (such as converting all strings to lower or upper case before the check).
-
-3. **No Pattern Matching**: The method checks for exact matches of the substring in the strings in the list.
-It does not support pattern matching or regular expressions.
-If more complex searches are required, a different method might be more suitable.
 
 ==== Complexity Analysis
-**Time Complexity**: The time complexity of the function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
-This is because for each string in the list, the function checks if the substring exists within it.
-The 'in' operator, used to check if the substring exists in a string, has a time complexity of O(m), where m is the length of the string.
-Therefore, if there are n strings in the list, the total time complexity becomes O(n*m).
+**Time Complexity**: The function uses the `any()` function in combination with a generator expression to iterate over each string in the `data` list.
+For each string, it checks if the substring is found in the string using the `in` operator.
+Both the `any()` function and the `in` operator have a time complexity of O(n), where n is the length of the string.
+Therefore, the total time complexity of the function is O(n * m), where n is the number of strings in the list and m is the average length of the strings.
 
-**Space Complexity**: The space complexity of the function is O(1), which means it uses constant space.
-This is because the function only uses a fixed amount of space to store the input and variables, and does not use any additional data structures whose size depends on the input.
-The generator expression used in the 'any' function does not generate all its values at once, but one at a time, thus it doesn't use additional space proportional to the size of the input list.
+**Space Complexity**: The space complexity of the function is O(1), as it does not use any additional space that scales with the size of the input.
+The function only uses a few variables to store the input parameters and the result, so the space complexity is constant.
 
 ==== Tests
 

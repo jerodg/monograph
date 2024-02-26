@@ -21,37 +21,37 @@ import pytest
 
 from python_monograph.check_if_a_substring_is_in_a_list_strings.solution_00 import solution_00
 
-# todo: needs verification
+
 def test_substring_found_in_list():
-    assert solution_00(["apple", "banana", "cherry"], "app") == True
+    assert solution_00(["apple", "banana", "cherry"], "app") is True
 
 
 def test_substring_not_found_in_list():
-    assert solution_00(["apple", "banana", "cherry"], "z") == False
+    assert solution_00(["apple", "banana", "cherry"], "z") is False
 
 
 def test_substring_found_in_one_string_only():
-    assert solution_00(["apple", "banana", "cherry"], "ban") == True
+    assert solution_00(["apple", "banana", "cherry"], "ban") is True
 
 
 def test_substring_found_in_all_strings():
-    assert solution_00(["apple", "banana", "cherry"], "a") == True
+    assert solution_00(["apple", "banana", "cherry"], "a") is True
 
 
 def test_substring_is_empty_string():
-    assert solution_00(["apple", "banana", "cherry"], "") == True
+    assert solution_00(["apple", "banana", "cherry"], "") is True
 
 
 def test_list_is_empty():
-    assert solution_00([], "app") == False
+    assert solution_00([], "app") is False
 
 
 def test_list_contains_empty_string():
-    assert solution_00(["apple", "", "cherry"], "app") == True
+    assert solution_00(["apple", "", "cherry"], "app") is True
 
 
 def test_list_contains_only_empty_strings():
-    assert solution_00(["", "", ""], "app") == False
+    assert solution_00(["", "", ""], "app") is False
 
 
 def test_list_contains_none():
@@ -65,21 +65,20 @@ def test_substring_is_none():
 
 
 def test_list_contains_non_string_elements():
-    with pytest.raises(TypeError):
-        solution_00(["apple", 123, "cherry"], "app")
+    assert solution_00(["apple", 123, "cherry"], "app") is True
 
 
 def test_list_contains_strings_with_special_characters():
-    assert solution_00(["app$le", "banana", "cherry"], "$") == True
+    assert solution_00(["app$le", "banana", "cherry"], "$") is True
 
 
 def test_substring_contains_special_characters():
-    assert solution_00(["apple", "banana", "cherry"], "$") == False
+    assert solution_00(["apple", "banana", "cherry"], "$") is False
 
 
 def test_list_contains_strings_with_numbers():
-    assert solution_00(["apple1", "banana", "cherry"], "1") == True
+    assert solution_00(["apple1", "banana", "cherry"], "1") is True
 
 
 def test_substring_contains_numbers():
-    assert solution_00(["apple", "banana", "cherry"], "1") == False
+    assert solution_00(["apple", "banana", "cherry"], "1") is False

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Check if a Substring is in a List of Strings Method 02
+"""Python Monograph: Check if a Substring is in a List of Strings Solution 02
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -40,6 +40,9 @@ def solution_02(data: List[str], substr: str) -> bool:
     Returns:
         bool: True if the substring is found in any string in the list, False otherwise.
 
+    Raises:
+        AttributeError: If any element in the list is None.
+
     Example:
     >>> solution_02(["apple", "banana", "cherry"], "app")
         True
@@ -49,9 +52,15 @@ def solution_02(data: List[str], substr: str) -> bool:
     References:
         https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find
     """
+    # Check if any element in the list is None. If it is, raise an AttributeError.
     if None in data:
-        raise AttributeError('NoneType found in list')
+        raise AttributeError("NoneType found in list")
 
+    # Use a list comprehension to iterate over the list of strings and apply the find() method to each string.
+    # If the substring is found in any string (find() method does not return -1), the list comprehension will return a list with at
+    # least one element, and the function will return True.
+    # If the substring is not found in any string, the list comprehension will return an empty list, and the function will return
+    # False.
     return True if [x for x in data if x.find(substr) != -1] else False
 
 

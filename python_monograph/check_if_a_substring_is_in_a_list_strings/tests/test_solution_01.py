@@ -17,28 +17,69 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
+import pytest
+
 from python_monograph.check_if_a_substring_is_in_a_list_strings.solution_01 import solution_01
 
 
-def test_substring_present_in_list():
-    assert solution_01(["apple", "banana", "cherry"], "app") == True
+def test_substring_found_in_list():
+    assert solution_01(["apple", "banana", "cherry"], "app") is True
 
 
-def test_substring_not_present_in_list():
-    assert solution_01(["apple", "banana", "cherry"], "z") == False
+def test_substring_not_found_in_list():
+    assert solution_01(["apple", "banana", "cherry"], "z") is False
 
 
-def test_substring_present_in_empty_string():
-    assert solution_01(["apple", "banana", "cherry", ""], "") == True
+def test_substring_found_in_one_string_only():
+    assert solution_01(["apple", "banana", "cherry"], "ban") is True
 
 
-def test_substring_not_present_in_empty_list():
-    assert solution_01([], "app") == False
+def test_substring_found_in_all_strings():
+    assert solution_01(["apple", "banana", "cherry"], "a") is True
 
 
-def test_substring_case_sensitivity():
-    assert solution_01(["apple", "banana", "cherry"], "APP") == False
+def test_substring_is_empty_string():
+    assert solution_01(["apple", "banana", "cherry"], "") is True
 
 
-def test_substring_in_list_with_special_characters():
-    assert solution_01(["apple@", "#banana", "cherry!"], "@") == True
+def test_list_is_empty():
+    assert solution_01([], "app") is False
+
+
+def test_list_contains_empty_string():
+    assert solution_01(["apple", "", "cherry"], "app") is True
+
+
+def test_list_contains_only_empty_strings():
+    assert solution_01(["", "", ""], "app") is False
+
+
+def test_list_contains_none():
+    with pytest.raises(TypeError):
+        solution_01(["apple", None, "cherry"], "app")
+
+
+def test_substring_is_none():
+    with pytest.raises(TypeError):
+        solution_01(["apple", "banana", "cherry"], None)
+
+
+def test_list_contains_non_string_elements():
+    with pytest.raises(TypeError):
+        solution_01(["apple", 123, "cherry"], "app")
+
+
+def test_list_contains_strings_with_special_characters():
+    assert solution_01(["app$le", "banana", "cherry"], "$") is True
+
+
+def test_substring_contains_special_characters():
+    assert solution_01(["apple", "banana", "cherry"], "$") is False
+
+
+def test_list_contains_strings_with_numbers():
+    assert solution_01(["apple1", "banana", "cherry"], "1") is True
+
+
+def test_substring_contains_numbers():
+    assert solution_01(["apple", "banana", "cherry"], "1") is False

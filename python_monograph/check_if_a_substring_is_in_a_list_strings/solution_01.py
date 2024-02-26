@@ -38,17 +38,31 @@ def solution_01(data: List[str], substr: str) -> bool:
 
     Example:
     >>> solution_01(["apple", "banana", "cherry"], "app")
-    True
+        True
     >>> solution_01(["apple", "banana", "cherry"], "z")
-    False
+        False
 
     References:
         https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find
     """
+    # Check if the substring is None. If it is, raise a TypeError.
+    if substr is None:
+        raise TypeError("NoneType found in substr")
+
+    # Check if any element in the list is None. If it is, raise a TypeError.
+    if None in data:
+        raise TypeError("NoneType found in list")
+
+    # Iterate over each string in the list.
     for row in data:
+        # Use the find() method to check if the substring is in the string.
+        # The find() method returns the lowest index where the substring is found.
+        # If the substring is not found, the find() method returns -1.
+        # If the substring is found (i.e., find() does not return -1), return True.
         if row.find(substr) != -1:  # Returns -1 if not found
             return True
 
+    # If the substring is not found in any string in the list, return False.
     return False
 
 

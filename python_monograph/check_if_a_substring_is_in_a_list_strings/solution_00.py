@@ -42,6 +42,19 @@ def solution_00(data: List[str], substr: str) -> bool:
     References:
         https://docs.python.org/3/library/functions.html?highlight=any#any
     """
+    # Check if the substring is None. If it is, raise a TypeError.
+    if substr is None:
+        raise TypeError("NoneType found in substr")
+
+    # Check if any element in the list is None. If it is, raise a TypeError.
+    if None in data:
+        raise TypeError("NoneType found in list")
+
+    # Use the any() function to check if the substring is in any string in the list.
+    # The any() function returns True if at least one element is True.
+    # The 'in' operator checks if the substring is a part of each string.
+    # The 'for' loop iterates over each string in the list.
+    # If the substring is found in any string, the function returns True. Otherwise, it returns False.
     return any(substr in x for x in data)
 
 
