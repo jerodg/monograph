@@ -20,6 +20,7 @@
 === Example(s)
 
 ==== 0
+
 .Input
 [source,python,linenums]
 ----

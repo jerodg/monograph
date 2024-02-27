@@ -64,6 +64,7 @@ return nums[k - 1]
 In summary, this function sorts a list of numbers in either ascending or descending order, depending on the `largest` parameter, and then returns the kth element in the sorted list.
 
 ==== Advantages
+
 1. **Simplicity**: The code is straightforward and easy to understand.
 It uses built-in Python functions, which makes it accessible to developers who are familiar with the language.
 
@@ -85,6 +86,7 @@ This could be a disadvantage if memory usage is a concern.
 This could be a disadvantage if you need to preserve the original order of the list for other parts of your program.
 
 ==== Complexity Analysis
+
 **Time Complexity:**
 
 The time complexity of the function is dominated by the sorting operation.
@@ -104,7 +106,6 @@ But since this space is used internally by the `sort` function and does not grow
 ----
 include::./tests/test_solution_00.py[]
 ----
-
 
 === Solution 01
 
@@ -167,12 +168,12 @@ In summary, this function uses a heap to efficiently find the kth largest or sma
 It does this by maintaining a heap of the `k` largest or smallest elements seen so far, and returning the smallest element on the heap at the end.
 
 ==== Advantages
+
 1. **Efficiency:** The heap data structure allows the function to efficiently keep track of the k largest or smallest elements seen so far.
 This is because the heap property ensures that the smallest element is always at the root of the heap, which allows the function to quickly remove the smallest element when the size of the heap exceeds k.
 
 2. **Flexibility:** The function can find either the kth largest or smallest element in the list, depending on the value of the `largest` parameter.
 This is achieved by negating each element before pushing it onto the heap and after popping it off when `largest` is set to `False`, which effectively turns the min-heap into a max-heap.
-
 
 ==== Disadvantages
 
@@ -183,6 +184,7 @@ This is because the `heapq` functions use additional space to maintain the heap 
 This extra space is used internally by the `heapq` functions and does not grow with the size of the input to our function, but it's still worth noting.
 
 ==== Complexity Analysis
+
 **Time Complexity:**
 
 The time complexity of the function is dominated by the loop that iterates over the `nums` list.
@@ -270,6 +272,7 @@ else:
 In summary, this code provides a Python implementation of the QuickSelect algorithm, which is an efficient way to find the kth largest or smallest element in a list.
 
 ==== Advantages
+
 1. *In-place Algorithm*: QuickSelect is an in-place algorithm, meaning it doesn't require any extra space apart from the input list.
 This makes it memory efficient.
 
@@ -277,8 +280,8 @@ This makes it memory efficient.
 
 3. *Average Time Complexity*: The average time complexity of QuickSelect is O(n), which is quite efficient.
 
-
 ==== Disadvantages
+
 1. *Worst-case Time Complexity*: The worst-case time complexity of QuickSelect is O(n^2^), which occurs when the pivot is the smallest or the largest element in the list.
 However, this scenario is quite rare, especially if the pivot is chosen randomly.
 

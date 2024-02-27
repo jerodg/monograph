@@ -49,7 +49,7 @@ def solution_04(data: List[str], substr: str) -> bool:
     """
     # Check if the substring is None
     if substr is None:
-        raise TypeError('NoneType found in substr')
+        raise TypeError("NoneType found in substr")
 
     try:
         # Iterate over each string in the list
@@ -60,7 +60,7 @@ def solution_04(data: List[str], substr: str) -> bool:
                 return True
     except TypeError:
         # If any element in the list is None, raise a TypeError
-        raise TypeError('NoneType found in list')
+        raise TypeError("NoneType found in list")
 
     # If the substring is not found in any string after iterating over the entire list, return False
     return False

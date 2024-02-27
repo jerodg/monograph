@@ -66,6 +66,7 @@ return any(substr in x for x in data)
 This function is a concise and efficient way to check if a substring is present in any string in a list, and it includes robust error checking to handle potential issues with the input data.
 
 ==== Advantages
+
 1. **Efficiency**: The `any()` function is a built-in Python function, which is highly optimized and efficient.
 It stops and returns `True` as soon as it finds a `True` element, making it a quick way to check for the presence of a substring.
 2. **Simplicity**: The use of a generator expression simplifies the code by combining the iteration over the list and the search for the substring into a single line.
@@ -74,6 +75,7 @@ This makes the code more concise and easier to read.
 It checks if the substring or any element in the list is `None` and raises a `TypeError` if it is.
 
 ==== Disadvantages
+
 1. **Limited Information**: The function only returns a boolean value indicating whether the substring was found in the list.
 It does not provide any information about where the substring was found.
 If this information is needed, the function would need to be modified or a different approach would need to be used.
@@ -82,8 +84,8 @@ If case-insensitive matching is required, the function would need to be modified
 3. **Error Handling**: While the function does handle `None` values in the input, it might not be the most appropriate way to handle this situation.
 It might be better to simply ignore `None` values or to return a specific value indicating that the list or the substring contained invalid data.
 
-
 ==== Complexity Analysis
+
 **Time Complexity**: The function uses the `any()` function in combination with a generator expression to iterate over each string in the `data` list.
 For each string, it checks if the substring is found in the string using the `in` operator.
 Both the `any()` function and the `in` operator have a time complexity of O(n), where n is the length of the string.
@@ -98,7 +100,6 @@ The function only uses a few variables to store the input parameters and the res
 ----
 include::./tests/test_solution_00.py[]
 ----
-
 
 === Solution 01
 
@@ -143,6 +144,7 @@ It's important to note that this function does not provide the location of the s
 It only checks for the existence of the substring in the list of strings.
 
 ==== Advantages
+
 1. **Simplicity**: The method is straightforward and easy to understand.
 It uses built-in Python functions and language features, making it accessible to developers familiar with Python.
 
@@ -153,6 +155,7 @@ In the worst-case scenario (the substring is not found or is in the last string)
 3. **Versatility**: This method can handle any list of strings and any substring, including empty strings and lists.
 
 ==== Disadvantages
+
 1. **Lack of Detailed Information**: The method only checks for the existence of the substring in the list of strings.
 It does not provide the location of the substring in the string or in which string(s) the substring was found.
 
@@ -164,6 +167,7 @@ It does not support pattern matching or regular expressions.
 If more complex searches are required, a different method might be more suitable.
 
 ==== Complexity Analysis
+
 **Time Complexity**: The time complexity of the function is O(n*m), where n is the number of strings in the list and m is the average length of the strings.
 This is because for each string in the list, the function checks if the substring exists within it.
 The 'find()' method, used to check if the substring exists in a string, has a time complexity of O(m), where m is the length of the string.
@@ -228,13 +232,13 @@ It uses the `find()` method and a list comprehension to achieve this.
 NOTE: This method will fail if the list contains `None` values.
 
 ==== Advantages
+
 1. **Efficiency**: The `find()` method is a built-in Python method, which is highly optimized and efficient.
 It returns the lowest index in the string where the substring is found, or -1 if the substring is not found.
 This makes it a quick and efficient way to check for the presence of a substring.
 2. **Simplicity**: The use of a list comprehension simplifies the code by combining the iteration over the list and the application of the `find()` method into a single line.
 This makes the code more concise and easier to read.
 3. **Flexibility**: The function can handle any list of strings and any substring, making it a flexible solution for checking the presence of a substring in a list of strings.
-
 
 ==== Disadvantages
 
@@ -248,6 +252,7 @@ If this information is needed, the function would need to be modified or a diffe
 If case-insensitive matching is required, the function would need to be modified.
 
 ==== Complexity Analysis
+
 **Time Complexity**: The `find()` method, used to check if the substring exists in a string, has a time complexity of O(m), where m is the length of the string.
 Therefore, if there are n strings in the list, the total time complexity becomes O(n*m).
 
@@ -260,7 +265,6 @@ This is because the function only uses a fixed amount of space to store the inpu
 ----
 include::./tests/test_solution_02.py[]
 ----
-
 
 === Solution 03
 
@@ -311,6 +315,7 @@ It uses the `join()` method and the `in` keyword to achieve this.
 NOTE: This method will fail if the list or the substring contains `None` values.
 
 ==== Advantages
+
 1. **Efficiency**: The `join()` method is a built-in Python method, which is highly optimized and efficient.
 It concatenates all the strings in the list into a single string, which can then be searched for the substring.
 This makes it a quick and efficient way to check for the presence of a substring.
@@ -319,6 +324,7 @@ This makes the code more concise and easier to read.
 3. **Flexibility**: The function can handle any list of strings and any substring, making it a flexible solution for checking the presence of a substring in a list of strings.
 
 ==== Disadvantages
+
 1. **Error Handling**: The function raises a `TypeError` if `None` is found in the list or in the substring.
 While this prevents the function from failing when it encounters a `None` value, it may not be the most appropriate way to handle this situation.
 It might be better to simply ignore `None` values or to return a specific value indicating that the list or the substring contained invalid data.
@@ -331,6 +337,7 @@ If case-insensitive matching is required, the function would need to be modified
 This could potentially cause issues if the strings in the list or the substring contain tab characters.
 
 ==== Complexity Analysis
+
 **Time Complexity**: The `join()` method, used to concatenate all the strings in the list into a single string, has a time complexity of O(n), where n is the total length of all the strings in the list.
 The `in` keyword, used to check if the substring exists in the joined string, also has a time complexity of O(n), where n is the length of the joined string.
 Therefore, the total time complexity of the function is O(n + n) = O(2n), which simplifies to O(n).
@@ -345,8 +352,6 @@ The size of this new string depends on the total length of all the strings in th
 ----
 include::./tests/test_solution_03.py[]
 ----
-
-
 
 === Solution 04
 
@@ -395,14 +400,15 @@ In summary, `solution_04` is a Python function that checks if a given substring 
 It uses a for-loop and the `in` keyword to achieve this.
 
 ==== Advantages
+
 1. **Efficiency**: The `in` keyword is a built-in Python operator, which is highly optimized and efficient.
 It checks for the presence of a substring in a string, making it a quick and efficient way to check for the presence of a substring.
 2. **Simplicity**: The use of a for-loop and the `in` keyword simplifies the code by combining the iteration over the list and the search for the substring into a few lines.
 This makes the code more concise and easier to read.
 3. **Flexibility**: The function can handle any list of strings and any substring, making it a flexible solution for checking the presence of a substring in a list of strings.
 
-
 ==== Disadvantages
+
 1. **Error Handling**: The function raises a `TypeError` if `None` is found in the list or in the substring.
 While this prevents the function from failing when it encounters a `None` value, it may not be the most appropriate way to handle this situation.
 It might be better to simply ignore `None` values or to return a specific value indicating that the list or the substring contained invalid data.
@@ -413,6 +419,7 @@ If this information is needed, the function would need to be modified or a diffe
 If case-insensitive matching is required, the function would need to be modified.
 
 ==== Complexity Analysis
+
 **Time Complexity**: The function uses a for-loop to iterate over each string in the `data` list.
 For each string, it checks if the substring is found in the string using the `in` operator.
 Both the for-loop and the `in` operator have a time complexity of O(n), where n is the length of the string.
@@ -475,6 +482,7 @@ In summary, `solution_05` is a Python function that checks if a given substring 
 It uses a list comprehension and the `in` keyword to achieve this.
 
 ==== Advantages
+
 1. **Efficiency**: The `in` keyword is a built-in Python operator, which is highly optimized and efficient.
 It checks for the presence of a substring in a string, making it a quick and efficient way to check for the presence of a substring.
 2. **Simplicity**: The use of a list comprehension simplifies the code by combining the iteration over the list and the search for the substring into a single line.
@@ -493,6 +501,7 @@ If this information is needed, the function would need to be modified or a diffe
 If case-insensitive matching is required, the function would need to be modified.
 
 ==== Complexity Analysis
+
 **Time Complexity**: The function uses a list comprehension to iterate over each string in the `data` list.
 For each string, it checks if the substring is found in the string using the `in` operator.
 Both the list comprehension and the `in` operator have a time complexity of O(n), where n is the length of the string.

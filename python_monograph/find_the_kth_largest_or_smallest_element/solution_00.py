@@ -24,7 +24,8 @@ def solution_00(nums: list, k: int, largest: bool = True) -> int:
 
     Parameters:
         nums (list): A list of integers.
-        k (int): The position of the element to find. If 'largest' is True, this is the kth largest element. If 'largest' is False, this is the kth smallest element.
+        k (int): The position of the element to find. If 'largest' is True, this is the kth largest element. If 'largest' is
+        False, this is the kth smallest element.
         largest (bool, optional): A boolean indicating whether to find the kth largest or smallest element. Defaults to True.
 
     Returns:

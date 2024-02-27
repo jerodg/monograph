@@ -76,11 +76,13 @@ In summary, the `convert_bytes` function converts a size in bytes to the largest
 This is achieved by passing the `notation` argument to the function, which can be either 'binary' or 'decimal'.
 
 2. **Simplicity**: The code is straightforward and easy to understand.
-It uses a while loop to divide the size by the base (1024 for binary and 1000 for decimal) until the size is less than the base. This effectively finds the largest unit that the size can be expressed in.
+It uses a while loop to divide the size by the base (1024 for binary and 1000 for decimal) until the size is less than the base.
+This effectively finds the largest unit that the size can be expressed in.
 
 3. **Error Handling**: The method includes a check for invalid `notation` values and raises a `ValueError` if the `notation` is neither 'binary' nor 'decimal'.
 
 ==== Disadvantages
+
 1. **Limited Error Checking**: While the method does check for invalid `notation` values, it does not check if the `size` argument is a positive number.
 If a negative number or a non-numeric value is passed for `size`, the function may behave unexpectedly.
 
@@ -91,13 +93,19 @@ The `:param`, `:type`, `:return`, and `:rtype` fields are not filled out, which 
 This could be avoided by breaking out of the loop as soon as the size is less than the base.
 
 ==== Complexity Analysis
+
 **Time Complexity:**
-The time complexity of this code is O(1). This is because the function performs a fixed number of operations that do not scale with the size of the input. The while loop in the function runs at most 8 times (the length of the `suffixes` list minus 1), regardless of the value of `size`.
+The time complexity of this code is O(1).
+This is because the function performs a fixed number of operations that do not scale with the size of the input.
+The while loop in the function runs at most 8 times (the length of the `suffixes` list minus 1), regardless of the value of `size`.
 
 **Space Complexity:**
-The space complexity of this code is also O(1). This is because the function uses a fixed amount of space to store the `suffixes` list and a few variables (`size`, `notation`, `base`, `index`). The space usage does not increase with the size of the input.
+The space complexity of this code is also O(1).
+This is because the function uses a fixed amount of space to store the `suffixes` list and a few variables (`size`, `notation`, `base`, `index`).
+The space usage does not increase with the size of the input.
 
 ==== Tests
+
 Coverage: 100% files, 90% lines covered
 
 [source,python,linenums]

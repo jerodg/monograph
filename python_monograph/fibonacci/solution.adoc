@@ -176,6 +176,7 @@ If `n` is large, the function could cause a stack overflow error because it exce
 3. **Memory Usage**: Recursive solutions generally use more memory than iterative solutions because they need to keep track of all the recursive calls.
 
 ===== Complexity Analysis
+
 **Time Complexity:**
 The time complexity of this code is O(2^n).
 This is because for each number calculated, the function calls itself twice - once for `(n-1)` and once for `(n-2)`.
@@ -265,6 +266,7 @@ It requires knowledge of matrix operations and the mathematical properties of th
 This might not be desirable in some cases, especially if you're trying to keep your codebase minimal or if you're working in an environment where you can't easily install external libraries.
 
 ==== Complexity Analysis
+
 **Time Complexity:**
 The time complexity of this code is O(log n).
 This is because the matrix exponentiation operation can be performed in logarithmic time.

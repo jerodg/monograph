@@ -45,15 +45,15 @@ def solution_03(data: List[str], substr: str) -> bool:
         https://docs.python.org/3/library/stdtypes.html?highlight=join#str.join
     """
     if substr is None:
-        raise TypeError('NoneType found in substr')
+        raise TypeError("NoneType found in substr")
 
     if None in data:
-        raise TypeError('NoneType found in list')
+        raise TypeError("NoneType found in list")
 
     try:
         return substr in "\t".join(data)
     except TypeError:
-        raise TypeError('NoneType found in list')
+        raise TypeError("NoneType found in list")
 
 
 if __name__ == "__main__":

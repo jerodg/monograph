@@ -12,10 +12,12 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to find out if a given string is within a list of strings.
 
 === Constraint(s)
+
 substr must be a string +
 data must be a list of strings
 

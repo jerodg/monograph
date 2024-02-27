@@ -50,22 +50,23 @@ This ensures that the output is presented in a consistent and predictable order.
 The function also includes a docstring that provides a detailed explanation of its purpose, parameters, return value, and usage examples.
 This is a common practice in Python to improve code readability and maintainability.
 
-
 ==== Advantages
+
 1. **Efficiency**: The function uses Python's built-in `combinations` function from the `itertools` module, which is highly optimized for generating combinations.
 This makes the function relatively efficient.
 2. **Simplicity**: The function is implemented in a single line of code, which makes it concise and easy to understand for someone familiar with Python's list and set comprehensions.
 3. **Elimination of Duplicates**: The use of a set comprehension `{abc for abc in combinations(sorted(nums), 3) if not sum(abc)}` helps in eliminating duplicate triplets, as sets in Python do not allow duplicate elements.
 4. **Sorted Output**: The function returns the output in a sorted order, which can be useful in certain scenarios where the order of the output matters.
 
-
 ==== Disadvantages
+
 1. **Memory Usage**: The function generates all possible combinations of three elements from the input list.
 This can consume a lot of memory if the input list is large.
 2. **Performance**: Although the function is relatively efficient due to the use of Python's built-in functions, it can still be slow for large input lists because it generates all combinations of three elements, which is an operation with a time complexity of O(n^3).
 3. **Readability**: While the function is concise, the use of complex list and set comprehensions in a single line can make the code harder to read and understand for developers who are not familiar with these Python features.
 
 ==== Complexity Analysis
+
 The time complexity of the selected code is O(n^3), where n is the length of the input list.
 This is because the function generates all possible combinations of three elements from the input list, which is an operation with a time complexity of O(n^3).
 
@@ -122,7 +123,6 @@ This is because for each element in the list, the function only needs to make a 
 
 2. **Handling Duplicates**: The method effectively handles duplicates by skipping over the same numbers.
 This ensures that the result list only contains unique triplets.
-
 
 ==== Disadvantages
 

@@ -50,11 +50,11 @@ def solution_05(data: List[str], substr: str) -> bool:
     """
     # Check if the list contains None
     if None in data:
-        raise TypeError('NoneType found in list')
+        raise TypeError("NoneType found in list")
 
     # Check if the substring is None
     if substr is None:
-        raise TypeError('NoneType found in substr')
+        raise TypeError("NoneType found in substr")
 
     # Use list comprehension to check if the substring is in any string in the list
     # If the list comprehension returns a list with at least one element, return True

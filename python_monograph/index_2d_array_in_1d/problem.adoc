@@ -13,6 +13,7 @@
 :keywords: problem, python
 
 == Problem
+
 [.lead]
 You need to index a 2-dimensional array in 1-dimension.
 

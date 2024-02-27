@@ -13,19 +13,22 @@
 :keywords: problem, python
 
 == Python provides a Boolean data type. Objects of Boolean type may have one of two values, _____ or _____.
+
 - True, False
 
 == In Python 3, the maximum value for an integer is 2^63^ - 1:
+
 - False
 
-NOTE: In Python 3, there is no explicit limit to the size of an integer value. The amount of available address space (hardware)
-forms a practical limit depending on the machine Python runs on.
+NOTE: In Python 3, there is no explicit limit to the size of an integer value.
+The amount of available address space (hardware) forms a practical limit depending on the machine Python runs on.
 
 == How would you express the hexadecimal value `+a5+` as a base-16 integer constant in Python?
 
 - 0xa5
 
 == How would you express the constant floating-point value 3.2 × 10^-12^ in Python:
+
 - 3.2e-12
 
 NOTE: We’re looking for a _constant_ value, so an _expression_ like `+3.2 * 10 ** -12+` would *not* be a valid answer in this case.
@@ -65,8 +68,8 @@ e) `+baz+` +
 
 - `foo\\bar\nbaz`
 
-
 == Which of the following is not a Python built-in function: +
+
 a) `+map()+` +
 b) `+isinstance()+` +
 c) `+round()+` +
