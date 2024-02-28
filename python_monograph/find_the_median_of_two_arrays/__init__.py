@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Tests
+"""Python Monograph:
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -17,6 +17,3 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-
-if __name__ == "__main__":
-    print(__doc__)
