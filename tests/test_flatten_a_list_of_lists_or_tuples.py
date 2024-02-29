@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from python_monograph.flatten_a_list_of_lists_or_tuples.solution import method_0, method_1, method_2, method_3, method_4
+from src.python_monograph import method_0, method_1, method_2, method_3, method_4
 
 
 def test_method_0_flattens_nested_lists():
@@ -61,5 +61,5 @@ def test_method_4_flattens_lists():
 #     assert method_4([]) == []
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(__doc__)

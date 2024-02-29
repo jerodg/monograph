@@ -1,24 +1,34 @@
-[tool.poetry]
+[project]
 name = "python-monograph"
 version = "0.1.0"
-description = "How do I...?"
-authors = ["Jerod Gawne <jerodg@pm.me>"]
-readme = "readme.adoc"
-license = "SSPL"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-pytest = "^8.0.0"
-numpy = "^1.26.4"
-pandas = "^2.2.0"
-requests = "^2.31.0"
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.2.2"
+description = "A learned treatise on Python."
+authors = [
+    { name = "JerodG", email = "2856163+jerodg@users.noreply.github.com" }
+]
+dependencies = [
+    "numpy>=1.26.4",
+    "pandas>=2.2.1",
+    "requests>=2.31.0",
+]
+readme = "readme.md"
+requires-python = ">= 3.12"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.0.2",
+    "pytest-benchmark>=4.0.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/python_monograph"]
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
@@ -49,6 +59,7 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
+    ".idea",
 ]
 
 line-length = 132
@@ -58,6 +69,8 @@ target-version = "py312"
 
 [tool.ruff.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
 select = ["E4", "E7", "E9", "F"]
 ignore = []
 
@@ -70,7 +83,7 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.ruff.format]
 # Like Black, use double quotes for strings.
-quote-style = "double"
+quote-style = "single"
 
 # Like Black, indent with spaces, rather than tabs.
 indent-style = "space"
@@ -79,4 +92,18 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 
 # Like Black, automatically detect the appropriate line ending.
-line-ending = "auto"
+line-ending = "lf"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = true
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"

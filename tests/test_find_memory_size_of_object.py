@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from python_monograph.find_memory_size_of_object.solution import method_0, method_1
+from src.python_monograph import method_0, method_1
 
 
 def test_memsize_returns_correct_size_for_int():
@@ -25,7 +25,7 @@ def test_memsize_returns_correct_size_for_int():
 
 
 def test_memsize_returns_correct_size_for_string():
-    assert method_0("Hello, World!") == 54
+    assert method_0('Hello, World!') == 54
 
 
 def test_memsize_returns_correct_size_for_list():
@@ -33,7 +33,7 @@ def test_memsize_returns_correct_size_for_list():
 
 
 def test_memsize_returns_correct_size_for_dict():
-    assert method_0({"key": "value"}) == 274
+    assert method_0({'key': 'value'}) == 274
 
 
 def test_memsize_returns_correct_size_for_custom_object():
@@ -58,7 +58,7 @@ def test_method_1_handles_integers_correctly():
 
 
 def test_method_1_handles_strings_correctly():
-    assert method_1("Hello, World!") == 54
+    assert method_1('Hello, World!') == 54
 
 
 def test_method_1_handles_lists_correctly():
@@ -66,7 +66,7 @@ def test_method_1_handles_lists_correctly():
 
 
 def test_method_1_handles_dicts_correctly():
-    assert method_1({"key": "value"}) == 230
+    assert method_1({'key': 'value'}) == 230
 
 
 def test_method_1_handles_custom_objects_correctly():
@@ -87,5 +87,5 @@ def test_method_1_handles_custom_objects_correctly():
 #     assert method_1(a) == 200
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(__doc__)

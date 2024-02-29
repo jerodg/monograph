@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from python_monograph.remove_duplicates_from_a_list.solution import (
+from src.python_monograph import (
     method_0,
     method_1,
     method_10,
@@ -105,5 +105,5 @@ def test_method_10_removes_duplicates_using_ordereddict():
     assert method_10([1]) == [1]
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(__doc__)

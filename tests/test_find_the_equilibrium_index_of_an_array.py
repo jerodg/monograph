@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from python_monograph.find_the_equilibrium_index_of_an_array.solution import method_0, method_1
+from find_the_equilibrium_index_of_an_array.solution import method_0, method_1
 
 
 def test_method_0_equilibrium_index_found():
@@ -50,5 +50,5 @@ def test_method_1_empty_array():
     assert method_1(arr) == -1
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(__doc__)

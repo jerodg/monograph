@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from python_monograph.find_the_intersection_of_two_lists_of_tuples.solution import (
+from find_the_intersection_of_two_lists_of_tuples import (
     method_0,
     method_1,
     method_2,
@@ -84,5 +84,5 @@ def test_intersection_not_present_in_lists_using_set_comprehension():
     assert method_6([(1, 2), (3, 4)], [(5, 6), (7, 8)]) == []
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(__doc__)

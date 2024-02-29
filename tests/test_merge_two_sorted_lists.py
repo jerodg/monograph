@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from python_monograph.merge_two_sorted_lists.solution import ListNode, method_0, method_1, method_2
+from src.python_monograph import ListNode, method_0, method_1, method_2
 
 
 # todo: need better tests
@@ -69,5 +69,5 @@ def test_merge_two_sorted_lists_priority_queue():
     assert result.next.next.next.next.next.val == 4
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(__doc__)
