@@ -33,6 +33,62 @@
 
 ----
 
+==== 1
+
+.Input
+[source,python,linenums]
+----
+
+----
+
+.Output
+[source,python,linenums]
+----
+
+----
+
+==== 2
+
+.Input
+[source,python,linenums]
+----
+
+----
+
+.Output
+[source,python,linenums]
+----
+
+----
+
+==== 3
+
+.Input
+[source,python,linenums]
+----
+
+----
+
+.Output
+[source,python,linenums]
+----
+
+----
+
+==== 4
+
+.Input
+[source,python,linenums]
+----
+
+----
+
+.Output
+[source,python,linenums]
+----
+
+----
+
 == Use-Case(s)
 
 == Common Mistakes

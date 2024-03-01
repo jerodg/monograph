@@ -1,0 +1,279 @@
+:doctitle: Find All Permutations of a List of Lists Solutions
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc:
+:icons: font
+:imagesdir: ./img
+:keywords: solution, python
+
+== Solution(s)
+
+[.lead]
+=== Solution 00
+
+==== Implementation
+
+[source,python,linenums]
+----
+include::./solution_00.py[]
+----
+
+==== Explanation
+
+The provided Python code defines a function `solution_00(nums: list[int]) -> list[list[int]]` that generates all permutations of a given list of integers using a recursive approach.
+
+The function starts by initializing an empty list `result` to store the permutations.
+This is done with the line `result: list[list[int]] = []`.
+
+The function then checks if the input list `nums` is empty.
+If it is, the function returns a list containing an empty list.
+This is the base case for the recursion.
+This is done with the lines:
+
+[source,python]
+----
+if len(nums) == 0:
+    return [[]]
+----
+
+The function then enters a loop where it iterates over the input list.
+In each iteration, it removes the first element from the list, recursively generates all permutations of the remaining list, and then appends the removed element to each of these permutations.
+This is done with the lines:
+
+[source,python]
+----
+for _ in range(len(nums)):
+    n = nums.pop(0)
+    permutations = solution_00(nums.copy())
+    for perm in permutations:
+        perm.append(n)
+    result.extend(permutations)
+    nums.append(n)
+----
+
+Here, `n = nums.pop(0)` removes the first element from the list and `permutations = solution_00(nums.copy())` recursively generates all permutations of the remaining list.
+The removed element is then appended to each permutation with `perm.append(n)`, and the new permutations are added to the result list with `result.extend(permutations)`.
+Finally, the removed element is added back to the end of the list with `nums.append(n)`.
+
+At the end of the function, the list of all permutations is returned with `return result`.
+
+In summary, this function uses a recursive approach to generate all permutations of a given list of integers.
+It does this by removing each element from the list, generating all permutations of the remaining list, and then appending the removed element to each of these permutations.
+
+==== Advantages
+
+1. **Simplicity**: Recursive solutions are often simpler and more straightforward to understand than their iterative counterparts.
+The base and recursive cases are clearly defined, which makes the code easier to read and understand.
+2. **No need for auxiliary data structures**: Unlike some other methods that require the use of stacks or queues, this recursive approach does not require any additional data structures, which can simplify the implementation.
+
+==== Disadvantages
+
+1. **Stack Overflow**: Recursive solutions have the risk of stack overflow if the recursion depth becomes too large.
+This is because each recursive call adds a layer to the system call stack.
+If the list is very large, the system might run out of stack space, leading to a stack overflow error.
+2. **Inefficiency**: The recursive approach can be inefficient for large lists.
+This is because it involves a lot of repeated computation where the same subproblems are solved multiple times.
+This redundancy increases the time complexity of the solution.
+3. **Mutability**: The function mutates the input list in each recursive call with `nums.pop(0)` and `nums.append(n)`.
+This could lead to unexpected side effects if the input list is used elsewhere in the program after the function call.
+
+==== Complexity Analysis
+
+The time and space complexity of the selected code can be analyzed as follows:
+
+Time Complexity: The time complexity of generating all permutations of a list of `n` elements is `O(n!)`.
+This is because there are `n!` (n factorial) possible permutations of a list of `n` elements, and the algorithm generates each permutation once.
+The factorial function grows very rapidly with `n`, so the time complexity is exponential.
+
+Space Complexity: The space complexity of the algorithm is also `O(n!)`.
+This is because all `n!` permutations are stored in memory at the same time.
+Each permutation is a list of `n` elements, but since the space complexity is measured in terms of the input size `n`, and not the size of the output, the space complexity is `O(n!)`.
+
+It's worth noting that the actual memory usage might be higher due to the use of recursion.
+Each recursive call adds a layer to the system call stack, and the maximum depth of the recursion is `n`.
+Therefore, the space complexity could be considered as `O(n*n!)` in the worst case, taking into account the call stack.
+However, typically when we talk about space complexity, we refer to the space needed to store the output, hence `O(n!)`.
+
+==== Tests
+
+[source,python,linenums]
+----
+include::./tests/test_solution_00.py[]
+----
+
+=== Solution 01
+
+==== Implementation
+
+[source,python,linenums]
+----
+include::./solution_01.py[]
+----
+
+==== Explanation
+
+I apologize for the oversight.
+Here's the explanation for the selected code formatted using AsciiDoc:
+
+[source,asciidoc]
+----
+The selected Python code consists of two functions, `backtrack` and `solution_01`, which work together to generate all permutations of a given list of integers.
+
+The `backtrack` function is a helper function that generates all permutations of the list from a given start index. It uses a recursive approach to generate the permutations. The function takes three arguments: `output`, `nums`, and `start`. `output` is the list where the permutations are stored, `nums` is the input list of integers, and `start` is the start index for generating permutations.
+
+[source,python]
+----
+
+def backtrack(output: list[list[int]], nums: list[int], start: int) -> list[list[int]]:
+
+----
+
+The function begins by checking if the start index is the last index of the list. If it is, it appends a copy of the list to the output list. This is the base case for the recursion.
+
+[source,python]
+----
+
+if start == len(nums) - 1:
+output.append(nums[:])
+
+----
+
+If the start index is not the last index of the list, the function iterates over the list from the start index. In each iteration, it swaps the start element with the current element, recursively generates all permutations of the remaining list, and then swaps the start element with the current element again to backtrack.
+
+[source,python]
+----
+
+for i in range(start, len(nums)):
+nums[start], nums[i] = nums[i], nums[start]
+backtrack(output, nums, start + 1) nums[start], nums[i] = nums[i], nums[start]
+
+----
+
+The `solution_01` function generates all permutations of a given list of integers using the `backtrack` helper function. It initializes an empty list to store the permutations and starts generating permutations from the first index of the list.
+
+[source,python]
+----
+
+def solution_01(nums: list[int]) -> list[list[int]]:
+output: list[list[int]] = []
+output = backtrack(output, nums, 0)
+
+----
+
+In summary, the selected code uses a backtracking approach to generate all permutations of a given list of integers. It does this by recursively swapping each element with the start element and generating all permutations of the remaining list.
+----
+
+==== Advantages
+
+==== Disadvantages
+
+==== Complexity Analysis
+
+==== Tests
+
+[source,python,linenums]
+----
+include::./tests/test_solution_01.py[]
+----
+
+=== Solution 02
+
+==== Implementation
+
+[source,python,linenums]
+----
+include::./solution_00.py[]
+----
+
+==== Explanation
+
+==== Advantages
+
+==== Disadvantages
+
+==== Complexity Analysis
+
+==== Tests
+
+[source,python,linenums]
+----
+include::./tests/test_solution_00.py[]
+----
+
+=== Solution 03
+
+==== Implementation
+
+[source,python,linenums]
+----
+include::./solution_00.py[]
+----
+
+==== Explanation
+
+==== Advantages
+
+==== Disadvantages
+
+==== Complexity Analysis
+
+==== Tests
+
+[source,python,linenums]
+----
+include::./tests/test_solution_00.py[]
+----
+
+=== Solution 04
+
+==== Implementation
+
+[source,python,linenums]
+----
+include::./solution_00.py[]
+----
+
+==== Explanation
+
+==== Advantages
+
+==== Disadvantages
+
+==== Complexity Analysis
+
+==== Tests
+
+[source,python,linenums]
+----
+include::./tests/test_solution_00.py[]
+----
+
+=== Solution 05
+
+==== Implementation
+
+[source,python,linenums]
+----
+include::./solution_00.py[]
+----
+
+==== Explanation
+
+==== Advantages
+
+==== Disadvantages
+
+==== Complexity Analysis
+
+==== Tests
+
+[source,python,linenums]
+----
+include::./tests/test_solution_00.py[]
+----
