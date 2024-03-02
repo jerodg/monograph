@@ -20,7 +20,7 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from collections import deque
 
 
-def solution(nums: list[int]) -> list[list[int]]:
+def solution_05(nums: list[int]) -> list[list[int]]:
     """
     This function generates all permutations of a given list of integers using a queue-based approach.
 
@@ -31,7 +31,7 @@ def solution(nums: list[int]) -> list[list[int]]:
         list[list[int]]: A list of all permutations of the input list. Each permutation is represented as a list of integers.
 
     Examples:
-        >>> solution([1, 2, 3])
+        >>> solution_05([1, 2, 3])
         [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
     """
     # Initialize the queue with the input list and an empty permutation.

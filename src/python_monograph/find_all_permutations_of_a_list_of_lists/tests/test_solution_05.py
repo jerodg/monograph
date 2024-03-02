@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Tests
+"""Python Monograph: Find All Permutations of a List of Lists Solution 05 Tests
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
@@ -17,6 +17,34 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
+
+from python_monograph.find_all_permutations_of_a_list_of_lists.solution_05 import solution_05
+
+
+def test_empty_list():
+    assert solution_05([]) == [[]]
+
+
+def test_single_element_list():
+    assert solution_05([1]) == [[1]]
+
+
+def test_two_elements_list():
+    assert sorted(solution_05([1, 2])) == sorted([[1, 2], [2, 1]])
+
+
+def test_three_elements_list():
+    assert sorted(solution_05([1, 2, 3])) == sorted([[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]])
+
+
+def test_list_with_duplicate_elements():
+    assert sorted(solution_05([1, 1])) == sorted([[1, 1], [1, 1]])
+
+
+# fixme: this test is failing@pytest.mark.timeout(1)
+# def test_performance_large_input():
+#     solution_01(list(range(10)))
+
 
 if __name__ == '__main__':
     print(__doc__)
