@@ -49,6 +49,12 @@ class Solution_04:
             >>> st.blocks
             [6, 9]
         """
+        if not arr:
+            raise ValueError('Array cannot be empty')
+
+        if not all(isinstance(item, int) for item in arr):
+            raise TypeError('Array must contain only integers')
+
         self.n = len(arr)
         self.block_size = int(math.sqrt(self.n)) + 1
         self.blocks = [0] * self.block_size

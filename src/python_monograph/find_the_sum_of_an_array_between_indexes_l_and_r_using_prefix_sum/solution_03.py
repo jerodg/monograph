@@ -45,6 +45,12 @@ class Solution_03:
             >>> st.table
             [[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4], [5, 5, 5]]
         """
+        if not arr:
+            raise ValueError('Array cannot be empty')
+
+        if not all(isinstance(item, int) for item in arr):
+            raise TypeError('Array must contain only integers')
+
         self.n = len(arr)
         self.table = self.build_table(arr)
 
