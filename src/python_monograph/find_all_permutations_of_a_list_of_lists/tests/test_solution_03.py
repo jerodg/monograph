@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Python Monograph: Tests
+"""Python Monograph: Find All Permutations of a List of Lists Solution 03 Tests
 
 Copyright ©2024 Jerod Gawne <https://github.com/jerodg/>
 
