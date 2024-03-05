@@ -4,7 +4,7 @@
 # last locked with the following flags:
 #   pre: false
 #   features: []
-#   all-features: false
+#   all-features: true
 #   with-sources: false
 
 -e file:.
@@ -12,8 +12,12 @@ certifi==2024.2.2
     # via requests
 charset-normalizer==3.3.2
     # via requests
+colorama==0.4.6
+    # via pytest
 idna==3.6
     # via requests
+importlib-metadata==7.0.1
+    # via pygal
 iniconfig==2.0.0
     # via pytest
 numpy==1.26.4
@@ -27,18 +31,23 @@ pluggy==1.4.0
     # via pytest
 py-cpuinfo==9.0.0
     # via pytest-benchmark
+pygal==3.0.4
+pygaljs==1.0.2
 pytest==8.0.2
     # via pytest-benchmark
 pytest-benchmark==4.0.0
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via pandas
 pytz==2024.1
     # via pandas
 requests==2.31.0
     # via python-monograph
+ruff==0.3.0
 six==1.16.0
     # via python-dateutil
 tzdata==2024.1
     # via pandas
 urllib3==2.2.1
     # via requests
+zipp==3.17.0
+    # via importlib-metadata

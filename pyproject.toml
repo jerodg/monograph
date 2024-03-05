@@ -21,7 +21,10 @@ build-backend = "hatchling.build"
 managed = true
 dev-dependencies = [
     "pytest>=8.0.2",
+    "ruff>=0.3.0",
     "pytest-benchmark>=4.0.0",
+    "pygal>=3.0.4",
+    "pygaljs>=1.0.2",
 ]
 
 [tool.hatch.metadata]

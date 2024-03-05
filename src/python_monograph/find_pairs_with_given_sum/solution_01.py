@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
-from typing import List, Tuple
+
 
 
 def solution_01(arr: List[int], req_sum: int) -> Tuple[int, List[Tuple[int, int]]]:

@@ -310,3 +310,31 @@ You can learn more about Python from the [Python documentation](https://docs.pyt
 You can learn more about unit testing in Python from the [Python documentation](https://docs.python.org/3/library/unittest.html).
 
 == References
+
+The selected code uses several Python features and methods.
+Here are the official Python documentation references for these:
+
+1. **Importing Modules**: The `import` statement is used to include external modules into the script.
+In the selected code, the `solution_03` function and `iterate` generator from the `solution_03` module in the `calculate_product_sum_from_nested_array` package are imported.
+- [Python Docs - Importing Modules](https://docs.python.org/3/tutorial/modules.html)
+
+2. **Functions**: Python allows you to define functions using the `def` keyword.
+Functions are reusable pieces of code that perform a specific task.
+In the selected code, the `solution_03` function is used.
+- [Python Docs - Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+
+3. **Generator Functions**: Python supports a concept called "generators", which allows you to create iterable objects.
+The `iterate` function in the selected code is a generator function.
+- [Python Docs - Generators](https://docs.python.org/3/tutorial/classes.html#generators)
+
+4. **`isinstance` Function**: The `isinstance` function is used to check if an object is an instance of a particular class or a subclass thereof.
+In the selected code, `isinstance` is used to check if an element is a list.
+- [Python Docs - `isinstance`](https://docs.python.org/3/library/functions.html#isinstance)
+
+5. **`yield` Keyword**: The `yield` keyword is used in Python generator functions as a replacement for the `return` statement.
+The `yield` keyword saves the state of the generator and can be used to produce a sequence of results instead of a single value.
+- [Python Docs - The `yield` statement](https://docs.python.org/3/reference/simple_stmts.html#the-yield-statement)
+
+6. **`for` Loop**: The `for` loop in Python is used to iterate over a sequence (such as a list, tuple, string) or other iterable objects.
+In the selected code, `for` loops are used to iterate over the elements in the array.
+- [Python Docs - The `for` statement](https://docs.python.org/3/tutorial/controlflow.html#for-statements)

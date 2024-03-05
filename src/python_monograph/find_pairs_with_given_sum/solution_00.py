@@ -18,7 +18,7 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from itertools import combinations
-from typing import List, Tuple
+
 
 
 def solution_00(arr: List[int], req_sum: int) -> Tuple[int, List[Tuple[int, int]]]:
