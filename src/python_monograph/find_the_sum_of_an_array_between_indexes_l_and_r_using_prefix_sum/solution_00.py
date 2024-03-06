@@ -21,7 +21,8 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 class Solution_00:
     """
-    This class provides methods to calculate the sum of elements in an array between two indexes and to check if the array contains a target sum.
+    This class provides methods to calculate the sum of elements in an array between two indexes and to check if the array
+    contains a target sum.
 
     Attributes:
         prefix_sum (list[int]): A list that stores the prefix sum of the array.

@@ -20,7 +20,6 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 import itertools
 from functools import reduce
 
-
 import numpy as np
 
 

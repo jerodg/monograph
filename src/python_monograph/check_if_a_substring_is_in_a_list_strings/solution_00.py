@@ -19,7 +19,6 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-
 def solution_00(data: List[str], substr: str) -> bool:
     """This function checks if a given substring is present in any of the strings in a list using the any() function.
 

@@ -19,7 +19,6 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-
 def solution_02(arr: List[int], req_sum: int) -> Tuple[int, List[Tuple[int, int]]]:
     """
     This function returns the number of pairs in the input list `arr` that sum up to `req_sum` using a two-pointer approach,

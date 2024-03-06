@@ -167,7 +167,6 @@ Each permutation is represented as a list of integers.
 2. **In-Place:** The algorithm swaps elements in the original list, which means it does not require additional space for each permutation.
 3. **Flexibility:** The algorithm can be easily modified to generate permutations in a specific order or to stop generating permutations once a certain condition is met.
 
-
 ==== Disadvantages
 
 1. **Efficiency:** The backtracking algorithm has a time complexity of O(n!), which means it can be slow for large lists.
@@ -351,6 +350,7 @@ This is a common practice in Python to help other developers understand the purp
 3. **Complexity:** The algorithm involves multiple nested loops, which can make the code more difficult to understand and maintain.
 
 ==== Complexity Analysis
+
 The time and space complexity of the selected code can be analyzed as follows:
 
 **Time Complexity:**
@@ -548,6 +548,7 @@ The function also includes a docstring that provides a detailed explanation of i
 This is a common practice in Python to help other developers understand the purpose and usage of the function.
 
 ==== Advantages
+
 1. **Non-Recursive:** The queue-based approach is non-recursive, which avoids the potential for stack overflow that can occur with recursive solutions.
 2. **Space Efficient:** The algorithm generates permutations in-place, which means it does not require additional space for each permutation.
 3. **Flexibility:** The algorithm can be easily modified to generate permutations in a specific order or to stop generating permutations once a certain condition is met.

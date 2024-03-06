@@ -106,8 +106,6 @@ The space usage does not increase with the size of the input.
 
 ==== Tests
 
-Coverage: 100% files, 90% lines covered
-
 [source,python,linenums]
 ----
 include::./tests/test_solution_00.py[]

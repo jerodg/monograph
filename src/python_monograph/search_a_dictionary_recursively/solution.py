@@ -19,7 +19,6 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-
 def method_0(dictionary, target_key):
     """This function searches for a target key in a dictionary recursively.
     If the key is in the dictionary, it returns the value.

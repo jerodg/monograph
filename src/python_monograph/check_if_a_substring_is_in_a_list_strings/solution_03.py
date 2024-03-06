@@ -19,7 +19,6 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-
 def solution_03(data: List[str], substr: str) -> bool:
     """This function checks if a given substring is found in a joined string of a list using the join() method.
 

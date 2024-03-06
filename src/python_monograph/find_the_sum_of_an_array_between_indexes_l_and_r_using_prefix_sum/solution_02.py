@@ -21,7 +21,8 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 class Solution_02:
     """
-    This class provides methods to build a Fenwick Tree (Binary Indexed Tree) from an array, update a value at a particular index in the array,
+    This class provides methods to build a Fenwick Tree (Binary Indexed Tree) from an array, update a value at a particular index
+    in the array,
     and calculate the sum of elements in the array between two indexes.
 
     Attributes:

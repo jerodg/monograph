@@ -186,7 +186,6 @@ This is significantly faster than other methods that might have a time complexit
 2. **In-place**: The method modifies one of the input arrays (`nums1`) to store the result, which saves auxiliary space.
 This is beneficial when dealing with large arrays where extra space could be a concern.
 
-
 ==== Disadvantages
 
 1. **Destructive**: This method modifies the input array `nums1`, which might not be desirable in all cases.
@@ -546,7 +545,6 @@ However, it may not be the most efficient solution for large arrays, as the sort
 This makes the code easy to understand and maintain.
 2. **In-place operation**: The method modifies the first input array `nums1` in-place, which means it does not require additional space proportional to the input size.
 This is beneficial in terms of space complexity.
-
 
 ==== Disadvantages
 

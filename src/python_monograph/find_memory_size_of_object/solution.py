@@ -21,7 +21,6 @@ from inspect import isgetsetdescriptor, ismemberdescriptor
 from sys import getsizeof
 
 
-
 def method_0(obj: Any, seen: set = None) -> int:
     """Calculate the memory size of a given object in bytes.
 

@@ -19,7 +19,6 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-
 def solution_02(nums: List[int], nums1: List[int]) -> float:
     """This function finds the median of two sorted arrays using the two pointers method.
 

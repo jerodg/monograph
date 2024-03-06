@@ -21,7 +21,6 @@ from functools import reduce
 from itertools import chain
 
 
-
 def method_0(arr: List[dict]) -> list:
     """Find unique keys from a list of dictionaries using Chain from itertools.
 

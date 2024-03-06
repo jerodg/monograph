@@ -19,7 +19,6 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-
 def solution_02(s: str) -> Tuple[int, str]:
     """This function finds the longest substring without repeating characters in a given string using a sliding window.
     It returns a tuple containing the length of the longest substring and the substring itself.

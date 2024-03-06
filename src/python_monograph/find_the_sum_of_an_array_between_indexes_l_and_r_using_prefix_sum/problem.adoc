@@ -15,7 +15,8 @@
 == Problem
 
 [.lead]
-Given an array arr[] of size **N**. Given **Q** queries and in each query given L and R, Print the sum of array elements from index L to R.
+Given an array arr[] of size **N**.
+Given **Q** queries and in each query given L and R, Print the sum of array elements from index L to R.
 
 Follow the given steps to solve the problem:
 
@@ -129,8 +130,7 @@ It allows for fast calculation of sum of pixel values in an image or rectangular
 
 5. **Machine Learning and Statistics:** In machine learning and statistics, you might need to calculate cumulative sums or moving averages, which can be optimized using a similar approach.
 
-NOTE: Remember, the prefix sum approach is a general technique that can be applied to solve a variety of problems that involve
-calculating cumulative or aggregate values over a range.
+NOTE: Remember, the prefix sum approach is a general technique that can be applied to solve a variety of problems that involve calculating cumulative or aggregate values over a range.
 
 == Common Mistakes
 

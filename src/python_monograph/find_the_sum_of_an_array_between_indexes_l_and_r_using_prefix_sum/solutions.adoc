@@ -91,6 +91,7 @@ In the method `contains_sum`, it uses a set to store the prefix sums and checks 
 The lookup operation in a set is O(1) on average.
 
 ==== Disadvantages
+
 1. **Update Cost**: While querying is efficient, updating an element in the original array is costly.
 If an element in the original array changes, the entire prefix sum array needs to be recalculated, which takes O(n) time.
 2. **Initial Construction Cost**: The initial construction of the prefix sum array also takes O(n) time.
@@ -333,14 +334,15 @@ def range_query(self, l: int, r: int) -> int:
 In summary, the `Solution_02` class provides a way to efficiently perform range sum queries and updates on an array by using the concept of a Fenwick Tree.
 
 ==== Advantages
+
 1. **Efficient Queries and Updates**: The Fenwick Tree allows for efficient range queries and updates.
 Once the Fenwick Tree is built, both queries and updates can be performed in logarithmic time, O(log n), which is a significant advantage for large arrays or multiple queries and updates.
 2. **Space Efficient**: The space complexity is O(n), where n is the size of the input array.
 This is because it only needs to store the Fenwick Tree which has the same size as the input array.
 3. **Simplicity**: Compared to other tree data structures like Segment Trees, Fenwick Trees are simpler and easier to implement.
 
-
 ==== Disadvantages
+
 1. **Limited Operations**: Fenwick Trees only support two operations: updating an element and getting a prefix sum.
 If other types of range queries (like minimum, maximum, etc.) are needed, Fenwick Trees cannot be used.
 2. **Array Indexing Starts from 1**: In Fenwick Trees, array indexing starts from 1, not 0. This is because the tree uses the binary representation of indexes, and the 0 index does not contribute to the tree.
@@ -571,6 +573,7 @@ def query(self, l: int, r: int) -> int:
 In summary, the `Solution_04` class provides a way to efficiently perform range sum queries on an array by using the concept of a block array.
 
 ==== Advantages
+
 1. **Efficient Queries**: The Block Array allows for efficient range sum queries.
 Once the Block Array is built, queries can be performed in O(sqrt(n)) time, which is a significant advantage for large arrays or multiple queries.
 2. **Supports Updates**: Unlike some other data structures like Sparse Tables, Block Arrays support updates.

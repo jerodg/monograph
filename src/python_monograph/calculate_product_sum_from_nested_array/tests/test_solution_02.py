@@ -18,6 +18,7 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 import pytest
+
 from python_monograph.calculate_product_sum_from_nested_array.solution_02 import solution_02
 
 

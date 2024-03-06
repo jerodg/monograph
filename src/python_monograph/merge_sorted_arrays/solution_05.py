@@ -38,7 +38,6 @@ def solution_05(nums1: list[int], m: int, nums2: list[int], n: int) -> list[int]
     Doctest:
         >>> solution_05([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
         [1, 2, 2, 3, 5, 6]
-
     """
     # Slice nums1 up to the mth index. This removes any placeholder zeros at the end of nums1.
     nums1[:] = nums1[:m]

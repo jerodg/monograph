@@ -20,7 +20,6 @@ If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 from itertools import combinations
 
 
-
 def solution_00(arr: List[int], req_sum: int) -> Tuple[int, List[Tuple[int, int]]]:
     """
     This function returns the number of pairs in the input list `arr` that sum up to `req_sum` using the `combinations`

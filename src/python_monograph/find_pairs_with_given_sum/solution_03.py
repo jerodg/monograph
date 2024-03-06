@@ -19,7 +19,6 @@ You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
 
-
 def binary_search(arr: List[int], low: int, high: int, x: int) -> int:
     """
     This function performs a binary search on a sorted list and returns the index of the element if found, else -1 using recursion.
