@@ -49,6 +49,7 @@ def solution_03(nums1: list[int], m: int, nums2: list[int], n: int) -> list[int]
     # Append the first m elements from nums1
     for i in range(m):
         nums3.append(nums1[i])
+
     # Append the first n elements from nums2
     for i in range(n):
         nums3.append(nums2[i])
