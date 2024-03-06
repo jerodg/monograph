@@ -13,11 +13,16 @@
 :keywords: problem, python
 
 == Problem
-
 [.lead]
-=== Constraint(s)
 
-=== Example(s)
+=== Approaches
+
+
+=== Constraints
+
+
+=== Examples
+
 
 ==== 0
 
@@ -89,18 +94,25 @@
 
 ----
 
-== Use-Case(s)
+== Use-Cases
+
 
 == Common Mistakes
 
+
 == Best Practices
+
 
 == Test Strategies
 
-== Performance Optimization
+
+== Performance Optimizations
+
 
 == Follow-up
 
+
 == Related Topics
+
 
 == References
