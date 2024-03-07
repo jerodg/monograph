@@ -1,0 +1,48 @@
+:author: Jerod Gawne
+:email: jerodg@pm.me
+:docdate: 04 January 2024
+:revdate: {docdatetime}
+:doctype: article
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc: left
+:toclevels: 5
+:icons: font
+:imagesdir: ../../img/
+:stylesheet: ../../css/styles.css
+:keywords: solution, python
+= Solutions
+
+
+== Approaches
+
+
+== Performance Optimizations
+
+
+== Solutions
+=== Solution 00
+==== Implementation
+[source,python,linenums]
+----
+include::./solution_00.py[]
+----
+
+==== Explanation
+
+
+==== Advantages
+
+
+==== Disadvantages
+
+
+==== Complexity Analysis
+
+== Tests
+===  Test Solution 00
+[source,python,linenums]
+----
+include::./tests/test_solution_00.py[]
+----
