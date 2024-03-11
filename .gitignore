@@ -326,5 +326,5 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,python,pycharm+all
 
 .benchmark
-src/python/requirements.lock
-src/python/requirements-dev.lock
+requirements.lock
+requirements-dev.lock
